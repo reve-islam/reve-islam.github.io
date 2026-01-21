@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultation & Interprétation - Rêve Islam</title>
+    <title>Consultations Houssen Moshinaly - Rêve Islam</title>
     <style>
         /* --- Styles Généraux --- */
         body {
@@ -26,23 +26,70 @@
         }
 
         /* --- Titres --- */
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
         h1 {
             text-align: center;
-            margin-bottom: 15px;
+            color: #2c3e50;
+            margin-bottom: 10px;
         }
         h2 {
             border-bottom: 2px solid #e0e0e0;
             padding-bottom: 10px;
             margin-top: 40px;
+            color: #2c3e50;
         }
-
-        /* --- Sections et Cartes --- */
-        .section {
+        .subtitle {
+            text-align: center;
+            font-size: 1.1em;
+            color: #7f8c8d;
             margin-bottom: 30px;
         }
+
+        /* --- Système d'Onglets (TABS) --- */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .tab-btn {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #95a5a6;
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+            margin-bottom: -2px; /* Pour chevaucher la ligne */
+        }
+
+        .tab-btn:hover {
+            color: #3498db;
+        }
+
+        .tab-btn.active {
+            color: #3498db;
+            border-bottom: 4px solid #3498db;
+        }
+
+        /* --- Contenu des Onglets --- */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Cartes et Blocs --- */
         .payment-card {
             background-color: #fdfdfd;
             border: 1px solid #eee;
@@ -55,37 +102,52 @@
             color: #3498db;
         }
 
-        /* --- Blocs d'information --- */
         .info-block {
             background-color: #e9f5ff;
             border-left: 5px solid #3498db;
             padding: 15px;
             margin: 20px 0;
             border-radius: 4px;
-            font-size: 1.1em;
-            word-break: break-all; /* Pour les longues chaînes comme les adresses */
+            font-size: 1.05em;
+            word-break: break-word;
         }
+        
+        /* Couleur spécifique pour le bloc Sihr */
+        .sihr-block {
+            background-color: #f3e5f5; /* Violet très clair */
+            border-left: 5px solid #9b59b6; /* Violet */
+        }
+
         .info-block strong {
             display: inline-block;
-            min-width: 100px; /* Aligne les valeurs */
+            min-width: 110px;
+            font-weight: 700;
         }
+
         .note-block {
             background-color: #fffbe6;
             border-left: 5px solid #f0ad4e;
             padding: 15px;
             margin-top: 15px;
             border-radius: 4px;
+            font-size: 0.95em;
         }
 
-        /* --- Boutons et Liens --- */
-        a {
-            color: #3498db;
-            text-decoration: none;
+        /* Disclaimer médical */
+        .medical-warning {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        .btn {
+
+        /* --- Boutons --- */
+        a.btn {
             display: inline-block;
             background-color: #3498db;
             color: #fff;
@@ -95,73 +157,142 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
             margin-top: 10px;
+            text-align: center;
         }
-        .btn:hover {
+        a.btn:hover {
             background-color: #2980b9;
-            text-decoration: none;
         }
+        
+        .whatsapp-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
         .whatsapp-btn {
             background-color: #25D366;
+            font-size: 1.1em;
+            width: 100%;
+            max-width: 300px;
         }
         .whatsapp-btn:hover {
             background-color: #1DA851;
         }
 
-        /* --- Pied de page --- */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Consultation & Interprétation</h1>
-        <p style="text-align: center; font-size: 1.2em; color: #555;">As-salamu alaykum. Bienvenue sur la page d'information pour votre consultation.</p>
+        <h1>Espace Consultations</h1>
+        <p class="subtitle">Bienvenue. Veuillez sélectionner le type de consultation souhaité ci-dessous.</p>
 
-        <!-- Section Tarifs et Fonctionnement -->
-        <div class="section info-block">
-            <strong>Tarif :</strong> 20 Euros<br>
-            <strong>Inclus :</strong> Plusieurs interprétations<br>
-            <strong>Canal :</strong> Directement via messages sur WhatsApp
+        <!-- Navigation des Onglets -->
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="openTab(event, 'reves')">🌙 Interprétation des Rêves</button>
+            <button class="tab-btn" onclick="openTab(event, 'sihr')">🛡️ Diagnostic & Roqya</button>
         </div>
 
-        <!-- Section Procédure -->
-        <h2>Étape 1 : Effectuer la contribution</h2>
-        <p>Choisissez l'une des trois méthodes de paiement ci-dessous. Les informations nécessaires sont fournies pour chacune.</p>
+        <!-- CONTENU ONGLET 1 : RÊVES -->
+        <div id="reves" class="tab-content active">
+            <div class="info-block">
+                <h3>Interprétation de vos Rêves</h3>
+                <p>Une analyse approfondie de vos songes selon les références islamiques authentiques.</p>
+                <hr style="border: 0; border-top: 1px solid #cbd5e0; margin: 10px 0;">
+                <strong>Tarif :</strong> 20 Euros<br>
+                <strong>Format :</strong> Messages vocaux ou écrits via WhatsApp<br>
+                <strong>Inclus :</strong> Couvre plusieurs interprétations (Consultation express)
+            </div>
+        </div>
+
+        <!-- CONTENU ONGLET 2 : SIHR/OCCULTE -->
+        <div id="sihr" class="tab-content">
+            <div class="info-block sihr-block">
+                <h3 style="color:#8e44ad;">Diagnostic & Accompagnement Spirituel</h3>
+                <p>Une écoute attentive pour identifier les blocages (Mauvais œil, Sihr) et établir un programme de protection.</p>
+                <hr style="border: 0; border-top: 1px solid #d7bde2; margin: 10px 0;">
+                <strong>Tarif :</strong> 45 Euros<br>
+                <strong>Format :</strong> Consultation approfondie (30-45 min) + Suivi<br>
+                <strong>Inclus :</strong> Diagnostic complet + Envoi d'un programme d'invocations personnalisé (PDF/Texte).
+            </div>
+            
+            <div class="medical-warning">
+                ⚠️ AVERTISSEMENT : Je ne suis pas médecin. Mes conseils sont d'ordre spirituel. En cas de douleurs physiques ou troubles mentaux, consultez impérativement un spécialiste de santé.
+            </div>
+        </div>
+
+        <!-- SECTION PAIEMENT (Commune aux deux) -->
+        <h2>Étape 1 : Effectuer le paiement</h2>
+        <p>Choisissez votre méthode préférée ci-dessous. Les coordonnées restent les mêmes quel que soit le service choisi.</p>
 
         <!-- Carte Western Union -->
         <div class="payment-card">
-            <h3>Western Union</h3>
-            <p>Le moyen le plus fiable pour un retrait en espèces.</p>
-            <div class="info-block">
+            <h3>Option A : Western Union</h3>
+            <p>Idéal pour un paiement en espèces.</p>
+            <div class="info-block" style="background-color: #fff; border: 1px solid #eee; border-left: 5px solid #f1c40f;">
                 <strong>Pays :</strong> Madagascar<br>
-                <strong>Prénom et Nom :</strong> Houssen Mohsinaly<br>
+                <strong>Nom complet :</strong> Houssen Mohsinaly<br>
                 <strong>Adresse :</strong> Lot IVW 5A - Anosizato Est<br>
                 <strong>Ville :</strong> Antananarivo<br>
                 <strong>Téléphone :</strong> +261341854716<br>
                 <strong>Email :</strong> housseniawriting@gmail.com
             </div>
             <div class="note-block">
-                <strong>Important :</strong> Lors de l'envoi, choisissez "<strong>Retrait en espèce</strong>". Ensuite, vous devrez me fournir le numéro de suivi (<strong>MTCN</strong>) pour que je puisse récupérer les fonds.
+                <strong>Important :</strong> Choisissez "<strong>Retrait en espèce</strong>". Une fois envoyé, notez le code <strong>MTCN</strong>.
             </div>
-            <a href="https://www.westernunion.com/fr/fr/send-money-to-madagascar.html" class="btn" target="_blank">Aller sur Western Union</a>
+            <a href="https://www.westernunion.com/fr/fr/send-money-to-madagascar.html" class="btn" target="_blank">Site Western Union</a>
         </div>
 
         <!-- Carte Remitly & Taptap Send -->
         <div class="payment-card">
-            <h3>Remitly ou Taptap Send</h3>
-            <p>Ces services permettent un envoi direct sur un portefeuille mobile (Mobile Money).</p>
-            <div class="info-block">
-                <strong>Prénom et Nom :</strong> Houssen Moshinaly<br>
-                <strong>Opérateur :</strong> Mvola<br>
-                <strong>Numéro de Tél :</strong> +261341854716
+            <h3>Option B : Remitly ou Taptap Send</h3>
+            <p>Envoi direct sur Mobile Money (Rapide et frais réduits).</p>
+            <div class="info-block" style="background-color: #fff; border: 1px solid #eee; border-left: 5px solid #2ecc71;">
+                <strong>Nom complet :</strong> Houssen Moshinaly<br>
+                <strong>Opérateur :</strong> Mvola (Telma)<br>
+                <strong>Numéro :</strong> +261341854716
             </div>
-            <a href="https://www.remitly.com/fr/fr/madagascar" class="btn" target="_blank">Aller sur Remitly</a>
-            <a href="https://www.taptapsend.com/country-landing-pages/transferts-madagascar" class="btn" style="margin-left: 10px;" target="_blank">Aller sur Taptap Send</a>
+            <a href="https://www.remitly.com/fr/fr/madagascar" class="btn" target="_blank">Utiliser Remitly</a>
+            <a href="https://www.taptapsend.com/country-landing-pages/transferts-madagascar" class="btn" style="margin-left: 10px;" target="_blank">Utiliser Taptap Send</a>
         </div>
+
+        <!-- SECTION CONTACT FINAL -->
+        <div class="whatsapp-section">
+            <h2>Étape 2 : Confirmer la consultation</h2>
+            <p>Une fois le paiement effectué, cliquez ci-dessous pour m'envoyer la preuve (Capture d'écran ou code MTCN) sur WhatsApp.</p>
+            <a href="https://wa.me/261341854716" class="btn whatsapp-btn">Envoyer la preuve sur WhatsApp</a>
+        </div>
+
+    </div>
+
+    <!-- Script pour gérer les onglets -->
+    <script>
+        function openTab(evt, tabName) {
+            // 1. Cacher tous les contenus
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // 2. Enlever la classe "active" de tous les boutons
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // 3. Afficher l'onglet actuel et ajouter la classe "active" au bouton cliqué
+            document.getElementById(tabName).style.display = "block";
+            // Petit délai pour permettre l'animation CSS
+            setTimeout(function() {
+                document.getElementById(tabName).classList.add("active");
+            }, 10);
+            
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+</html>
