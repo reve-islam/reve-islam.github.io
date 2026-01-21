@@ -36,6 +36,7 @@
             padding-bottom: 10px;
             margin-top: 40px;
             color: #2c3e50;
+            font-size: 1.5em;
         }
         .subtitle {
             text-align: center;
@@ -50,6 +51,7 @@
             justify-content: center;
             margin-bottom: 25px;
             border-bottom: 2px solid #eee;
+            flex-wrap: wrap; /* Pour mobile */
         }
         
         .tab-btn {
@@ -63,7 +65,7 @@
             color: #95a5a6;
             transition: 0.3s;
             border-bottom: 4px solid transparent;
-            margin-bottom: -2px; /* Pour chevaucher la ligne */
+            margin-bottom: -2px;
         }
 
         .tab-btn:hover {
@@ -89,7 +91,58 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- Cartes et Blocs --- */
+        /* --- Blocs d'information --- */
+        .info-block {
+            background-color: #e9f5ff;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 1.05em;
+        }
+        
+        .info-block ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        /* Styles spécifiques Roqya/Sihr */
+        .sihr-block {
+            background-color: #f3e5f5; /* Violet très clair */
+            border-left: 5px solid #9b59b6; /* Violet */
+        }
+        
+        .role-clarification {
+            background-color: #e8f6f3;
+            border-left: 5px solid #16a085;
+            color: #0e6655;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .target-audience {
+            background-color: #f9f9f9; 
+            border-left: 5px solid #7f8c8d;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* Disclaimer médical */
+        .medical-warning {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* --- Cartes Paiement --- */
         .payment-card {
             background-color: #fdfdfd;
             border: 1px solid #eee;
@@ -99,51 +152,24 @@
         }
         .payment-card h3 {
             margin-top: 0;
-            color: #3498db;
-        }
-
-        .info-block {
-            background-color: #e9f5ff;
-            border-left: 5px solid #3498db;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-            font-size: 1.05em;
-            word-break: break-word;
+            color: #2980b9;
         }
         
-        /* Couleur spécifique pour le bloc Sihr */
-        .sihr-block {
-            background-color: #f3e5f5; /* Violet très clair */
-            border-left: 5px solid #9b59b6; /* Violet */
-        }
-
-        .info-block strong {
-            display: inline-block;
-            min-width: 110px;
-            font-weight: 700;
+        .payment-details {
+            background-color: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 1em;
+            border-radius: 4px;
         }
 
         .note-block {
             background-color: #fffbe6;
             border-left: 5px solid #f0ad4e;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            font-size: 0.95em;
-        }
-
-        /* Disclaimer médical */
-        .medical-warning {
-            background-color: #ffebee;
-            color: #c62828;
-            border: 1px solid #ffcdd2;
             padding: 10px;
-            border-radius: 5px;
+            margin-top: 10px;
             font-size: 0.9em;
-            margin-top: 15px;
-            font-weight: bold;
-            text-align: center;
         }
 
         /* --- Boutons --- */
@@ -175,6 +201,7 @@
             font-size: 1.1em;
             width: 100%;
             max-width: 300px;
+            padding: 15px 20px;
         }
         .whatsapp-btn:hover {
             background-color: #1DA851;
@@ -194,35 +221,71 @@
             <button class="tab-btn" onclick="openTab(event, 'sihr')">🛡️ Diagnostic & Roqya</button>
         </div>
 
+        <!-- ========================================= -->
         <!-- CONTENU ONGLET 1 : RÊVES -->
+        <!-- ========================================= -->
         <div id="reves" class="tab-content active">
             <div class="info-block">
                 <h3>Interprétation de vos Rêves</h3>
                 <p>Une analyse approfondie de vos songes selon les références islamiques authentiques.</p>
-                <hr style="border: 0; border-top: 1px solid #cbd5e0; margin: 10px 0;">
+                <hr style="border: 0; border-top: 1px solid #cbd5e0; margin: 15px 0;">
                 <strong>Tarif :</strong> 20 Euros<br>
                 <strong>Format :</strong> Messages vocaux ou écrits via WhatsApp<br>
-                <strong>Inclus :</strong> Couvre plusieurs interprétations (Consultation express)
+                <strong>Inclus :</strong> Consultation express (couvre plusieurs interprétations)
             </div>
         </div>
 
+        <!-- ========================================= -->
         <!-- CONTENU ONGLET 2 : SIHR/OCCULTE -->
+        <!-- ========================================= -->
         <div id="sihr" class="tab-content">
+            
+            <!-- 1. Introduction : Pour qui ? -->
+            <div class="target-audience">
+                <h3>🛡️ À qui s'adresse ce service ?</h3>
+                <p>Ce service de consultation est conçu pour vous si :</p>
+                <ul>
+                    <li>Vous ressentez des <strong>blocages inexpliqués</strong> dans votre vie (mariage, travail, santé).</li>
+                    <li>Vous suspectez une atteinte occulte (Sihr, Mauvais Œil, Djinn) sans en être sûr.</li>
+                    <li>Vous avez vu plusieurs "guérisseurs" sans résultat et souhaitez <strong>reprendre le contrôle</strong>.</li>
+                    <li>Vous avez besoin d'une écoute pour démêler le psychologique du spirituel.</li>
+                </ul>
+            </div>
+
+            <!-- 2. Clarification importante -->
+            <div class="role-clarification">
+                <strong>🛑 Important - Clarification de mon rôle :</strong><br>
+                Je ne suis pas un "Raqui" qui effectue des séances d'exorcisme ou de soins physiques à votre place. 
+                Mon rôle est celui d'un <strong>Conseiller Spirituel</strong>. Je vous aide à analyser vos symptômes et je vous fournis un <strong>protocole de soin (Self-Ruqya)</strong> que vous appliquerez vous-même avec mes conseils.
+            </div>
+
+            <!-- 3. Détails de l'offre -->
             <div class="info-block sihr-block">
-                <h3 style="color:#8e44ad;">Diagnostic & Accompagnement Spirituel</h3>
-                <p>Une écoute attentive pour identifier les blocages (Mauvais œil, Sihr) et établir un programme de protection.</p>
-                <hr style="border: 0; border-top: 1px solid #d7bde2; margin: 10px 0;">
+                <h3 style="color:#8e44ad;">Diagnostic & Plan d'Action</h3>
+                <p>Une consultation complète pour vous donner les armes spirituelles nécessaires.</p>
+                <hr style="border: 0; border-top: 1px solid #d7bde2; margin: 15px 0;">
+                
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 8px;">✅ <strong>Analyse des symptômes :</strong> Échange approfondi pour identifier le type de mal.</li>
+                    <li style="margin-bottom: 8px;">✅ <strong>Sélection des Duas :</strong> Invocations spécifiques à votre cas.</li>
+                    <li style="margin-bottom: 8px;">✅ <strong>Plan d'hygiène spirituelle :</strong> Conseils personnalisés.</li>
+                    <li>✅ <strong>Support écrit :</strong> Envoi d'un récapitulatif PDF/Texte.</li>
+                </ul>
+
+                <hr style="border: 0; border-top: 1px solid #d7bde2; margin: 15px 0;">
+                
                 <strong>Tarif :</strong> 45 Euros<br>
-                <strong>Format :</strong> Consultation approfondie (30-45 min) + Suivi<br>
-                <strong>Inclus :</strong> Diagnostic complet + Envoi d'un programme d'invocations personnalisé (PDF/Texte).
+                <strong>Durée :</strong> 30 à 45 minutes (Appel ou échanges vocaux WhatsApp)<br>
             </div>
             
             <div class="medical-warning">
-                ⚠️ AVERTISSEMENT : Je ne suis pas médecin. Mes conseils sont d'ordre spirituel. En cas de douleurs physiques ou troubles mentaux, consultez impérativement un spécialiste de santé.
+                ⚠️ AVERTISSEMENT : Je ne suis pas médecin. Mes conseils sont strictement d'ordre spirituel. Si vous souffrez de douleurs physiques graves ou de troubles mentaux, consultez impérativement un médecin.
             </div>
         </div>
 
+        <!-- ========================================= -->
         <!-- SECTION PAIEMENT (Commune aux deux) -->
+        <!-- ========================================= -->
         <h2>Étape 1 : Effectuer le paiement</h2>
         <p>Choisissez votre méthode préférée ci-dessous. Les coordonnées restent les mêmes quel que soit le service choisi.</p>
 
@@ -230,7 +293,7 @@
         <div class="payment-card">
             <h3>Option A : Western Union</h3>
             <p>Idéal pour un paiement en espèces.</p>
-            <div class="info-block" style="background-color: #fff; border: 1px solid #eee; border-left: 5px solid #f1c40f;">
+            <div class="payment-details" style="border-left: 5px solid #f1c40f;">
                 <strong>Pays :</strong> Madagascar<br>
                 <strong>Nom complet :</strong> Houssen Mohsinaly<br>
                 <strong>Adresse :</strong> Lot IVW 5A - Anosizato Est<br>
@@ -239,7 +302,7 @@
                 <strong>Email :</strong> housseniawriting@gmail.com
             </div>
             <div class="note-block">
-                <strong>Important :</strong> Choisissez "<strong>Retrait en espèce</strong>". Une fois envoyé, notez le code <strong>MTCN</strong>.
+                <strong>Important :</strong> Choisissez "<strong>Retrait en espèce</strong>". Une fois envoyé, notez bien le code <strong>MTCN</strong>.
             </div>
             <a href="https://www.westernunion.com/fr/fr/send-money-to-madagascar.html" class="btn" target="_blank">Site Western Union</a>
         </div>
@@ -247,8 +310,8 @@
         <!-- Carte Remitly & Taptap Send -->
         <div class="payment-card">
             <h3>Option B : Remitly ou Taptap Send</h3>
-            <p>Envoi direct sur Mobile Money (Rapide et frais réduits).</p>
-            <div class="info-block" style="background-color: #fff; border: 1px solid #eee; border-left: 5px solid #2ecc71;">
+            <p>Envoi direct sur Mobile Money (Rapide, simple et moins de frais).</p>
+            <div class="payment-details" style="border-left: 5px solid #2ecc71;">
                 <strong>Nom complet :</strong> Houssen Moshinaly<br>
                 <strong>Opérateur :</strong> Mvola (Telma)<br>
                 <strong>Numéro :</strong> +261341854716
@@ -257,7 +320,9 @@
             <a href="https://www.taptapsend.com/country-landing-pages/transferts-madagascar" class="btn" style="margin-left: 10px;" target="_blank">Utiliser Taptap Send</a>
         </div>
 
+        <!-- ========================================= -->
         <!-- SECTION CONTACT FINAL -->
+        <!-- ========================================= -->
         <div class="whatsapp-section">
             <h2>Étape 2 : Confirmer la consultation</h2>
             <p>Une fois le paiement effectué, cliquez ci-dessous pour m'envoyer la preuve (Capture d'écran ou code MTCN) sur WhatsApp.</p>
@@ -266,7 +331,7 @@
 
     </div>
 
-    <!-- Script pour gérer les onglets -->
+    <!-- Script pour gérer le changement d'onglets -->
     <script>
         function openTab(evt, tabName) {
             // 1. Cacher tous les contenus
@@ -283,9 +348,10 @@
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
 
-            // 3. Afficher l'onglet actuel et ajouter la classe "active" au bouton cliqué
+            // 3. Afficher l'onglet sélectionné
             document.getElementById(tabName).style.display = "block";
-            // Petit délai pour permettre l'animation CSS
+            
+            // Petit délai pour l'animation CSS
             setTimeout(function() {
                 document.getElementById(tabName).classList.add("active");
             }, 10);
