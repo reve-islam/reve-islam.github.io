@@ -3,360 +3,552 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultations Houssen Moshinaly - Rêve Islam</title>
+    <title>Houssen Moshinaly - Rêves, Soins & Spiritualité</title>
+    
+    <!-- Polices pour l'Arabe et le texte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        /* --- Styles Généraux --- */
+        /* --- 1. CONFIGURATION GÉNÉRALE --- */
+        :root {
+            --primary-blue: #3498db;
+            --primary-purple: #9b59b6;
+            --primary-green: #2c7a7b; /* Pour les invocations */
+            --bg-color: #f7f9fc;
+            --text-main: #2c3e50;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f7f8fa;
-            color: #333;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
         }
 
-        /* --- Conteneur Principal --- */
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 20px auto;
             background: #ffffff;
-            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* Pour que le header ne dépasse pas */
         }
 
-        /* --- Titres --- */
-        h1 {
+        /* --- 2. HEADER PROFIL (NOUVEAU) --- */
+        .profile-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
             text-align: center;
-            color: #2c3e50;
+            padding: 30px 20px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            object-fit: cover;
             margin-bottom: 10px;
-        }
-        h2 {
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
-            margin-top: 40px;
-            color: #2c3e50;
-            font-size: 1.5em;
-        }
-        .subtitle {
-            text-align: center;
-            font-size: 1.1em;
-            color: #7f8c8d;
-            margin-bottom: 30px;
+            background-color: #fff; /* Couleur de fond si pas d'image */
         }
 
-        /* --- Système d'Onglets (TABS) --- */
+        .profile-header h1 {
+            margin: 5px 0;
+            font-size: 1.8em;
+        }
+
+        .profile-bio {
+            font-size: 0.95em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- 3. SYSTÈME D'ONGLETS --- */
         .tabs-container {
             display: flex;
-            justify-content: center;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #eee;
-            flex-wrap: wrap; /* Pour mobile */
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100; /* Reste au dessus lors du scroll */
         }
         
         .tab-btn {
-            background-color: transparent;
+            flex: 1;
+            background: transparent;
             border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 15px 25px;
-            font-size: 1.1em;
+            padding: 18px 5px;
+            font-size: 1em;
             font-weight: 600;
-            color: #95a5a6;
-            transition: 0.3s;
+            color: #7f8c8d;
+            cursor: pointer;
             border-bottom: 4px solid transparent;
-            margin-bottom: -2px;
+            transition: 0.3s;
         }
 
-        .tab-btn:hover {
-            color: #3498db;
-        }
+        /* Couleurs spécifiques par onglet au survol/actif */
+        .tab-btn:hover { background-color: #f8f9fa; }
 
-        .tab-btn.active {
-            color: #3498db;
-            border-bottom: 4px solid #3498db;
-        }
+        .tab-btn[data-target="reves"].active { border-bottom-color: var(--primary-blue); color: var(--primary-blue); }
+        .tab-btn[data-target="sihr"].active { border-bottom-color: var(--primary-purple); color: var(--primary-purple); }
+        .tab-btn[data-target="duas"].active { border-bottom-color: var(--primary-green); color: var(--primary-green); }
 
-        /* --- Contenu des Onglets --- */
         .tab-content {
             display: none;
-            animation: fadeIn 0.5s;
+            padding: 25px;
+            animation: fadeIn 0.4s ease;
         }
-        .tab-content.active {
-            display: block;
-        }
+        .tab-content.active { display: block; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Blocs d'information --- */
+        /* --- 4. STYLES COMMUNS (Info blocks) --- */
         .info-block {
             background-color: #e9f5ff;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-blue);
             padding: 20px;
-            margin: 20px 0;
+            margin-bottom: 20px;
             border-radius: 4px;
-            font-size: 1.05em;
         }
-        
-        .info-block ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-
-        /* Styles spécifiques Roqya/Sihr */
         .sihr-block {
-            background-color: #f3e5f5; /* Violet très clair */
-            border-left: 5px solid #9b59b6; /* Violet */
+            background-color: #f3e5f5;
+            border-left-color: var(--primary-purple);
         }
-        
-        .role-clarification {
-            background-color: #e8f6f3;
-            border-left: 5px solid #16a085;
-            color: #0e6655;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .target-audience {
-            background-color: #f9f9f9; 
-            border-left: 5px solid #7f8c8d;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        /* Disclaimer médical */
         .medical-warning {
             background-color: #ffebee;
             color: #c62828;
             border: 1px solid #ffcdd2;
-            padding: 15px;
+            padding: 10px;
             border-radius: 5px;
-            font-size: 0.95em;
-            margin-top: 20px;
-            font-weight: bold;
+            font-size: 0.9em;
             text-align: center;
+            font-weight: bold;
         }
 
-        /* --- Cartes Paiement --- */
+        /* --- 5. STYLES SPÉCIFIQUES INVOCATIONS (DUAS) --- */
+        .dua-controls {
+            margin-bottom: 25px;
+            background: #f0fdf4;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #c6f6d5;
+        }
+        
+        .dua-controls input, .dua-controls select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box; /* Important pour ne pas dépasser */
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-green);
+            transition: transform 0.2s;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-tag {
+            font-size: 0.75rem;
+            background-color: #edf2f7;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #4a5568;
+            font-weight: normal;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            color: #000;
+            text-align: center;
+            margin: 15px 0;
+            line-height: 2.2;
+            direction: rtl;
+        }
+
+        .transliteration { font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem; }
+        
+        .translation {
+            background-color: #f0fdf4;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: #276749;
+        }
+
+        .instruction {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #c05621;
+            font-size: 0.9em;
+        }
+        .instruction-note { font-weight: normal; color: #666; }
+        
+        .hidden { display: none !important; }
+
+        /* --- 6. PAIEMENT & FOOTER --- */
+        .payment-section {
+            border-top: 2px solid #eee;
+            margin-top: 40px;
+            padding-top: 20px;
+        }
         .payment-card {
             background-color: #fdfdfd;
             border: 1px solid #eee;
             border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        .payment-card h3 {
-            margin-top: 0;
-            color: #2980b9;
-        }
-        
-        .payment-details {
-            background-color: #fff;
-            border: 1px solid #eee;
             padding: 15px;
-            margin: 10px 0;
-            font-size: 1em;
-            border-radius: 4px;
+            margin-top: 15px;
         }
-
-        .note-block {
-            background-color: #fffbe6;
-            border-left: 5px solid #f0ad4e;
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-
-        /* --- Boutons --- */
-        a.btn {
+        .btn {
             display: inline-block;
-            background-color: #3498db;
+            background-color: var(--primary-blue);
             color: #fff;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
             text-align: center;
         }
-        a.btn:hover {
-            background-color: #2980b9;
-        }
+        .btn-whatsapp { background-color: #25D366; width: 100%; box-sizing: border-box; margin-top: 10px; }
         
-        .whatsapp-section {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+        /* Mobile responsive adjustments */
+        @media (max-width: 600px) {
+            .tab-btn { font-size: 0.9em; padding: 15px 5px; }
+            .card h3 { flex-direction: column; align-items: flex-start; gap: 5px; }
         }
-        
-        .whatsapp-btn {
-            background-color: #25D366;
-            font-size: 1.1em;
-            width: 100%;
-            max-width: 300px;
-            padding: 15px 20px;
-        }
-        .whatsapp-btn:hover {
-            background-color: #1DA851;
-        }
-
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Espace Consultations</h1>
-        <p class="subtitle">Bienvenue. Veuillez sélectionner le type de consultation souhaité ci-dessous.</p>
+        
+        <!-- HEADER PROFIL -->
+        <div class="profile-header">
+            <!-- Remplacez l'URL ci-dessous par votre photo plus tard -->
+            <img src="https://via.placeholder.com/150/2c7a7b/ffffff?text=H" alt="Houssen Moshinaly" class="profile-img">
+            <h1>Houssen Moshinaly</h1>
+            <p class="profile-bio">Interprétation des rêves & Accompagnement spirituel éthique.<br>Basé sur le Coran et la Sunnah.</p>
+        </div>
 
-        <!-- Navigation des Onglets -->
+        <!-- NAVIGATION ONGLETS -->
         <div class="tabs-container">
-            <button class="tab-btn active" onclick="openTab(event, 'reves')">🌙 Interprétation des Rêves</button>
-            <button class="tab-btn" onclick="openTab(event, 'sihr')">🛡️ Diagnostic & Roqya</button>
+            <button class="tab-btn active" data-target="reves" onclick="openTab(event, 'reves')">🌙 Rêves</button>
+            <button class="tab-btn" data-target="sihr" onclick="openTab(event, 'sihr')">🛡️ Diagnostic</button>
+            <button class="tab-btn" data-target="duas" onclick="openTab(event, 'duas')">🤲 Invocations</button>
         </div>
 
         <!-- ========================================= -->
-        <!-- CONTENU ONGLET 1 : RÊVES -->
+        <!-- ONGLET 1 : RÊVES -->
         <!-- ========================================= -->
         <div id="reves" class="tab-content active">
             <div class="info-block">
-                <h3>Interprétation de vos Rêves</h3>
+                <h3 style="color: var(--primary-blue); margin-top:0;">Interprétation de vos Rêves</h3>
                 <p>Une analyse approfondie de vos songes selon les références islamiques authentiques.</p>
                 <hr style="border: 0; border-top: 1px solid #cbd5e0; margin: 15px 0;">
                 <strong>Tarif :</strong> 20 Euros<br>
                 <strong>Format :</strong> Messages vocaux ou écrits via WhatsApp<br>
                 <strong>Inclus :</strong> Consultation express (couvre plusieurs interprétations)
             </div>
+            
+            <!-- Lien vers paiement -->
+            <p style="text-align: center; margin-top: 30px; color: #7f8c8d;">⬇️ Voir les méthodes de paiement en bas de page ⬇️</p>
         </div>
 
         <!-- ========================================= -->
-        <!-- CONTENU ONGLET 2 : SIHR/OCCULTE -->
+        <!-- ONGLET 2 : SIHR/OCCULTE -->
         <!-- ========================================= -->
         <div id="sihr" class="tab-content">
-            
-            <!-- 1. Introduction : Pour qui ? -->
-            <div class="target-audience">
-                <h3>🛡️ À qui s'adresse ce service ?</h3>
-                <p>Ce service de consultation est conçu pour vous si :</p>
-                <ul>
-                    <li>Vous ressentez des <strong>blocages inexpliqués</strong> dans votre vie (mariage, travail, santé).</li>
-                    <li>Vous suspectez une atteinte occulte (Sihr, Mauvais Œil, Djinn) sans en être sûr.</li>
-                    <li>Vous avez vu plusieurs "guérisseurs" sans résultat et souhaitez <strong>reprendre le contrôle</strong>.</li>
-                    <li>Vous avez besoin d'une écoute pour démêler le psychologique du spirituel.</li>
+            <div class="info-block" style="background-color: #f9f9f9; border-left: 5px solid #7f8c8d;">
+                <h3 style="margin-top:0;">🛡️ À qui s'adresse ce service ?</h3>
+                <ul style="margin-top: 5px; padding-left: 20px;">
+                    <li>Blocages inexpliqués (mariage, travail, santé).</li>
+                    <li>Suspicion de Sihr ou Mauvais Œil.</li>
+                    <li>Besoin d'un plan d'action autonome (Self-Ruqya).</li>
                 </ul>
             </div>
 
-            <!-- 2. Clarification importante -->
-            <div class="role-clarification">
-                <strong>🛑 Important - Clarification de mon rôle :</strong><br>
-                Je ne suis pas un "Raqui" qui effectue des séances d'exorcisme ou de soins physiques à votre place. 
-                Mon rôle est celui d'un <strong>Conseiller Spirituel</strong>. Je vous aide à analyser vos symptômes et je vous fournis un <strong>protocole de soin (Self-Ruqya)</strong> que vous appliquerez vous-même avec mes conseils.
-            </div>
-
-            <!-- 3. Détails de l'offre -->
             <div class="info-block sihr-block">
-                <h3 style="color:#8e44ad;">Diagnostic & Plan d'Action</h3>
-                <p>Une consultation complète pour vous donner les armes spirituelles nécessaires.</p>
-                <hr style="border: 0; border-top: 1px solid #d7bde2; margin: 15px 0;">
-                
-                <ul style="list-style-type: none; padding-left: 0;">
-                    <li style="margin-bottom: 8px;">✅ <strong>Analyse des symptômes :</strong> Échange approfondi pour identifier le type de mal.</li>
-                    <li style="margin-bottom: 8px;">✅ <strong>Sélection des Duas :</strong> Invocations spécifiques à votre cas.</li>
-                    <li style="margin-bottom: 8px;">✅ <strong>Plan d'hygiène spirituelle :</strong> Conseils personnalisés.</li>
-                    <li>✅ <strong>Support écrit :</strong> Envoi d'un récapitulatif PDF/Texte.</li>
+                <h3 style="color: var(--primary-purple); margin-top:0;">Diagnostic & Plan d'Action</h3>
+                <p>Je ne suis pas un Raqui qui "enlève" le mal à votre place. Je suis un conseiller qui vous apprend à vous soigner vous-même.</p>
+                <ul style="padding-left: 20px;">
+                    <li>✅ Analyse des symptômes.</li>
+                    <li>✅ Sélection des Duas spécifiques.</li>
+                    <li>✅ Programme d'hygiène spirituelle (PDF/Texte).</li>
                 </ul>
-
-                <hr style="border: 0; border-top: 1px solid #d7bde2; margin: 15px 0;">
-                
-                <strong>Tarif :</strong> 45 Euros<br>
-                <strong>Durée :</strong> Des échanges pouvant s'étaler sur 7 jours (Messages texte ou vocaux WhatsApp, pas de consultation téléphonique)<br>
+                <strong>Tarif :</strong> 45 Euros (30-45 min d'échange)
             </div>
             
             <div class="medical-warning">
-                ⚠️ AVERTISSEMENT : Je ne suis pas médecin. Mes conseils sont strictement d'ordre spirituel. Si vous souffrez de douleurs physiques graves ou de troubles mentaux, consultez impérativement un médecin.
+                ⚠️ AVERTISSEMENT : Conseils spirituels uniquement. Consultez un médecin pour tout problème physique ou mental.
             </div>
+
+            <!-- Lien vers paiement -->
+            <p style="text-align: center; margin-top: 30px; color: #7f8c8d;">⬇️ Voir les méthodes de paiement en bas de page ⬇️</p>
         </div>
 
         <!-- ========================================= -->
-        <!-- SECTION PAIEMENT (Commune aux deux) -->
+        <!-- ONGLET 3 : INVOCATIONS (NOUVEAU) -->
         <!-- ========================================= -->
-        <h2>Étape 1 : Effectuer le paiement</h2>
-        <p>Choisissez votre méthode préférée ci-dessous. Les coordonnées restent les mêmes quel que soit le service choisi.</p>
+        <div id="duas" class="tab-content">
+            
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h2 style="color: var(--primary-green); margin-bottom: 5px;">Trésors Spirituels</h2>
+                <p style="font-size: 0.9em; color: #666;">Une compilation gratuite d'invocations pour le quotidien.</p>
+            </div>
 
-        <!-- Carte Western Union -->
-        <div class="payment-card">
-            <h3>Option A : Western Union</h3>
-            <p>Idéal pour un paiement en espèces.</p>
-            <div class="payment-details" style="border-left: 5px solid #f1c40f;">
-                <strong>Pays :</strong> Madagascar<br>
-                <strong>Nom complet :</strong> Houssen Mohsinaly<br>
-                <strong>Adresse :</strong> Lot IVW 5A - Anosizato Est<br>
-                <strong>Ville :</strong> Antananarivo<br>
-                <strong>Téléphone :</strong> +261341854716<br>
-                <strong>Email :</strong> housseniawriting@gmail.com
+            <!-- Contrôles de recherche -->
+            <div class="dua-controls">
+                <select id="quickNav" onchange="scrollToCard()">
+                    <option value="" disabled selected>Accès Rapide (Choisir un thème)...</option>
+                    <option value="all">Tout Afficher</option>
+                    <!-- Peuplé par JS -->
+                </select>
+                <input type="text" id="searchInput" placeholder="🔍 Rechercher (ex: Examen, Maladie, Stress...)" onkeyup="filterCards()">
             </div>
-            <div class="note-block">
-                <strong>Important :</strong> Choisissez "<strong>Retrait en espèce</strong>". Une fois envoyé, notez bien le code <strong>MTCN</strong>.
+
+            <!-- Liste des cartes (Contenu extrait de votre fichier) -->
+            <div id="cardList">
+                
+                <!-- Dua Noor -->
+                <div class="card" id="card-duanoor" data-title="Dua al-Noor (Lumière)" data-keywords="noor lumiere protection mariage fievre">
+                    <h3>Dua al-Noor <span class="category-tag">Protection</span></h3>
+                    <p class="instruction-note">Très puissant pour la protection et la fièvre.</p>
+                    <div class="arabic-text">بِسْمِ اللهِ النُّورِ، بِسْمِ اللهِ نُورِ النُّورِ...</div>
+                    <div class="translation">Au nom d'Allah, la Lumière. Au nom d'Allah, Lumière de la Lumière...</div>
+                    <div class="instruction">À lire avec sincérité.</div>
+                </div>
+
+                <!-- Examens -->
+                <div class="card" id="card-examen" data-title="Études & Examens" data-keywords="examen ecole etude science memoire">
+                    <h3>Études & Examens <span class="category-tag">Savoir</span></h3>
+                    <div class="arabic-text">رَبِّ اشْرَحْ لِي صَدْرِي، وَيَسِّرْ لِي أَمْرِي</div>
+                    <div class="transliteration">Rabbi ishrah li sadri, wa yassir li amri...</div>
+                    <div class="translation">Seigneur, ouvre-moi ma poitrine, facilite ma mission...</div>
+                    <div class="instruction">40 Fois</div>
+                </div>
+
+                <!-- Enfant -->
+                <div class="card" id="card-enfant" data-title="Espoir d'enfant" data-keywords="enfant bebe sterilite enceinte">
+                    <h3>Espoir d'avoir un enfant <span class="category-tag">Famille</span></h3>
+                    <div class="arabic-text">رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً</div>
+                    <div class="translation">Ô mon Seigneur, donne-moi une excellente descendance.</div>
+                    <div class="instruction">110 Fois</div>
+                </div>
+
+                <!-- Barakat -->
+                <div class="card" id="card-barakat" data-title="Bénédiction (Maison/Commerce)" data-keywords="barakat benediction maison magasin commerce">
+                    <h3>Bénédiction Maison & Commerce <span class="category-tag">Rizq</span></h3>
+                    <div class="arabic-text">رَبِّ أَنزِلْنِي مُنزَلًا مُّبَارَكًا وَأَنتَ خَيْرُ الْمُنزِلِينَ</div>
+                    <div class="translation">Seigneur, fais-moi débarquer d'un débarquement béni.</div>
+                    <div class="instruction">110 Fois</div>
+                </div>
+
+                <!-- Colère -->
+                <div class="card" id="card-colere" data-title="Contre la Colère" data-keywords="colere fievre dispute">
+                    <h3>Contre Colère & Fièvre <span class="category-tag">Apaisement</span></h3>
+                    <div class="arabic-text">قُلْنَا يَا نَارُ كُونِي بَرْدًا وَسَلَامًا</div>
+                    <div class="translation">Ô feu, sois pour Abraham une fraîcheur salutaire.</div>
+                    <div class="instruction">110 Fois (Souffler)</div>
+                </div>
+
+                <!-- Difficulté -->
+                <div class="card" id="card-difficulte" data-title="Difficulté & Malheur" data-keywords="difficulte probleme prison police">
+                    <h3>En cas de Difficulté <span class="category-tag">Secours</span></h3>
+                    <div class="arabic-text">رَبِّ إِنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ</div>
+                    <div class="translation">Le mal m'a touché. Mais Toi, Tu es le plus miséricordieux.</div>
+                    <div class="instruction">En abondance</div>
+                </div>
+
+                 <!-- Maladie / Guérison -->
+                 <div class="card" id="card-guerison" data-title="Guérison (Général)" data-keywords="maladie guerison sante hopital">
+                    <h3>Guérison Maladie <span class="category-tag">Santé</span></h3>
+                    <div class="arabic-text">وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ</div>
+                    <div class="translation">Et quand je suis malade, c'est Lui qui me guérit.</div>
+                    <div class="instruction">110 Fois</div>
+                </div>
+
+                <!-- Mariage -->
+                <div class="card" id="card-mariage" data-title="Espoir de Mariage" data-keywords="mariage marier epoux amour">
+                    <h3>Espoir de Mariage <span class="category-tag">Famille</span></h3>
+                    <div class="arabic-text">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً...</div>
+                    <div class="instruction">40 Fois + Ayat al-Kursi</div>
+                </div>
+
+                <!-- Anxiété -->
+                <div class="card" id="card-anxiete" data-title="Anxiété & Stress" data-keywords="peur anxiete stress coeur">
+                    <h3>Anxiété & Stress <span class="category-tag">Mental</span></h3>
+                    <div class="arabic-text">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</div>
+                    <div class="translation">N'est-ce point par l'évocation d'Allah que se tranquillisent les cœurs ?</div>
+                    <div class="instruction">110 Fois</div>
+                </div>
+                
+                 <!-- Rizq -->
+                 <div class="card" id="card-rizq" data-title="Subsistance (Rizq)" data-keywords="argent travail richesse rizq">
+                    <h3>Pour la Subsistance (Rizq) <span class="category-tag">Argent</span></h3>
+                    <div class="arabic-text">إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ</div>
+                    <div class="translation">En vérité, c'est Allah qui est le Grand Pourvoyeur.</div>
+                    <div class="instruction">110 Fois</div>
+                </div>
+
+                <!-- Protection -->
+                <div class="card" id="card-magie" data-title="Contre Magie Noire" data-keywords="magie sorcellerie protection djinn">
+                    <h3>Contre la Magie Noire <span class="category-tag">Protection</span></h3>
+                    <div class="arabic-text">وَقُل رَّبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ</div>
+                    <div class="translation">Seigneur, je cherche Ta protection contre les incitations des diables.</div>
+                    <div class="instruction">110 Fois</div>
+                </div>
+
             </div>
-            <a href="https://www.westernunion.com/fr/fr/send-money-to-madagascar.html" class="btn" target="_blank">Site Western Union</a>
+            
+            <p style="text-align:center; font-size:0.8em; color:#999; margin-top:20px;">Ces invocations sont offertes gratuitement. N'hésitez pas à les partager.</p>
         </div>
 
-        <!-- Carte Remitly & Taptap Send -->
-        <div class="payment-card">
-            <h3>Option B : Remitly ou Taptap Send</h3>
-            <p>Envoi direct sur Mobile Money (Rapide, simple et moins de frais).</p>
-            <div class="payment-details" style="border-left: 5px solid #2ecc71;">
-                <strong>Nom complet :</strong> Houssen Moshinaly<br>
-                <strong>Opérateur :</strong> Mvola (Telma)<br>
-                <strong>Numéro :</strong> +261341854716
-            </div>
-            <a href="https://www.remitly.com/fr/fr/madagascar" class="btn" target="_blank">Utiliser Remitly</a>
-            <a href="https://www.taptapsend.com/country-landing-pages/transferts-madagascar" class="btn" style="margin-left: 10px;" target="_blank">Utiliser Taptap Send</a>
-        </div>
+        <!-- ========================================= -->
+        <!-- SECTION PAIEMENT (COMMUNE) -->
+        <!-- ========================================= -->
+        <div class="payment-section">
+            <h2 style="text-align: center; color: #2c3e50;">Procéder au Paiement (Services)</h2>
+            <p style="text-align: center; font-size: 0.9em; color: #666;">Valable pour les consultations Rêves (20€) et Roqya (45€).</p>
 
-        <!-- ========================================= -->
-        <!-- SECTION CONTACT FINAL -->
-        <!-- ========================================= -->
-        <div class="whatsapp-section">
-            <h2>Étape 2 : Confirmer la consultation</h2>
-            <p>Une fois le paiement effectué, cliquez ci-dessous pour m'envoyer la preuve (Capture d'écran ou code MTCN) sur WhatsApp.</p>
-            <a href="https://wa.me/261341854716" class="btn whatsapp-btn">Envoyer la preuve sur WhatsApp</a>
+            <div class="payment-card">
+                <h3>🏛️ Western Union (Espèces)</h3>
+                <div style="font-size: 0.9em; border-left: 3px solid #f1c40f; padding-left: 10px;">
+                    <strong>Nom :</strong> Houssen Mohsinaly<br>
+                    <strong>Ville :</strong> Antananarivo, Madagascar<br>
+                    <strong>Note :</strong> Choisir "Retrait Espèces". Gardez le code MTCN.
+                </div>
+                <a href="https://www.westernunion.com" class="btn" target="_blank" style="margin-top:10px; font-size:0.8em;">Site Western Union</a>
+            </div>
+
+            <div class="payment-card">
+                <h3>📱 Mobile Money (Remitly / Taptap Send)</h3>
+                <div style="font-size: 0.9em; border-left: 3px solid #2ecc71; padding-left: 10px;">
+                    <strong>Nom :</strong> Houssen Moshinaly<br>
+                    <strong>Opérateur :</strong> Mvola (Telma)<br>
+                    <strong>Numéro :</strong> +261341854716
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://wa.me/261341854716" class="btn btn-whatsapp">✅ Envoyer la preuve sur WhatsApp</a>
+            </div>
         </div>
 
     </div>
 
-    <!-- Script pour gérer le changement d'onglets -->
+    <!-- SCRIPT JAVASCRIPT UNIFIÉ -->
     <script>
+        // --- 1. GESTION DES ONGLETS ---
         function openTab(evt, tabName) {
-            // 1. Cacher tous les contenus
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
+            // Cacher tous les contenus
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
                 tabcontent[i].classList.remove("active");
             }
 
-            // 2. Enlever la classe "active" de tous les boutons
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            // Désactiver tous les boutons
+            var tablinks = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
             }
 
-            // 3. Afficher l'onglet sélectionné
+            // Activer l'onglet choisi
             document.getElementById(tabName).style.display = "block";
-            
-            // Petit délai pour l'animation CSS
             setTimeout(function() {
                 document.getElementById(tabName).classList.add("active");
             }, 10);
             
-            evt.currentTarget.className += " active";
+            // Activer le bouton (si click)
+            if(evt) {
+                evt.currentTarget.classList.add("active");
+            } else {
+                // Si appel automatique, trouver le bouton correspondant
+                document.querySelector(`.tab-btn[data-target="${tabName}"]`).classList.add("active");
+            }
+        }
+
+        // --- 2. GESTION RECHERCHE & MENU (Invocations) ---
+        
+        // Remplir le select automatiquement au chargement
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.getElementById('quickNav');
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                const id = card.id;
+                const option = document.createElement('option');
+                option.value = id;
+                option.textContent = title;
+                select.appendChild(option);
+            });
+        });
+
+        // Filtrer les cartes
+        function filterCards() {
+            let input = document.getElementById('searchInput');
+            let filter = input.value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let keywords = cards[i].getAttribute('data-keywords');
+                let textContent = cards[i].innerText.toLowerCase();
+                
+                if (keywords.includes(filter) || textContent.includes(filter)) {
+                    cards[i].classList.remove('hidden');
+                } else {
+                    cards[i].classList.add('hidden');
+                }
+            }
+        }
+
+        // Scroll vers la carte choisie
+        function scrollToCard() {
+            const select = document.getElementById('quickNav');
+            const selectedId = select.value;
+
+            if (selectedId === 'all') {
+                const cards = document.getElementsByClassName('card');
+                for (let card of cards) { card.classList.remove('hidden'); }
+                document.getElementById('searchInput').value = '';
+                return;
+            }
+
+            if (selectedId) {
+                const element = document.getElementById(selectedId);
+                // Si on est en mode recherche, on réaffiche tout
+                const cards = document.getElementsByClassName('card');
+                for (let card of cards) { card.classList.remove('hidden'); }
+                
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Petit effet visuel pour montrer la sélection
+                    element.style.transform = "scale(1.02)";
+                    setTimeout(() => { element.style.transform = "scale(1)"; }, 500);
+                }
+            }
         }
     </script>
 
