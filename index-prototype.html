@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lato:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lato:wght@300;400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -85,7 +85,7 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
-
+        
         .tab-btn {
             flex: 1;
             background: transparent;
@@ -99,7 +99,10 @@
             transition: all 0.3s;
         }
 
-        .tab-btn.active { border-bottom-color: var(--primary-blue); color: var(--primary-blue); }
+        .tab-btn.active { 
+            border-bottom-color: var(--primary-blue); 
+            color: var(--primary-blue); 
+        }
         .tab-btn[data-target="sihr"].active { border-bottom-color: var(--primary-purple); color: var(--primary-purple); }
         .tab-btn[data-target="duas"].active { border-bottom-color: var(--primary-green); color: var(--primary-green); }
 
@@ -110,15 +113,15 @@
         }
         .tab-content.active { display: block; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
         }
 
         /* CONTROLS STICKY - CORRECTION ERGONOMIQUE */
         .dua-controls {
             position: sticky;
-            top: 64px;
+            top: 64px; /* Hauteur des onglets + bordure */
             z-index: 90;
             background: #f0fdf4;
             padding: 15px;
@@ -158,14 +161,7 @@
             padding: 20px;
             margin-bottom: 20px;
             border-left: 5px solid var(--primary-green);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
-            scroll-margin-top: 140px;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
+            scroll-margin-top: 140px; /* Espace pour les sticky headers */
         }
 
         .card h3 {
@@ -209,17 +205,17 @@
             border: 1px solid #f0f0f0;
         }
 
-        .transliteration {
-            font-style: italic;
-            color: #475569;
-            margin-bottom: 10px;
+        .transliteration { 
+            font-style: italic; 
+            color: #475569; 
+            margin-bottom: 10px; 
             font-size: 0.9rem;
             padding: 8px;
             background: #f8fafc;
             border-radius: 6px;
             border-left: 3px solid #cbd5e1;
         }
-
+        
         .translation {
             background-color: #f0fdf4;
             padding: 12px;
@@ -273,12 +269,12 @@
             margin-top: 10px;
         }
 
-        .btn-whatsapp {
+        .btn-whatsapp { 
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background-color: #25D366;
+            background-color: #25D366; 
             color: white;
             padding: 15px 30px;
             border-radius: 50px;
@@ -335,16 +331,16 @@
 
         #global-counter:hover { transform: scale(1.05); }
         #global-counter:active { transform: scale(0.95); }
-
-        #global-counter .count {
-            font-size: 1.4rem;
-            font-weight: bold;
+        
+        #global-counter .count { 
+            font-size: 1.4rem; 
+            font-weight: bold; 
             z-index: 2;
         }
-
-        #global-counter .label {
-            font-size: 0.6rem;
-            opacity: 0.9;
+        
+        #global-counter .label { 
+            font-size: 0.6rem; 
+            opacity: 0.9; 
             z-index: 2;
             text-transform: uppercase;
         }
@@ -396,9 +392,9 @@
             .tab-btn { font-size: 0.85em; padding: 15px 2px; }
             .tab-content { padding: 15px; }
             .arabic-text { font-size: 1.5rem; padding: 12px; }
-            #global-counter {
-                width: 60px; height: 60px;
-                bottom: 20px; right: 15px;
+            #global-counter { 
+                width: 60px; height: 60px; 
+                bottom: 20px; right: 15px; 
             }
             .profile-img { width: 100px; height: 100px; }
             .card { scroll-margin-top: 130px; }
@@ -408,7 +404,7 @@
 <body>
 
 <div class="container">
-
+    
     <div class="profile-header">
         <img src="profil.jpg" alt="Houssen Moshinaly" class="profile-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2255%22 fill=%22%23e0e7ff%22/%3E%3Ctext x=%2260%22 y=%2270%22 text-anchor=%22middle%22 fill=%22%234f46e5%22 font-size=%2240%22%3E☪%3C/text%3E%3C/svg%3E'">
         <h1>Houssen Moshinaly</h1>
@@ -426,23 +422,21 @@
         <div style="background-color: #f0f9ff; border-left: 5px solid var(--primary-blue); padding: 25px; border-radius: 0 8px 8px 0;">
             <h2 style="color: var(--primary-blue); margin-top:0;">Interprétation de vos Rêves</h2>
             <p>Une analyse approfondie et spirituelle de vos songes selon les méthodologies authentiques.</p>
-
+            
             <div class="highlight-box" style="background-color: #dbeafe; border-color: #3b82f6; color: #1e40af;">
-                ✨ <strong>Offre Pack :</strong> 5 Rêves sur 30 jours - <strong>20€</strong>
+                ✨ <strong>Offre spéciale :</strong> Une seule consultation couvre <strong>PLUSIEURS INTERPRÉTATIONS</strong> de rêves
             </div>
 
             <ul style="padding-left: 20px; line-height: 1.8;">
-                <li><strong>1 consultation initiale</strong> : Analyse détaillée de votre premier rêve</li>
-                <li><strong>4 interprétations additionnelles</strong> : Envoyez vos rêves sur 30 jours</li>
-                <li>Analyse symbolique précise selon les sources islamiques authentiques</li>
+                <li>Analyse symbolique précise de chaque rêve</li>
+                <li>Références aux sources islamiques authentiques</li>
                 <li>Conseils spirituels personnalisés</li>
-                <li>Réponses via messages vocaux WhatsApp</li>
             </ul>
-
+            
             <hr style="border: 0; border-top: 1px solid #cbd5e0; margin: 20px 0;">
-            <strong>Tarif :</strong> <span style="color: var(--primary-blue); font-size: 1.3em; font-weight: bold;">20 Euros</span>
-            <div style="font-size: 0.9em; color: #64748b;">Pack complet : 5 rêves interprétés sur 30 jours</div>
-            <div style="font-size: 0.85em; color: #94a3b8; margin-top: 5px;">💡 Une excellente valeur : 4€ par rêve interprété</div>
+            <strong>Tarif :</strong> 20 Euros<br>
+            <strong>Inclus :</strong> Analyse de plusieurs rêves en une consultation<br>
+            <strong>Format :</strong> Messages vocaux via WhatsApp
         </div>
     </div>
 
@@ -460,14 +454,14 @@
         <div style="background-color: #faf5ff; border-left: 5px solid var(--primary-purple); padding: 25px; border-radius: 0 8px 8px 0;">
             <h2 style="color: var(--primary-purple); margin-top:0;">Diagnostic & Plan d'Action</h2>
             <p><strong>Approche éthique :</strong> Je vous apprend à vous soigner vous-même.</p>
-
+            
             <ul style="padding-left: 20px; line-height: 1.8;">
                 <li>✅ Analyse détaillée des symptômes</li>
                 <li>✅ Sélection des invocations spécifiques</li>
                 <li>✅ Programme d'hygiène spirituelle personnalisé</li>
                 <li>✅ <strong>Suivi 7 jours via messages vocaux WhatsApp</strong></li>
             </ul>
-
+            
             <div class="highlight-box" style="background-color: #f3e8ff; border-color: #9333ea; color: #6b21a8;">
                 📱 Suivi vocal de 7 jours inclus pour ajuster votre traitement
             </div>
@@ -476,7 +470,7 @@
             <strong>Tarif :</strong> <span style="color: var(--primary-purple); font-size: 1.3em; font-weight: bold;">45 Euros</span>
             <div style="font-size: 0.9em; color: #6b7280;">Session initiale + Suivi 7 jours</div>
         </div>
-
+        
         <div class="medical-warning">
             ⚠️ Conseils spirituels uniquement. Consultez un médecin pour tout problème physique.
         </div>
@@ -484,7 +478,7 @@
 
     <!-- ONGLET INVOCATIONS -->
     <div id="duas" class="tab-content">
-
+        
         <div style="text-align: center; margin-bottom: 15px;">
             <h2 style="color: var(--primary-green); margin-bottom: 5px;">Trésors Spirituels</h2>
             <p style="color: #64748b; font-size: 0.9em; margin: 0;">26 invocations authentiques</p>
@@ -518,7 +512,7 @@
                 <option value="card-souhait">21. Réalisation des Vœux</option>
                 <option value="card-rizq">22. Rizq & Provisions</option>
                 <option value="card-sihr">23. Protection Sorcellerie</option>
-                <option value="card-travail">24. Facilitation des Affaires</option>
+                <option value="card-travail">24. Facilitation Affaires</option>
                 <option value="card-estomac">25. Digestion</option>
                 <option value="card-pluie">26. Pluie & Abondance</option>
             </select>
@@ -526,11 +520,11 @@
         </div>
 
         <div id="cardList">
-
+            
             <!-- 1. DUA AL-NOOR COMPLÈTE -->
             <div class="card" id="card-duanoor" data-title="Dua al-Noor (Lumière Divine)" data-keywords="noor lumiere protection fievre maladie">
                 <h3>Dua al-Noor <span class="category-tag">Protection</span></h3>
-
+                
                 <div class="arabic-text" style="line-height: 2.4; font-size: 1.6rem;">
                     بِسْمِ اللَّهِ النُّورِ<br>
                     بِسْمِ اللَّهِ نُورِ النُّورِ<br>
@@ -546,7 +540,7 @@
                     وَصَلَّى اللَّهُ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ<br>
                     الطَّاهِرِينَ
                 </div>
-
+                
                 <div class="transliteration">
                     Bismillâhi n-Nûri<br>
                     Bismillâhi Nûri n-Nûri<br>
@@ -562,7 +556,7 @@
                     Wa sallâ Allâhu 'alâ Muhammadin wa 'alâ Âli Muhammad<br>
                     At-Tâhirîn
                 </div>
-
+                
                 <div class="translation">
                     "Au nom d'Allah la Lumière.<br>
                     Au nom d'Allah, Lumière des lumières.<br>
@@ -581,21 +575,16 @@
             <!-- 2. EXAMENS -->
             <div class="card" id="card-examen" data-title="Facilitation des Études" data-keywords="examen ecole etude science memoire">
                 <h3>Facilitation des Études <span class="category-tag">Savoir</span></h3>
-
                 <div class="arabic-text">رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي يَفْقَهُوا قَوْلِي</div>
                 <div class="transliteration">Rabbi ishrah lî sadri wa yassir lî amri wahlul 'uqdatan min lisânî yafqahû qawli.</div>
                 <div class="translation">"Seigneur, apaise mon cœur, facilite ma mission et desserre le nœud de ma langue." (Taha : 25-28)</div>
                 <div class="instruction">40 fois avant l'examen</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
-                <div class="arabic-text">رَبِّ زِدْنِي عِلْمًا</div>
-                <div class="transliteration">Rabbî zidnî 'ilmâ.</div>
-                <div class="translation">"Ô mon Seigneur, accrois mes connaissances." (Taha : 114)</div>
-                <div class="instruction">40 fois</div>
+                
+                <div class="arabic-text" style="font-size: 1.3rem; margin-top: 15px;">رَبِّ زِدْنِي عِلْمًا</div>
+                <div class="instruction">40 fois (Taha : 114)</div>
             </div>
 
-            <!-- 4. ENFANT -->
+            <!-- 3. ENFANT -->
             <div class="card" id="card-enfant" data-title="Espoir d'Enfant" data-keywords="enfant bebe sterilite enceinte">
                 <h3>Espoir d'Enfant <span class="category-tag">Famille</span></h3>
                 <div class="arabic-text">رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً إِنَّكَ سَمِيعُ الدُّعَاءِ</div>
@@ -604,7 +593,7 @@
                 <div class="instruction">110 fois après chaque prière</div>
             </div>
 
-            <!-- 5. BARAKAT -->
+            <!-- 4. BARAKAT -->
             <div class="card" id="card-barakat" data-title="Bénédiction du Lieu" data-keywords="barakat maison magasin commerce">
                 <h3>Bénédiction Maison & Commerce <span class="category-tag">Abondance</span></h3>
                 <div class="arabic-text">قِيلَ يَا نُوحُ اهْبِطْ بِسَلَامٍ مِّنَّا وَبَرَكَاتٍ عَلَيْكَ وَعَلَىٰ أُمَمٍ مِّمَّن مَّعَكَ</div>
@@ -613,7 +602,7 @@
                 <div class="instruction">110 fois en soufflant sur les coins de la maison</div>
             </div>
 
-            <!-- 6. COLÈRE -->
+            <!-- 5. COLÈRE -->
             <div class="card" id="card-colere" data-title="Apaisement & Colère" data-keywords="colere fievre chaleur">
                 <h3>Contre la Colère & Fièvre <span class="category-tag">Apaisement</span></h3>
                 <div class="arabic-text">قُلْنَا يَا نَارُ كُونِي بَرْدًا وَسَلَامًا عَلَىٰ إِبْرَاهِيمَ</div>
@@ -622,7 +611,7 @@
                 <div class="instruction">110 fois en soufflant sur l'eau ou la personne</div>
             </div>
 
-            <!-- 7. DIABÈTE -->
+            <!-- 6. DIABÈTE -->
             <div class="card" id="card-diabete" data-title="Diabète" data-keywords="diabete sucre glycemie">
                 <h3>Pour le Diabète <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text">رَبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ وَاجْعَل لِّي مِن لَّدُنكَ سُلْطَانًا نَّصِيرًا</div>
@@ -631,7 +620,7 @@
                 <div class="instruction">110 fois sur de l'eau</div>
             </div>
 
-            <!-- 8. DIFFICULTÉS -->
+            <!-- 7. DIFFICULTÉS -->
             <div class="card" id="card-difficulte" data-title="Détresse" data-keywords="difficulte probleme prison">
                 <h3>En cas de Détresse <span class="category-tag">Secours</span></h3>
                 <div class="arabic-text">رَبِّ إِنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ</div>
@@ -640,7 +629,7 @@
                 <div class="instruction">En abondance jusqu'à délivrance</div>
             </div>
 
-            <!-- 9. PIED -->
+            <!-- 8. PIED -->
             <div class="card" id="card-pied" data-title="Douleurs & Mobilité" data-keywords="douleur pied jambe">
                 <h3>Douleur au Pied <span class="category-tag">Guérison</span></h3>
                 <div class="arabic-text">اللَّهُمَّ إِنِّي بِحَوْلِكَ وَقُوَّتِكَ أَقُومُ وَأَقْعُدُ</div>
@@ -649,7 +638,7 @@
                 <div class="instruction">40 fois lors des douleurs</div>
             </div>
 
-            <!-- 10. GUIDANCE -->
+            <!-- 9. GUIDANCE -->
             <div class="card" id="card-guidance" data-title="Guidance" data-keywords="guidance chemin direction">
                 <h3>Pour la Guidance <span class="category-tag">Spiritualité</span></h3>
                 <div class="arabic-text">وَاللَّهُ يَهْدِي مَن يَشَاءُ إِلَىٰ صِرَاطٍ مُّسْتَقِيمٍ</div>
@@ -658,7 +647,7 @@
                 <div class="instruction">110 fois sur l'eau + 11/jour</div>
             </div>
 
-            <!-- 11. PLEUR -->
+            <!-- 10. PLEUR -->
             <div class="card" id="card-pleur" data-title="Enfant qui Pleure" data-keywords="enfant pleure bebe">
                 <h3>Apaiser un Enfant <span class="category-tag">Protection</span></h3>
                 <div class="arabic-text">وَخَشَعَتِ الْأَصْوَاتُ لِلرَّحْمَٰنِ فَلَا تَسْمَعُ إِلَّا هَمْسًا</div>
@@ -667,7 +656,7 @@
                 <div class="instruction">Jusqu'au calme, souffler vers l'enfant</div>
             </div>
 
-            <!-- 12. JUSTICE -->
+            <!-- 11. JUSTICE -->
             <div class="card" id="card-justice" data-title="Justice" data-keywords="tribunal gouvernement">
                 <h3>Affaires Judiciaires <span class="category-tag">Succès</span></h3>
                 <div class="arabic-text">سَلَامٌ قَوْلًا مِّن رَّبٍّ رَّحِيمٍ</div>
@@ -676,7 +665,7 @@
                 <div class="instruction">Abondamment avant les rendez-vous</div>
             </div>
 
-            <!-- 13. SOMMEIL -->
+            <!-- 12. SOMMEIL -->
             <div class="card" id="card-sommeil" data-title="Sommeil" data-keywords="insomnie dormir nuit">
                 <h3>Sommeil & Insomnie <span class="category-tag">Repos</span></h3>
                 <div class="arabic-text">وَجَعَلْنَا نَوْمَكُمْ سُبَاتًا</div>
@@ -685,7 +674,7 @@
                 <div class="instruction">Jusqu'à l'endormissement (avec Ikhlas, Falaq, Nass)</div>
             </div>
 
-            <!-- 14. GUÉRISON -->
+            <!-- 13. GUÉRISON -->
             <div class="card" id="card-guerison" data-title="Guérison" data-keywords="maladie sante hopital">
                 <h3>Guérison Générale <span class="category-tag">Cure</span></h3>
                 <div class="arabic-text">وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ</div>
@@ -697,90 +686,57 @@
             <!-- 14. YEUX -->
             <div class="card" id="card-yeux" data-title="Vue & Yeux" data-keywords="yeux ophtalmo vue">
                 <h3>Pour les Yeux <span class="category-tag">Guérison</span></h3>
-
                 <div class="arabic-text" style="font-size: 1.4rem;">إِذَا مَا أَتَمَتْ عَيْنِي فَكُلُّهُ تُرَابٌ</div>
-                <div class="transliteration">Idhâ ma armadat 'aynî fakuhli turâbu massi na'li Abi Turâb.</div>
-                <div class="translation">"Si mon œil s'enflamme, mon collyre est la poussière touchée par la sandale d'Abu Turab."</div>
-                <div class="instruction">21 fois</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
+                <div class="instruction" style="margin-bottom: 15px;">21 fois</div>
+                
                 <div class="arabic-text" style="font-size: 1.3rem;">فَكَشَفْنَا عَنكَ غِطَاءَكَ فَبَصَرُكَ الْيَوْمَ حَدِيدٌ</div>
-                <div class="transliteration">Fakashafnâ 'anka ghîtâka fabasaruka al-yawma hadîd.</div>
-                <div class="translation">"Nous t'avons ôté ton voile ; ta vue est perçante aujourd'hui."</div>
-                <div class="instruction">110 fois (Qaf : 22)</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
+                <div class="instruction" style="margin-bottom: 15px;">110 fois (Qaf : 22)</div>
+                
                 <div class="arabic-text" style="font-size: 1.3rem;">اذْهَبُوا بِقَمِيصِي هَٰذَا فَأَلْقُوهُ عَلَىٰ وَجْهِ أَبِي يَأْتِ بَصِيرًا</div>
-                <div class="transliteration">Idh-habu biqamîsi hâdhâ fa-alqûhu 'alâ wajhi abî ya'ti basîrâ.</div>
-                <div class="translation">"Emportez ma tunique que voici, et appliquez-la sur le visage de mon père : il recouvrera la vue."</div>
                 <div class="instruction">40 fois (Yusuf : 93)</div>
             </div>
 
             <!-- 15. MARIAGE -->
             <div class="card" id="card-mariage" data-title="Mariage" data-keywords="mariage union celibat">
                 <h3>Union & Mariage <span class="category-tag">Famille</span></h3>
-
                 <div class="arabic-text" style="font-size: 1.3rem;">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</div>
-                <div class="transliteration">Iyyâka na'budu wa iyyâka nasta'în.</div>
-                <div class="translation">"C'est Toi [seul] que nous adorons, et c'est Toi [seul] dont nous implorons secours." (Al-Fatiha : 5)</div>
-                <div class="instruction">834 fois (réciter la Fatiha entière) ou 110 fois cette phrase</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
+                <div class="instruction" style="margin-bottom: 15px;">834 fois (Fatiha) ou 110 fois cette phrase</div>
+                
                 <div class="arabic-text" style="font-size: 1.3rem;">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</div>
-                <div class="transliteration">Rabbanâ atinâ fî ad-dunyâ hasanatan wa fî al-âkhirati hasanatan wa qinâ 'adhâba an-nâr.</div>
-                <div class="translation">"Seigneur ! Accorde-nous belle part ici-bas, et belle part aussi dans l'au-delà ; et protège-nous du châtiment du Feu !" (Al-Baqarah : 201)</div>
-                <div class="instruction">40 fois + Ayat al-Kursi après chaque prière (continuer pendant 40 jours)</div>
+                <div class="instruction">40 fois + Ayat al-Kursi après chaque prière</div>
             </div>
 
             <!-- 16. AYN -->
             <div class="card" id="card-ayn" data-title="Mauvais Oeil" data-keywords="mauvais oeil ayn hasad">
                 <h3>Mauvais Oeil ('Ayn) <span class="category-tag">Protection</span></h3>
-
                 <p style="color: #c2410c; font-weight: bold; margin-bottom: 10px;">Pour se protéger :</p>
-                <div class="arabic-text" style="font-size: 1.3rem;">أُعِيذُكَ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِن شَرِّ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِن شَرِّ كُلِّ عَيْنٍ لَّامَّةٍ</div>
-                <div class="transliteration">U'îdhuka bikalimâti Allâhi at-tâmmati min sharri kulli shaytânin wa hammah, wa min sharri kulli 'aynin lammah.</div>
-                <div class="translation">"Je cherche protection pour toi par les paroles parfaites d'Allah contre tout démon, tout animal venimeux, et contre tout mauvais œil."</div>
-                <div class="instruction">À réciter pour protéger les enfants et soi-même</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
-                <p style="color: #c2410c; font-weight: bold; margin-bottom: 10px;">Pour dissoudre :</p>
-                <div class="arabic-text" style="font-size: 1.3rem;">وَإِن يَكَادُ الَّذِينَ كَفَرُوا لَيُزْلِقُونَكَ بِأَبْصَارِهِمْ لَمَّا سَمِعُوا الذِّكْرَ وَيَقُولُونَ إِنَّهُ لَمَجْنُونٌ وَمَا هُوَ إِلَّا ذِكْرٌ لِّلْعَالَمِينَ</div>
-                <div class="transliteration">Wa in yakâdu alladhîna kafarû layuzlîqunaka bi-absârihim lammâ sami'û adh-dhikra wa yaqûlûna innahu lamajnûn, wa mâ huwa illâ dhikrun lil-'âlamîn.</div>
-                <div class="translation">"Peu s'en faut que ceux qui mécroient ne te transpercent par leurs regards, quand ils entendent le Coran, ils disent : "Il est certes fou !" Et ce n'est qu'un Rappel, adressé aux mondes."</div>
-                <div class="instruction">40 fois sur l'eau à boire</div>
+                <div class="arabic-text" style="font-size: 1.3rem;">أَعُوذُكَ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِن شَرِّ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِن شَرِّ كُلِّ عَيْنٍ لَّامَّةٍ</div>
+                
+                <p style="color: #c2410c; font-weight: bold; margin: 15px 0 10px;">Pour dissoudre :</p>
+                <div class="arabic-text" style="font-size: 1.3rem;">وَإِن يَكَادُ الَّذِينَ كَفَرُوا لَيُزْلِقُونَكَ بِأَبْصَارِهِمْ... (Qalam : 51-52)</div>
+                <div class="instruction">40 fois sur eau à boire</div>
             </div>
 
-            <!-- 22. MIGRAINE -->
+            <!-- 17. MIGRAINE -->
             <div class="card" id="card-migraine" data-title="Migraine" data-keywords="migraine mal tete">
                 <h3>Migraine & Céphalées <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text">لَا يُصَدَّعُونَ عَنْهَا وَلَا يُنْزِفُونَ</div>
                 <div class="transliteration">Lâ yusadda'ûna 'anhâ wa lâ yunzifûn.</div>
-                <div class="translation">"Ils n'en auront ni maux de tête ni ivresse." (Waqi'ah : 19)</div>
+                <div class="translation">"Ils n'en auront ni maux de tête, ni intoxication." (Waqi'ah : 19)</div>
                 <div class="instruction">Souffler sur front et tempes jusqu'à guérison</div>
             </div>
 
             <!-- 18. AMOUR -->
             <div class="card" id="card-amour" data-title="Harmonie" data-keywords="amour couple union">
                 <h3>Harmonie Conjugale <span class="category-tag">Union</span></h3>
-
-                <div class="arabic-text" style="font-size: 1.3rem;">يُحِبُّونَهُمْ كَحُبِّ اللَّهِ ۖ وَالَّذِينَ آمَنُوا أَشَدُّ حُبًّا لِّلَّهِ</div>
-                <div class="transliteration">Yuhibbunahum kahubbillâhi wa alladhîna âmanû ashaddu hubban lillâhi.</div>
-                <div class="translation">"Ils les aiment comme on aime Allah. Or les croyants sont les plus ardents en l'amour d'Allah."</div>
-                <div class="instruction">110 fois, visualiser la personne et souffler sur l'eau (Al-Baqarah : 165)</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
+                <div class="arabic-text" style="font-size: 1.3rem;">يُحِبُّونَهُمْ كَحُبِّ اللَّهِ...</div>
+                <div class="instruction" style="margin-bottom: 15px;">110 fois + souffler sur eau (Baqarah : 165)</div>
+                
                 <div class="arabic-text" style="font-size: 1.3rem;">إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ سَيَجْعَلُ لَهُمُ الرَّحْمَٰنُ وُدًّا</div>
-                <div class="transliteration">Inna alladhîna âmanû wa 'amilû as-salihâti sayaj'alu lahum ar-Rahmânu wuddâ.</div>
-                <div class="translation">"À ceux qui croient et font de bonnes œuvres, le Tout Miséricordieux accordera Son amour."</div>
-                <div class="instruction">40 fois, visualiser la personne et souffler sur l'eau</div>
+                <div class="instruction">40 fois + souffler sur eau</div>
             </div>
 
-            <!-- 25. PERDU -->
+            <!-- 19. PERDU -->
             <div class="card" id="card-perdu" data-title="Objet Perdu" data-keywords="objet perdu trouver">
                 <h3>Objet Perdu <span class="category-tag">Secours</span></h3>
                 <div class="arabic-text">هَذِهِ بِضَاعَتُنَا رُدَّتْ إِلَيْنَا</div>
@@ -789,7 +745,7 @@
                 <div class="instruction">40 fois avant de chercher</div>
             </div>
 
-            <!-- 26. ANXIÉTÉ -->
+            <!-- 20. ANXIÉTÉ -->
             <div class="card" id="card-anxiete" data-title="Anxiété" data-keywords="peur stress coeur">
                 <h3>Anxiété & Tranquillité <span class="category-tag">Apaisement</span></h3>
                 <div class="arabic-text">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</div>
@@ -798,7 +754,7 @@
                 <div class="instruction">110 fois matin et soir</div>
             </div>
 
-            <!-- 27. VŒUX -->
+            <!-- 21. VŒUX -->
             <div class="card" id="card-souhait" data-title="Vœux" data-keywords="voeux projet reussite">
                 <h3>Réalisation des Vœux <span class="category-tag">Succès</span></h3>
                 <div class="arabic-text">عَلِيٌّ صِرَاطٌ حَقٌّ نُّمُسِكُهُ</div>
@@ -810,42 +766,14 @@
             <!-- 22. RIZQ -->
             <div class="card" id="card-rizq" data-title="Rizq" data-keywords="argent travail provision">
                 <h3>Rizq & Provisions <span class="category-tag">Abondance</span></h3>
-
-                <div class="arabic-text" style="font-size: 1.3rem;">رَبَّنَا أَنزِلْ عَلَيْنَا مَائِدَةً مِّنَ السَّمَاءِ تَكُونُ لَنَا عِيدًا لِّأَوَّلِنَا وَآخِرِنَا وَآيَةً مِّنكَ ۖ وَارْزُقْنَا وَأَنتَ خَيْرُ الرَّازِقِينَ</div>
-                <div class="transliteration">Rabbanâ anzil 'alaynâ mâ'idatan min as-samâ'i takûnu lanâ 'idan li-awwalinâ wa âkhirinâ wa âyah minka, warzuqnâ wa anta khayru ar-râzîqîn.</div>
-                <div class="translation">"Ô Allah, notre Seigneur, fais descendre du ciel sur nous une table servie qui soit une fête pour nous, pour le premier d'entre nous, comme pour le dernier, ainsi qu'un signe de Ta part. Nourris-nous : Tu es le meilleur des nourrisseurs."</div>
-                <div class="instruction">110 fois chaque matin après la prière (avant Fajr)</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
-                <div class="arabic-text" style="font-size: 1.3rem;">إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ</div>
-                <div class="transliteration">Inna Allâha huwa ar-Razzâqu dhû al-quwwati al-matîn.</div>
-                <div class="translation">"En vérité, c'est Allah qui est le Grand Pourvoyeur, Le Détenteur de la force, l'Inébranlable."</div>
-                <div class="instruction">110 fois</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
-                <div class="arabic-text" style="font-size: 1.3rem;">وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ</div>
-                <div class="transliteration">Wa man yattaqi Allâha yaj'al lahu makhrajan, wa yarzuqhu min haythu lâ yahtasib.</div>
-                <div class="translation">"Et quiconque craint Allah, Il lui donnera une issue favorable, et lui accordera Ses dons par [des moyens] sur lesquels il ne comptait pas."</div>
-                <div class="instruction">110 fois</div>
-            </div>
-
-            <!-- 29. RIZQ 2 -->
-            <div class="card" id="card-rizq-2" data-title="Rizq (2)" data-keywords="argent travail provision">
-                <h3>Rizq & Provisions <span class="category-tag">Abondance</span></h3>
+                <div class="arabic-text" style="font-size: 1.3rem;">رَبَّنَا أَنزِلْ عَلَيْنَا مَائِدَةً مِّنَ السَّمَاءِ...</div>
+                <div class="instruction" style="margin-bottom: 10px;">110 fois avant Fajr</div>
+                
                 <div class="arabic-text" style="font-size: 1.3rem;">إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ</div>
                 <div class="instruction">110 fois</div>
             </div>
 
-            <!-- 30. RIZQ 3 -->
-            <div class="card" id="card-rizq-3" data-title="Rizq (3)" data-keywords="argent travail provision">
-                <h3>Rizq & Provisions <span class="category-tag">Abondance</span></h3>
-                <div class="arabic-text" style="font-size: 1.3rem;">وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا ، وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ</div>
-                <div class="instruction">110 fois</div>
-            </div>
-
-            <!-- 31. SIHR -->
+            <!-- 23. SIHR -->
             <div class="card" id="card-sihr" data-title="Sorcellerie" data-keywords="magie sihr protection">
                 <h3>Protection Sorcellerie <span class="category-tag">Protection</span></h3>
                 <div class="arabic-text">وَقُل رَّبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ وَأَعُوذُ بِكَ رَبِّ أَن يَحْضُرُونِ</div>
@@ -857,21 +785,14 @@
             <!-- 24. TRAVAIL -->
             <div class="card" id="card-travail" data-title="Projets" data-keywords="tache projet travail">
                 <h3>Facilitation des Affaires <span class="category-tag">Succès</span></h3>
-
-                <div class="arabic-text" style="font-size: 1.3rem;">فَسَيَكْفِيكَهُمُ اللَّهُ ۚ وَهُوَ السَّمِيعُ الْعَلِيمُ</div>
-                <div class="transliteration">Fasayakfikahumu Allâhu wa huwa as-Samî'u al-'Alîm.</div>
-                <div class="translation">"Allah te suffira contre eux. Il est l'Audient, l'Omniscient."</div>
-                <div class="instruction">110 fois par jour</div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-
+                <div class="arabic-text" style="font-size: 1.3rem;">فَسَيَكْفِيكَهُمُ اللَّهُ وَهُوَ السَّمِيعُ الْعَلِيمُ</div>
+                <div class="instruction" style="margin-bottom: 10px;">11 fois, puis selon besoin</div>
+                
                 <div class="arabic-text" style="font-size: 1.3rem;">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ</div>
-                <div class="transliteration">Lâ hawla wa lâ quwwata illâ billâhi al-'Aliyyi al-'Azîm.</div>
-                <div class="translation">"Il n'y a de force ni de puissance que par Allah, le Très Haut, le Très Grand."</div>
-                <div class="instruction">110 fois</div>
+                <div class="instruction">11 fois minimum</div>
             </div>
 
-            <!-- 34. DIGESTION -->
+            <!-- 25. DIGESTION -->
             <div class="card" id="card-estomac" data-title="Digestion" data-keywords="ventre estomac nourriture">
                 <h3>Digestion & Ventre <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text" style="font-size: 1.3rem;">لِإِيلَافِ قُرَيْشٍ * إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ...</div>
@@ -879,7 +800,7 @@
                 <div class="instruction">10 fois après les repas</div>
             </div>
 
-            <!-- 35. PLUIE -->
+            <!-- 26. PLUIE -->
             <div class="card" id="card-pluie" data-title="Pluie" data-keywords="pluie secheresse abondance">
                 <h3>Pluie & Abondance <span class="category-tag">Nature</span></h3>
                 <div class="arabic-text" style="font-size: 1.3rem;">وَهُوَ الَّذِي يُنَزِّلُ الْغَيْثَ مِن بَعْدِ مَا قَنَطُوا...</div>
@@ -893,16 +814,14 @@
     <!-- PAIEMENT -->
     <div class="payment-section">
         <h2 style="text-align: center; color: #1e293b; margin-bottom: 10px;">💳 Paiement</h2>
-
+        
         <div class="payment-grid">
             <div class="payment-card">
                 <h3>🏛️ Western Union</h3>
                 <p style="font-size: 0.9em;">
-                    <strong>Nom complet :</strong> Houssen Mohsinaly<br>
-                    <strong>Ville :</strong> Antananarivo<br>
-                    <strong>Pays :</strong> Madagascar<br>
-                    <strong>Téléphone :</strong> +261 34 18 547 16<br>
-                    <span style="color: #64748b; font-size: 0.85em;">Conservez le code MTCN</span>
+                    <strong>Houssen Mohsinaly</strong><br>
+                    Antananarivo, Madagascar<br>
+                    Conservez le code MTCN
                 </p>
                 <a href="https://www.westernunion.com/fr/fr/send-money-to-madagascar.html" class="payment-btn" target="_blank" rel="noopener">
                     Transférer →
@@ -912,11 +831,9 @@
             <div class="payment-card">
                 <h3>📱 Remitly</h3>
                 <p style="font-size: 0.9em;">
-                    <strong>Nom complet :</strong> Houssen Mohsinaly<br>
-                    <strong>Numéro :</strong> +261 34 18 547 16<br>
-                    <strong>Opérateur :</strong> Mvola (Telma)<br>
-                    <strong>Ville :</strong> Antananarivo<br>
-                    <strong>Pays :</strong> Madagascar
+                    <strong>Houssen Moshinaly</strong><br>
+                    +261 34 18 547 16 (Mvola)<br>
+                    Telma Madagascar
                 </p>
                 <a href="https://www.remitly.com/fr/fr/madagascar" class="payment-btn" target="_blank" rel="noopener" style="border-color: #25c2a0; color: #25c2a0;">
                     Envoyer →
@@ -926,12 +843,9 @@
             <div class="payment-card">
                 <h3>💸 Taptap Send</h3>
                 <p style="font-size: 0.9em;">
-                    <strong>Nom complet :</strong> Houssen Mohsinaly<br>
-                    <strong>Numéro :</strong> +261 34 18 547 16<br>
-                    <strong>Opérateur :</strong> Mvola (Telma)<br>
-                    <strong>Ville :</strong> Antananarivo<br>
-                    <strong>Pays :</strong> Madagascar<br>
-                    <span style="color: #059669; font-weight: 600;">✅ Recommandé</span>
+                    <strong>Recommandé</strong><br>
+                    Vers Mvola Madagascar<br>
+                    Houssen Moshinaly
                 </p>
                 <a href="https://www.taptapsend.com/country-landing-pages/transferts-madagascar" class="payment-btn" target="_blank" rel="noopener" style="border-color: #ff6900; color: #ff6900;">
                     Envoyer →
@@ -974,7 +888,7 @@
     function scrollToCard() {
         const select = document.getElementById('quickNav');
         const selectedId = select.value;
-
+        
         if (selectedId === 'all') {
             document.querySelectorAll('.card').forEach(c => c.classList.remove('hidden'));
             window.scrollTo({ top: document.getElementById('cardList').offsetTop - 130, behavior: 'smooth' });
@@ -1004,27 +918,27 @@
     // COMPTEUR AVEC APUI LONG (2 secondes)
     let pressTimer;
     let isLongPress = false;
-    const longPressDuration = 2000;
+    const longPressDuration = 2000; // 2 secondes
     const counter = document.getElementById('global-counter');
     const indicator = document.getElementById('pressIndicator');
     let progress = 0;
     let animationFrame;
 
     function startPress(e) {
-        if (e.type === 'mousedown' && e.button !== 0) return;
-
+        if (e.type === 'mousedown' && e.button !== 0) return; // Seulement clic gauche
+        
         isLongPress = false;
         progress = 0;
         indicator.style.setProperty('--progress', '0%');
         indicator.classList.add('active');
-
+        
         const startTime = Date.now();
-
+        
         function updateProgress() {
             const elapsed = Date.now() - startTime;
             progress = Math.min(elapsed / longPressDuration, 1);
             indicator.style.setProperty('--progress', (progress * 100) + '%');
-
+            
             if (progress < 1 && pressTimer) {
                 animationFrame = requestAnimationFrame(updateProgress);
             } else if (progress >= 1) {
@@ -1033,8 +947,11 @@
                 showResetConfirm();
             }
         }
-
-        pressTimer = setTimeout(() => {}, longPressDuration);
+        
+        pressTimer = setTimeout(() => {
+            // Le timer de sécurité, mais l'animation visuelle est gérée par requestAnimationFrame
+        }, longPressDuration);
+        
         animationFrame = requestAnimationFrame(updateProgress);
     }
 
@@ -1043,8 +960,9 @@
         cancelAnimationFrame(animationFrame);
         indicator.classList.remove('active');
         indicator.style.setProperty('--progress', '0%');
-
+        
         if (!isLongPress) {
+            // C'était un clic court normal, on incrémente
             incrementCounter();
         }
         isLongPress = false;
@@ -1063,7 +981,8 @@
         count++;
         document.getElementById('global-count').textContent = count;
         localStorage.setItem('global_counter', count);
-
+        
+        // Feedback visuel rapide
         counter.style.transform = "scale(1.1)";
         setTimeout(() => counter.style.transform = "scale(1)", 100);
     }
@@ -1072,19 +991,22 @@
         if (confirm('Réinitialiser le compteur de dhikr ?')) {
             document.getElementById('global-count').textContent = '0';
             localStorage.setItem('global_counter', 0);
-
+            
+            // Animation de confirmation
             counter.style.animation = 'pulse 0.4s ease';
             setTimeout(() => counter.style.animation = '', 400);
         }
     }
 
+    // Event listeners pour le compteur
     counter.addEventListener('mousedown', startPress);
     counter.addEventListener('touchstart', startPress, {passive: true});
     counter.addEventListener('mouseup', endPress);
     counter.addEventListener('touchend', endPress);
     counter.addEventListener('mouseleave', cancelPress);
-    counter.addEventListener('contextmenu', e => e.preventDefault());
+    counter.addEventListener('contextmenu', e => e.preventDefault()); // Empêcher menu clic droit
 
+    // Chargement
     document.addEventListener('DOMContentLoaded', () => {
         const saved = localStorage.getItem('global_counter');
         if (saved) document.getElementById('global-count').textContent = saved;
