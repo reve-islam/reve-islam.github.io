@@ -698,7 +698,7 @@
             <div class="card" id="card-yeux" data-title="Vue & Yeux" data-keywords="yeux ophtalmo vue">
                 <h3>Pour les Yeux <span class="category-tag">Guérison</span></h3>
 
-                <div class="arabic-text" style="font-size: 1.4rem;">إِذَا مَا أَتَمَتْ عَيْنِي فَكُلُّهُ تُرَابٌ</div>
+                <div class="arabic-text" style="font-size: 1.4rem;">إِذَا مَا ارْمَدَتْ عَيْنِي فَكُحْلِي تُرَابُ مَسِّ نَعْلِ أَبِي تُرَابِ</div>
                 <div class="transliteration">Idhâ ma armadat 'aynî fakuhli turâbu massi na'li Abi Turâb.</div>
                 <div class="translation">"Si mon œil s'enflamme, mon collyre est la poussière touchée par la sandale d'Abu Turab."</div>
                 <div class="instruction">21 fois</div>
@@ -850,8 +850,8 @@
                 <h3>Protection Sorcellerie <span class="category-tag">Protection</span></h3>
                 <div class="arabic-text">وَقُل رَّبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ وَأَعُوذُ بِكَ رَبِّ أَن يَحْضُرُونِ</div>
                 <div class="transliteration">Wa qur Rabbi a'ûdhu bika minhamazâti sh-shayâtîn, wa a'ûdhu bika Rabbi ay yahdurûn.</div>
-                <div class="translation">"Seigneur, je cherche Ta protection contre les diables." (Mu'minun : 97-98)</div>
-                <div class="instruction">110 fois matin et soir (avec Falaq et Nass)</div>
+                <div class="translation">« Et dis : "Seigneur, je cherche Ta protection, contre les incitations des diables ; et je cherche Ta protection, Seigneur, contre leur présence auprès de moi."</div>
+                <div class="instruction">110 fois</div>
             </div>
 
             <!-- 24. TRAVAIL -->
@@ -1009,10 +1009,12 @@
     const indicator = document.getElementById('pressIndicator');
     let progress = 0;
     let animationFrame;
+    let handled = false;
 
     function startPress(e) {
         if (e.type === 'mousedown' && e.button !== 0) return;
 
+        handled = false;
         isLongPress = false;
         progress = 0;
         indicator.style.setProperty('--progress', '0%');
@@ -1044,7 +1046,8 @@
         indicator.classList.remove('active');
         indicator.style.setProperty('--progress', '0%');
 
-        if (!isLongPress) {
+        if (!isLongPress && !handled) {
+            handled = true;
             incrementCounter();
         }
         isLongPress = false;
@@ -1056,6 +1059,7 @@
         indicator.classList.remove('active');
         indicator.style.setProperty('--progress', '0%');
         isLongPress = false;
+        handled = false;
     }
 
     function incrementCounter() {
