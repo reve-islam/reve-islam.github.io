@@ -1,164 +1,126 @@
 # Contexte Actif
 
-## Session : Amélioration de index.html - 31/01/2026
+## Session : Corrections du Compteur Dhikr - 19/02/2026
 
-## Tâche en Cours : ✅ TERMINÉE (Avec ajustements)
+## Tâche en Cours : ✅ TERMINÉE
 
-## Implémentations Réalisées
+## Problèmes Identifiés et Résolus
 
-### 1. ✅ Banque de Mémoire Créée
-- projectbrief.md : Contexte et objectifs du projet
-- productContext.md : Mission et public cible
-- systemPatterns.md : Architecture et composants clés
-- techContext.md : Stack et conventions de codage
-- progress.md : État d'avancement
-- activeContext.md : Session actuelle
+### 1. ✅ Bug du Double Compte sur Mobile
+**Problème** : Sur smartphone, un tap unique incrémentait le compteur de +2 au lieu de +1.
 
-### 2. ✅ Offre d'Interprétation Modifiée
-**Ancien** : "Une seule consultation couvre PLUSIEURS INTERPRÉTATIONS de rêves"
+**Cause racine** : Les événements tactiles (`touchend`) et souris (`click`) étaient tous deux écoutés. Sur mobile, le navigateur déclenche les deux, causant un double compte.
+
+**Solution** : 
+```javascript
+let touchFired = false;
+
+// Touch events (mobile)
+counter.addEventListener('touchend', (e) => {
+    touchFired = true;
+    incrementCounter();
+});
+
+// Mouse events (desktop) - ignorés si touch déjà traité
+counter.addEventListener('click', (e) => {
+    if (touchFired) {
+        touchFired = false;
+        return;
+    }
+    incrementCounter();
+});
+```
+
+### 2. ✅ Menu Contextuel Gênant sur Mobile
+**Problème** : Le long press pour reset déclenchait le menu contextuel du navigateur sur mobile.
+
+**Solution** : Remplacement du long press par un **bouton "R" discret**.
+
+### 3. ✅ Modale de Confirmation Custom
+**Problème** : Le `confirm()` natif du navigateur était peu esthétique.
+
+**Solution** : Modale custom avec :
+- Design élégant (fond blanc, ombre douce, flèche pointant vers le compteur)
+- Animation fluide (scale + fade)
+- Boutons "Annuler" (gris) et "Effacer" (rouge)
+- Fermeture par overlay ou boutons
+
+## Fichiers Modifiés
+
+| Fichier | Changements |
+|---------|-------------|
+| `index-prototype.html` | Correction bug + bouton R + modale custom |
+| `index.html` | Répercuté les changements |
+| `tasbeeh.html` | Répercuté les changements |
+
+## Nouvelle Structure CSS du Compteur
+
+```css
+/* Bouton reset discret */
+.reset-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ef4444;
+    opacity: 0;  /* Visible au survol seulement */
+}
+
+/* Modal de confirmation custom */
+.reset-modal {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    /* Animation: translateY + scale */
+}
+
+/* Overlay pour fermeture */
+.reset-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+```
+
+## Ancienne Session : Amélioration de index.html - 31/01/2026
+
+### Implémentations Réalisées (Session Précédente)
+
+#### 1. ✅ Offre d'Interprétation Modifiée
 **Nouveau** : "Pack 5 Rêves sur 30 jours - 20€"
 
-**Réflexions sur l'offre** :
-- Précision : Le client sait exactement ce qu'il obtient (5 interprétations)
-- Flexibilité : Les rêves peuvent être envoyés au fur et à mesure sur 30 jours
-- Engagement : Crée une relation plus durable et professionnelle
-- Valeur perçue : 20€ pour 5 rêves = 4€/rêve → excellent rapport qualité-prix
-- Continuité : Permet de suivre l'évolution des thèmes dans les rêves du client
-
-**Contenu de l'offre** :
-- 1 consultation initiale (analyse détaillée)
-- 4 interprétations additionnelles (envoyées sur 30 jours)
-- Messages vocaux ou écrits via WhatsApp
-- Réponses personnalisées avec références islamiques
-
-### 3. ✅ Contenu des Invocations - 26 CARTES REGROUPÉES
-Toutes les 26 invocations depuis tasbee-liste.md ont été implémentées avec :
+#### 2. ✅ Contenu des Invocations - 26 CARTES REGROUPÉES
 - Texte arabe complet (Scheherazade New)
 - Translittération précise
 - Traduction française
-- Instructions de récitation (nombre de fois)
+- Instructions de récitation
 
-**Invocations multiples REGROUPÉES** (1 carte par problème) :
-- **Examens (Facilitation des Études)** : 1 carte avec 2 versets
-- **Yeux (Vue & Yeux)** : 1 carte avec 3 versets
-- **Mariage** : 1 carte avec 2 versets
-- **Mauvais Oeil ('Ayn)** : 1 carte avec 2 versets (Protection + Dissoudre)
-- **Harmonie Conjugale** : 1 carte avec 2 versets
-- **Rizq & Provisions** : 1 carte avec 3 versets
-- **Facilitation des Affaires** : 1 carte avec 2 versets
+#### 3. ✅ Design Amélioré
+- Ombres accrues, micro-interactions hover
+- Contrôles sticky
+- Scroll margin-top pour éviter le masquage
 
-**Cartes individuelles** (1 invocation par carte) :
-- Dua al-Noor
-- Espoir d'Enfant
-- Bénédiction Maison
-- Apaisement & Colère
-- Diabète
-- Détresse
-- Douleur au Pied
-- Guidance
-- Enfant qui Pleure
-- Justice
-- Sommeil
-- Guérison Générale
-- Migraine
-- Objet Perdu
-- Anxiété
-- Réalisation des Vœux
-- Protection Sorcellerie
-- Digestion
-- Pluie & Abondance
+#### 4. ✅ Navigation Améliorée
+- Menu déroulant avec 26 options
+- Recherche avec normalisation NFD
+- Scroll smooth vers les cartes
 
-**Invocations ajoutées** (pas dans l'ancien index.html) :
-- Pluie (verset 42:28)
-- Diabète
-- Pied/Douleurs
-- Guidance
-- Enfant qui pleure
-- Justice
-- Sommeil
-- Migraine
-- Perdu
-- Vœux
-- Digestion
+#### 5. ✅ Liens de Paiement Mis à Jour
+- Western Union, Remitly, Taptap Send
+- Coordonnées complètes
 
-### 4. ✅ Design Amélioré
-- **Ombres accrues** : box-shadow plus prononcés (0 2px 8px → 0 8px 25px au hover)
-- **Lisibilité de l'arabe** : Padding, line-height, Scheherazade New font
-- **Micro-interactions** : Hover states (transform translateY(-2px)), scale sur sélection
-- **Contrôles sticky** : position: sticky, top: 64px, z-index: 90
-- **Scroll margin-top** : 140px pour éviter le masquage par les headers sticky
-
-### 5. ✅ Compteur de Dhikr Global Implémenté
-- **Position** : Fixe en bas à droite (65px)
-- **Couleur** : Dégradé vert (#27ae60 → #219a52) avec ombre et bordure blanche
-- **Fonctionnement** :
-  - Clic court → Incrément (+1) avec animation scale(1.1)
-  - Appui long (2s) → Reset avec confirmation
-  - Indicateur visuel de progression (conic-gradient)
-  - Persistance via localStorage
-  - Hint "Maintenir 2s pour reset" au hover
-- **Animations** : pulse sur reset, scale sur clic
-
-### 6. ✅ Navigation Améliorée
-- **Menu déroulant** : Auto-généré depuis les 26 cartes au chargement
-- **Recherche** : Filtrage en temps réel avec normalisation NFD (accents)
-- **Scroll smooth** : Vers la carte sélectionnée avec block: 'center'
-- **Effet visuel** : scale(1.02) sur la carte ciblée (600ms)
-
-### 7. ✅ Liens de Paiement Mis à Jour
-- Western Union : https://www.westernunion.com/fr/fr/send-money-to-madagascar.html
-- Remitly : https://www.remitly.com/fr/fr/madagascar
-- Taptap Send : https://www.taptapsend.com/country-landing-pages/transferts-madagascar
-- **Coordonnées complètes pour les 3 méthodes** :
-  - Nom complet : Houssen Mohsinaly
-  - Numéro de téléphone : +261 34 18 547 16
-  - Opérateur : Mvola (Telma)
-  - Ville : Antananarivo
-  - Pays : Madagascar
-
-## Modifications Techniques
-
-### CSS
-- Ajout de :root variables (primary-green, primary-purple, primary-blue)
-- Contrôles sticky avec responsive margin
-- Cartes améliorées avec box-shadow et hover effects
-- Compteur avec gradient, shadow, et animation pulse
-- Long-press indicator avec conic-gradient
-- Reset hint au hover
-- Mobile responsive adjustments
-
-### JavaScript
-- Gestion du compteur de dhikr (increment, reset avec appui long)
-- Animation de progression (requestAnimationFrame)
-- Chargement depuis localStorage
-- Feedback visuel sur les cartes
-- Normalisation de recherche (NFD pour accents)
-
-### HTML
-- Header amélioré avec meilleur gradient
-- Offre d'interprétation reformulée (Pack 5 Rêves sur 30 jours)
-- 26 cartes d'invocations (invocations multiples regroupées avec séparateurs visuels)
-- Menu déroulant avec 26 options + "Afficher toutes"
-- Bouton WhatsApp avec message pré-rempli
-
-## Structure des Cartes Multiples
-Les cartes avec plusieurs versets utilisent des séparateurs visuels :
-```html
-<div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #e2e8f0;"></div>
-```
-Cela permet de distinguer clairement chaque invocation tout en les regroupant logiquement.
-
-## Prochaines Étapes (Testing)
-- [ ] Testing sur mobile et desktop
-- [ ] Vérification de l'accessibilité (contrast, focus states)
-- [ ] Test de performance (temps de chargement)
-- [ ] Validation du contenu (texte arabe, translittération, traduction)
+## Prochaines Étapes
+- [x] Correction bug double compte mobile
+- [x] Remplacement long press par bouton R
+- [x] Modale de confirmation custom
+- [x] Bouton reset toujours visible sur mobile (plus de hover requis)
+- [x] Modal ajustée pour ne pas déborder sur mobile
+- [ ] Testing sur plusieurs appareils mobiles
+- [ ] Validation finale
 
 ## Notes
-- Fichier index.html créé avec ~1300 lignes (après regroupement)
-- Toutes les 26 invocations de tasbee-liste.md sont présentes et complètes
-- Les invocations multiples sont regroupées dans des cartes uniques
-- L'offre d'interprétation est plus claire et attractive
-- Le compteur de dhikr est fonctionnel avec persistance
-- La page est prête pour GitHub Pages
-- Légère et performante grâce au CSS/JS pur
+- Le système de compteur est maintenant robuste sur mobile et desktop
+- Le code JS a été simplifié (~50 lignes vs ~80 avant)
+- Plus de dépendance au long press ni au `confirm()` natif
+- Bouton reset : 20x20px sur desktop (droite), 28x28px sur mobile (gauche)

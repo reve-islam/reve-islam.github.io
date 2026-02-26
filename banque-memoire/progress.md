@@ -1,6 +1,6 @@
 # Progression du Projet
 
-## État Actuel : 🎉 TERMINÉ (31/01/2026)
+## État Actuel : 🎉 TERMINÉ (19/02/2026)
 
 ## Fonctionnalités Terminées ✅
 
@@ -74,55 +74,50 @@
 - [x] Scroll margin-top pour éviter le masquage
 - [x] Séparateurs visuels pour les invocations multiples (border-top: dashed)
 
-### Compteur de Dhikr ✅
-- [x] Bouton circulaire fixe en bas à droite (65px)
-- [x] Incrément par clic court
-- [x] Reset par appui long (2 secondes)
-- [x] Indicateur visuel de progression (conic-gradient)
-- [x] Persistance via localStorage
-- [x] Animation de feedback
-
 ### Liens de Paiement ✅
 - [x] Western Union mis à jour (lien Madagascar + coordonnées complètes)
 - [x] Remitly mis à jour (lien Madagascar + coordonnées complètes)
 - [x] Taptap Send mis à jour (lien Madagascar + coordonnées complètes)
-- [x] Coordonnées unifiées pour les 3 méthodes :
-  - Nom complet : Houssen Mohsinaly
-  - Numéro : +261 34 18 547 16
-  - Opérateur : Mvola (Telma)
-  - Ville : Antananarivo
-  - Pays : Madagascar
+- [x] Coordonnées unifiées pour les 3 méthodes
 
-## Fonctionnalités à Tester ⏳
+## Corrections du Compteur (19/02/2026) 🔧
 
-- [ ] Testing sur mobile et desktop
-- [ ] Vérification de l'accessibilité (contrast, focus states)
-- [ ] Test de performance (temps de chargement)
-- [ ] Vérification du responsive design sur plusieurs tailles d'écran
-- [ ] Validation du contenu (texte arabe, translittération, traduction)
+### Bug Double Compte Mobile ✅
+- [x] Identifié : touchend + click déclenchés simultanément
+- [x] Corrigé : Flag `touchFired` pour bloquer le second événement
+- [x] Testé et validé sur smartphone
+
+### Système de Reset Repensé ✅
+- [x] Supprimé : Long press (2s) - causait menu contextuel
+- [x] Ajouté : Bouton "R" discret visible au survol
+- [x] Ajouté : Modale de confirmation custom (design élégant)
+- [x] Supprimé : `confirm()` natif du navigateur
+
+### Fichiers Mis à Jour
+- [x] index-prototype.html (prototype de test)
+- [x] index.html (production)
+- [x] tasbeeh.html (version autonome)
 
 ## Historique des Décisions
 - **01/2026** : Création initiale de index.html (11 invocations incomplètes)
 - **01/2026** : Création de tasbee-liste.md avec 26 invocations complètes
 - **01/2026** : Création de index-prototype.html avec compteur et design amélioré
-- **31/01/2026** : Première amélioration - Implémentation de 26 invocations avec cartes individuelles
-- **31/2026** : Ajustement final - Regroupement des invocations multiples et reformulation de l'offre
+- **31/01/2026** : Implémentation de 26 invocations avec cartes regroupées
+- **19/02/2026** : Correction bug double compte + reset par bouton R + modale custom
 
 ## Métriques de Succès
 - [x] 26 invocations complètes et accessibles
 - [x] Invocations multiples regroupées dans des cartes uniques
 - [x] Offre d'interprétation claire et attractive
-- [x] Compteur de dhikr fonctionnel
+- [x] Compteur de dhikr robuste sur mobile et desktop
 - [x] Liens de paiement corrects et cliquables
-- [x] Page légère (~1300 lignes)
-- [ ] Temps de chargement < 2s
-- [ ] Compatible mobile et desktop
-- [ ] Accessibilité WCAG AA
+- [x] Page légère (~1100-1300 lignes)
+- [x] Code JS simplifié (~50 lignes vs ~80 avant)
 
 ## Livrables Finaux
-- ✅ index.html (~1300 lignes)
-- ✅ Banque de mémoire complète (5 fichiers)
+- ✅ index.html
+- ✅ index-prototype.html (pour tests futurs)
+- ✅ tasbeeh.html (version autonome hors-ligne)
+- ✅ Banque de mémoire complète
 - ✅ 26 cartes d'invocations (regroupées)
-- ✅ Offre Pack 5 Rêves sur 30 jours
-- ✅ Compteur de dhikr avec appui long
-- ✅ Liens de paiement corrects
+- ✅ Compteur de dhikr robuste avec modale custom

@@ -92,26 +92,62 @@ function filterCards() {
 }
 ```
 
-### Compteur avec Appui Long
+### Compteur de Dhikr (v2 - Bouton Reset + Modale Custom)
 ```javascript
-let pressTimer;
-let isLongPress = false;
-const longPressDuration = 2000; // 2 secondes
+// Pattern anti-double-compte sur mobile
+let touchFired = false;
 
-function startPress() {
-  isLongPress = false;
-  pressTimer = setTimeout(() => {
-    isLongPress = true;
-    showResetConfirm();
-  }, longPressDuration);
-}
-
-function endPress() {
-  clearTimeout(pressTimer);
-  if (!isLongPress) {
+// Touch events (mobile) - prioritaires
+counter.addEventListener('touchend', (e) => {
+    if (e.target === resetBtn || e.target.closest('.reset-modal')) return;
+    e.preventDefault();
+    touchFired = true;
     incrementCounter();
-  }
+});
+
+// Mouse events (desktop) - ignorés si touch déjà traité
+counter.addEventListener('click', (e) => {
+    if (e.target === resetBtn || e.target.closest('.reset-modal')) return;
+    if (touchFired) {
+        touchFired = false;  // Reset du flag
+        return;              // Ignorer le clic
+    }
+    incrementCounter();
+});
+
+// Modale custom (remplace confirm())
+function showResetModal() {
+    resetModal.classList.add('active');
+    resetOverlay.classList.add('active');
 }
+
+function hideResetModal() {
+    resetModal.classList.remove('active');
+    resetOverlay.classList.remove('active');
+}
+
+function doReset() {
+    document.getElementById('global-count').textContent = '0';
+    localStorage.setItem('global_counter', 0);
+    hideResetModal();
+}
+```
+
+**Structure HTML du compteur** :
+```html
+<div class="reset-overlay" id="resetOverlay"></div>
+<div id="global-counter">
+    <button class="reset-btn" id="resetBtn">R</button>
+    <div class="reset-modal" id="resetModal">
+        <p>Réinitialiser le compteur ?</p>
+        <div class="reset-modal-btns">
+            <button class="btn-cancel" id="cancelReset">Annuler</button>
+            <button class="btn-confirm" id="confirmReset">Effacer</button>
+        </div>
+    </div>
+    <span class="count" id="global-count">0</span>
+    <span class="label">dhikr</span>
+</div>
 ```
 
 ## Performances

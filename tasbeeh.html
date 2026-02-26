@@ -228,6 +228,119 @@
             opacity: 1;
         }
 
+        /* Bouton reset discret - toujours visible */
+        .reset-btn {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ef4444;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border: 2px solid white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: transform 0.2s;
+        }
+
+        .reset-btn:hover {
+            transform: scale(1.15);
+            background: #dc2626;
+        }
+
+        /* Modal de confirmation custom */
+        .reset-modal {
+            position: absolute;
+            bottom: calc(100% + 12px);
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 16px;
+            min-width: 180px;
+            opacity: 0;
+            transform: translateY(8px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+        }
+
+        .reset-modal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .reset-modal::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            transform: rotate(45deg);
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .reset-modal p {
+            margin: 0 0 14px;
+            font-size: 0.9rem;
+            color: #374151;
+            text-align: center;
+        }
+
+        .reset-modal-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        .reset-modal-btns button {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+            border: none;
+        }
+
+        .reset-modal-btns .btn-cancel {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+
+        .reset-modal-btns .btn-cancel:hover {
+            background: #e5e7eb;
+        }
+
+        .reset-modal-btns .btn-confirm {
+            background: #ef4444;
+            color: white;
+        }
+
+        .reset-modal-btns .btn-confirm:hover {
+            background: #dc2626;
+        }
+
+        .reset-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: none;
+        }
+
+        .reset-overlay.active {
+            display: block;
+        }
+
         .reset-hint {
             position: absolute;
             top: -35px;
@@ -251,9 +364,33 @@
             .card { scroll-margin-top: 130px; }
             #global-counter {
                 width: 60px; height: 60px;
-                bottom: 20px; right: 15px;
+                bottom: 20px; right: 10px;
             }
             .arabic-text { font-size: 1.5rem; padding: 12px; }
+            
+            /* Modal plus petite et centrée sur mobile */
+            .reset-modal {
+                right: 0px;
+                left: auto;
+                min-width: 160px;
+                bottom: calc(100% + 15px);
+                padding: 12px;
+            }
+            
+            .reset-modal::after {
+                right: 68px;
+                left: auto;
+            }
+            
+            .reset-modal p {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+            
+            .reset-modal-btns button {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
         }
 
         @keyframes pulse {
@@ -621,11 +758,18 @@
 
 </div>
 
+<div class="reset-overlay" id="resetOverlay"></div>
 <div id="global-counter">
-    <div class="long-press-indicator" id="pressIndicator"></div>
+    <button class="reset-btn" id="resetBtn" title="Réinitialiser">R</button>
+    <div class="reset-modal" id="resetModal">
+        <p>Réinitialiser le compteur ?</p>
+        <div class="reset-modal-btns">
+            <button class="btn-cancel" id="cancelReset">Annuler</button>
+            <button class="btn-confirm" id="confirmReset">Effacer</button>
+        </div>
+    </div>
     <span class="count" id="global-count">0</span>
     <span class="label">dhikr</span>
-    <div class="reset-hint">Maintenir 2s pour reset</div>
 </div>
 
 <script>
@@ -659,92 +803,77 @@
         });
     }
 
-    let pressTimer;
-    let isLongPress = false;
-    const longPressDuration = 2000;
+    // COMPTEUR - CORRECTION DOUBLE COMPTE + BOUTON RESET + MODAL CUSTOM
     const counter = document.getElementById('global-counter');
-    const indicator = document.getElementById('pressIndicator');
-    let progress = 0;
-    let animationFrame;
-    let handled = false;
-
-    function startPress(e) {
-        if (e.type === 'mousedown' && e.button !== 0) return;
-
-        handled = false;
-        isLongPress = false;
-        progress = 0;
-        indicator.style.setProperty('--progress', '0%');
-        indicator.classList.add('active');
-
-        const startTime = Date.now();
-
-        function updateProgress() {
-            const elapsed = Date.now() - startTime;
-            progress = Math.min(elapsed / longPressDuration, 1);
-            indicator.style.setProperty('--progress', (progress * 100) + '%');
-
-            if (progress < 1 && pressTimer) {
-                animationFrame = requestAnimationFrame(updateProgress);
-            } else if (progress >= 1) {
-                isLongPress = true;
-                indicator.classList.remove('active');
-                showResetConfirm();
-            }
-        }
-
-        pressTimer = setTimeout(() => {}, longPressDuration);
-        animationFrame = requestAnimationFrame(updateProgress);
-    }
-
-    function endPress(e) {
-        clearTimeout(pressTimer);
-        cancelAnimationFrame(animationFrame);
-        indicator.classList.remove('active');
-        indicator.style.setProperty('--progress', '0%');
-
-        if (!isLongPress && !handled) {
-            handled = true;
-            incrementCounter();
-        }
-        isLongPress = false;
-    }
-
-    function cancelPress() {
-        clearTimeout(pressTimer);
-        cancelAnimationFrame(animationFrame);
-        indicator.classList.remove('active');
-        indicator.style.setProperty('--progress', '0%');
-        isLongPress = false;
-        handled = false;
-    }
+    const resetBtn = document.getElementById('resetBtn');
+    const resetModal = document.getElementById('resetModal');
+    const resetOverlay = document.getElementById('resetOverlay');
+    const cancelReset = document.getElementById('cancelReset');
+    const confirmReset = document.getElementById('confirmReset');
+    let touchFired = false;
 
     function incrementCounter() {
         let count = parseInt(document.getElementById('global-count').textContent);
         count++;
         document.getElementById('global-count').textContent = count;
         localStorage.setItem('global_counter', count);
-
+        
         counter.style.transform = "scale(1.1)";
         setTimeout(() => counter.style.transform = "scale(1)", 100);
     }
 
-    function showResetConfirm() {
-        if (confirm('Réinitialiser le compteur de dhikr ?')) {
-            document.getElementById('global-count').textContent = '0';
-            localStorage.setItem('global_counter', 0);
-
-            counter.style.animation = 'pulse 0.4s ease';
-            setTimeout(() => counter.style.animation = '', 400);
-        }
+    function showResetModal() {
+        resetModal.classList.add('active');
+        resetOverlay.classList.add('active');
     }
 
-    counter.addEventListener('mousedown', startPress);
-    counter.addEventListener('touchstart', startPress, {passive: true});
-    counter.addEventListener('mouseup', endPress);
-    counter.addEventListener('touchend', endPress);
-    counter.addEventListener('mouseleave', cancelPress);
-    counter.addEventListener('contextmenu', e => e.preventDefault());
+    function hideResetModal() {
+        resetModal.classList.remove('active');
+        resetOverlay.classList.remove('active');
+    }
+
+    function doReset() {
+        document.getElementById('global-count').textContent = '0';
+        localStorage.setItem('global_counter', 0);
+        counter.style.animation = 'pulse 0.4s ease';
+        setTimeout(() => counter.style.animation = '', 400);
+        hideResetModal();
+    }
+
+    // Touch events (mobile)
+    counter.addEventListener('touchend', (e) => {
+        if (e.target === resetBtn || e.target.closest('.reset-modal')) return;
+        e.preventDefault();
+        touchFired = true;
+        incrementCounter();
+    });
+
+    // Mouse events (desktop) - ignorés si touch déjà traité
+    counter.addEventListener('click', (e) => {
+        if (e.target === resetBtn || e.target.closest('.reset-modal')) return;
+        if (touchFired) {
+            touchFired = false;
+            return;
+        }
+        incrementCounter();
+    });
+
+    // Bouton reset - ouvre la modale
+    resetBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showResetModal();
+    });
+
+    resetBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showResetModal();
+    });
+
+    // Actions modale
+    cancelReset.addEventListener('click', hideResetModal);
+    confirmReset.addEventListener('click', doReset);
+    resetOverlay.addEventListener('click', hideResetModal);
 
     document.addEventListener('DOMContentLoaded', () => {
         const saved = localStorage.getItem('global_counter');
