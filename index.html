@@ -75,7 +75,7 @@
             font-weight: 300;
         }
 
-        /* NOUVEAU : BADGES DE CONTACT POUR PAYONEER */
+        /* CONTACT BADGES */
         .contact-badges {
             display: flex;
             flex-wrap: wrap;
@@ -271,6 +271,7 @@
 
         .payment-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 15px;
             margin: 20px 0;
         }
@@ -280,6 +281,9 @@
             border: 2px solid #e2e8f0;
             border-radius: 10px;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .payment-btn {
@@ -293,7 +297,12 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: 700;
-            margin-top: 10px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-btn:hover {
+            background-color: #f8fafc;
         }
 
         .btn-whatsapp {
@@ -309,6 +318,11 @@
             font-weight: 700;
             font-size: 1.1em;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s ease;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: scale(1.02);
         }
 
         .highlight-box {
@@ -334,7 +348,7 @@
             margin-top: 20px;
         }
 
-        /* NOUVEAU : PIED DE PAGE BUSINESS POUR PAYONEER */
+        /* PIED DE PAGE BUSINESS */
         .business-footer {
             background-color: #1e293b;
             color: #f8fafc;
@@ -373,7 +387,7 @@
             text-decoration: underline;
         }
 
-        /* COMPTEUR AVEC APPUI LONG (Reste inchangé) */
+        /* COMPTEUR AVEC APPUI LONG */
         #global-counter {
             position: fixed;
             bottom: 25px;
@@ -512,7 +526,6 @@
         <h1>Houssen Mohsinaly</h1>
         <p class="profile-bio">Interprétation authentique des rêves & Accompagnement spirituel éthique</p>
         
-        <!-- BADGES CONTACT POUR VISIBILITÉ PAYONEER -->
         <div class="contact-badges">
             <div class="contact-badge">
                 📧 <a href="mailto:houssen_moshine@yahoo.fr">houssen_moshine@yahoo.fr</a>
@@ -551,6 +564,8 @@
             <strong>Tarif :</strong> <span style="color: var(--primary-blue); font-size: 1.3em; font-weight: bold;">20 Euros</span>
             <div style="font-size: 0.9em; color: #64748b;">Pack complet : 5 rêves interprétés sur 30 jours</div>
             <div style="font-size: 0.85em; color: #94a3b8; margin-top: 5px;">💡 Une excellente valeur : 4€ par rêve interprété</div>
+            
+            <a href="#paiement" class="payment-btn" style="max-width: 200px; margin-top: 20px; display: inline-block;">Procéder au paiement ↓</a>
         </div>
     </div>
 
@@ -583,6 +598,8 @@
             <hr style="border: 0; border-top: 1px solid #e9d5ff; margin: 20px 0;">
             <strong>Tarif :</strong> <span style="color: var(--primary-purple); font-size: 1.3em; font-weight: bold;">45 Euros</span>
             <div style="font-size: 0.9em; color: #6b7280;">Session initiale + Suivi 7 jours</div>
+            
+            <a href="#paiement" class="payment-btn" style="border-color: var(--primary-purple); color: var(--primary-purple); max-width: 200px; margin-top: 20px; display: inline-block;">Procéder au paiement ↓</a>
         </div>
 
         <div class="medical-warning">
@@ -590,7 +607,7 @@
         </div>
     </div>
 
-    <!-- ONGLET INVOCATIONS (Reste inchangé) -->
+    <!-- ONGLET INVOCATIONS -->
     <div id="duas" class="tab-content">
         <div style="text-align: center; margin-bottom: 15px;">
             <h2 style="color: var(--primary-green); margin-bottom: 5px;">Trésors Spirituels</h2>
@@ -632,63 +649,86 @@
         </div>
 
         <div id="cardList">
-            <!-- CARTES INVOCATIONS (J'ai gardé 3 cartes en exemple pour ne pas surcharger la réponse, 
-            VOUS POUVEZ RECOLLER VOS CARTES ORIGINALES ICI) -->
-            
+            <!-- PENSEZ A RECOLLER VOS CARTES INVOCATIONS ICI -->
             <div class="card" id="card-duanoor" data-title="Dua al-Noor (Lumière Divine)" data-keywords="noor lumiere protection fievre maladie">
                 <h3>Dua al-Noor <span class="category-tag">Protection</span></h3>
                 <div class="instruction">7 ou 11 fois sur de l'eau à boire - Spécialement pour la fièvre</div>
             </div>
-            
-            <!-- /VOS CARTES -->
+            <!-- Fin de vos cartes -->
         </div>
     </div>
 
     <!-- PAIEMENT -->
-    <div class="payment-section">
-        <h2 style="text-align: center; color: #1e293b; margin-bottom: 10px;">💳 Paiement</h2>
+    <div id="paiement" class="payment-section">
+        <h2 style="text-align: center; color: #1e293b; margin-bottom: 10px;">💳 Effectuer le paiement</h2>
+        <p style="text-align: center; color: #64748b; font-size: 0.95em; margin-top: 0;">Choisissez votre méthode d'envoi vers mon portefeuille mobile Mvola</p>
 
         <div class="payment-grid">
+            
+            <!-- CARTE WESTERN UNION -->
             <div class="payment-card">
-                <h3>🏛️ Western Union</h3>
-                <p style="font-size: 0.9em;">
-                    <strong>Nom complet :</strong> Houssen Mohsinaly<br>
-                    <strong>Ville :</strong> Antananarivo<br>
-                    <strong>Pays :</strong> Madagascar<br>
-                    <strong>Téléphone :</strong> +261 34 18 547 16<br>
-                    <span style="color: #64748b; font-size: 0.85em;">Conservez le code MTCN</span>
-                </p>
-                <a href="https://www.westernunion.com/fr/fr/send-money-to-madagascar.html" class="payment-btn" target="_blank" rel="noopener">
-                    Transférer →
+                <div>
+                    <h3>🏛️ Western Union</h3>
+                    <p style="font-size: 0.9em;">
+                        <strong>Mode de Réception:</strong> Portefeuille Mobile<br>
+                        <strong>Opérateur :</strong> Mvola<br>
+                        <strong>Numéro :</strong> +261 34 18 547 16<br>
+                        <strong>Nom :</strong> Houssen Mohsinaly<br>
+                        <strong>Pays :</strong> Madagascar
+                    </p>
+                </div>
+                <a href="https://www.westernunion.com/fr/fr/send-money-to-madagascar.html" class="payment-btn" target="_blank" rel="noopener" style="border-color: #ffd700; color: #111; background-color: #fffce6;">
+                    Western Union →
                 </a>
             </div>
 
+            <!-- CARTE TAPTAP SEND -->
             <div class="payment-card">
-                <h3>💸 Taptap Send</h3>
-                <p style="font-size: 0.9em;">
-                    <strong>Nom complet :</strong> Houssen Mohsinaly<br>
-                    <strong>Numéro :</strong> +261 34 18 547 16<br>
-                    <strong>Opérateur :</strong> Mvola (Telma)<br>
-                    <strong>Ville :</strong> Antananarivo<br>
-                    <strong>Pays :</strong> Madagascar<br>
-                    <span style="color: #059669; font-weight: 600;">✅ Recommandé</span>
-                </p>
+                <div>
+                    <h3>💸 Taptap Send</h3>
+                    <p style="font-size: 0.9em;">
+                        <strong>Mode de Réception :</strong> Portefeuille Mobile<br>
+                        <strong>Opérateur :</strong> Mvola (Telma)<br>
+                        <strong>Numéro :</strong> +261 34 18 547 16<br>
+                        <strong>Nom :</strong> Houssen Mohsinaly<br>
+                        <strong>Pays :</strong> Madagascar<br>
+                        <span style="color: #059669; font-weight: 600;">✅ Recommandé</span>
+                    </p>
+                </div>
                 <a href="https://www.taptapsend.com/country-landing-pages/transferts-madagascar" class="payment-btn" target="_blank" rel="noopener" style="border-color: #ff6900; color: #ff6900;">
-                    Envoyer →
+                    TapTap Send →
                 </a>
             </div>
+            
+            <!-- CARTE REMITLY -->
+            <div class="payment-card">
+                <div>
+                    <h3>🌍 Remitly</h3>
+                    <p style="font-size: 0.9em;">
+                        <strong>Mode de Réception :</strong> Portefeuille Mobile<br>
+                        <strong>Opérateur :</strong> Mvola<br>
+                        <strong>Numéro :</strong> +261 34 18 547 16<br>
+                        <strong>Nom :</strong> Houssen Mohsinaly<br>
+                        <strong>Pays :</strong> Madagascar
+                    </p>
+                </div>
+                <a href="https://www.remitly.com/fr/fr/madagascar" class="payment-btn" target="_blank" rel="noopener" style="border-color: #0073e6; color: #0073e6;">
+                    Remitly →
+                </a>
+            </div>
+
         </div>
 
-        <div class="whatsapp-section" style="margin-top:20px;">
+        <div class="whatsapp-section" style="margin-top:20px; text-align: center;">
             <h3 style="margin-top: 0; color: #166534;">✅ Étape finale</h3>
-            <p>Envoyez la preuve de paiement (MTCN ou capture) pour confirmer.</p>
-            <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20je%20confirme%20mon%20paiement..." class="btn-whatsapp">
-                WhatsApp
+            <p>Envoyez la preuve de paiement (capture d'écran ou reçu) pour confirmer le début de votre accompagnement.</p>
+            <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20je%20confirme%20mon%20paiement%20avec%20la%20preuve%20ci-jointe." class="btn-whatsapp">
+                Confirmer sur WhatsApp
             </a>
         </div>
     </div>
 
-    <!-- NOUVEAU FOOTER BUSINESS POUR VALIDATION PAYONEER -->
+    <!-- FOOTER BUSINESS -->
     <div class="business-footer">
         <h3>Informations Professionnelles</h3>
         <div class="business-details">
