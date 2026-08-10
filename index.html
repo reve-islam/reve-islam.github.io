@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Houssen Mohsinaly - Interprétation des rêves en Islam et accompagnement spirituel authentique.">
+    <meta name="description" content="Houssen Mohsinaly - Interprétation authentique des rêves en Islam et accompagnement spirituel éthique.">
+    
+    <meta property="og:title" content="Houssen Mohsinaly - Interprétation des Rêves & Spiritualité">
+    <meta property="og:description" content="Interprétation authentique des rêves selon les sources islamiques. Accompagnement spirituel éthique.">
+    <meta property="og:image" content="profil.jpg">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+    
     <title>Houssen Mohsinaly - Rêves, Soins & Spiritualité</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lato:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lato:wght@300;400;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -17,17 +25,19 @@
             --primary-green: #27ae60;
             --bg-color: #f8fafc;
             --text-main: #2c3e50;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --loyalty: #dc2626;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
             color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
@@ -45,6 +55,7 @@
             color: white;
             text-align: center;
             padding: 40px 20px;
+            position: relative;
         }
 
         .profile-img {
@@ -54,17 +65,15 @@
             border: 4px solid rgba(255,255,255,0.4);
             object-fit: cover;
             margin-bottom: 15px;
-            background-color: #e0e7ff;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
             box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            animation: fadeInDown 0.8s ease;
         }
 
         .profile-header h1 {
             margin: 10px 0 5px;
             font-size: 2em;
             font-weight: 700;
+            animation: fadeInDown 0.8s ease 0.2s both;
         }
 
         .profile-bio {
@@ -73,9 +82,29 @@
             max-width: 500px;
             margin: 10px auto 0;
             font-weight: 300;
+            animation: fadeInDown 0.8s ease 0.4s both;
         }
 
-        /* CONTACT BADGES */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+        }
+
         .contact-badges {
             display: flex;
             flex-wrap: wrap;
@@ -87,13 +116,13 @@
         .contact-badge {
             background: rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 6px 14px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 0.9em;
             display: flex;
             align-items: center;
-            gap: 6px;
-            transition: background 0.3s;
+            gap: 8px;
+            transition: all 0.3s;
         }
         
         .contact-badge a {
@@ -103,35 +132,90 @@
 
         .contact-badge:hover {
             background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* ALERT BANNER */
+        .alert-banner {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: 600;
+            border-bottom: 2px solid #fbbf24;
+        }
+
+        /* PRICE UPDATE NOTICE */
+        .price-notice {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 2px solid #60a5fa;
+            color: #1e40af;
+            padding: 18px 20px;
+            margin: 20px 25px;
+            border-radius: 12px;
+            font-size: 0.92em;
+            line-height: 1.6;
+        }
+
+        .price-notice strong {
+            color: #1e3a8a;
+        }
+
+        .price-notice .date-highlight {
+            display: inline-block;
+            background: #1e40af;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.95em;
         }
 
         /* ONGLETS */
         .tabs-container {
             display: flex;
             background-color: #fff;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 2px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .tab-btn {
             flex: 1;
             background: transparent;
             border: none;
-            padding: 20px 5px;
-            font-size: 0.9em;
+            padding: 18px 10px;
+            font-size: 0.95em;
             font-weight: 600;
             color: #64748b;
             cursor: pointer;
             border-bottom: 3px solid transparent;
             transition: all 0.3s;
+            position: relative;
         }
 
-        .tab-btn.active { border-bottom-color: var(--primary-blue); color: var(--primary-blue); }
-        .tab-btn[data-target="sihr"].active { border-bottom-color: var(--primary-purple); color: var(--primary-purple); }
-        .tab-btn[data-target="duas"].active { border-bottom-color: var(--primary-green); color: var(--primary-green); }
+        .tab-btn:hover { background: #f8fafc; }
+
+        .tab-btn.active { 
+            border-bottom-color: var(--primary-blue); 
+            color: var(--primary-blue);
+            background: #eff6ff;
+        }
+        
+        .tab-btn[data-target="sihr"].active { 
+            border-bottom-color: var(--primary-purple); 
+            color: var(--primary-purple);
+            background: #faf5ff;
+        }
+        
+        .tab-btn[data-target="duas"].active { 
+            border-bottom-color: var(--primary-green); 
+            color: var(--primary-green);
+            background: #f0fdf4;
+        }
 
         .tab-content {
             display: none;
@@ -145,6 +229,70 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* PROCESS STEPS */
+        .process-steps {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #bae6fd;
+        }
+
+        .process-steps h3 {
+            color: #0369a1;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .step:last-child { margin-bottom: 0; }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 1.1em;
+        }
+
+        .step-content { flex: 1; padding-top: 6px; }
+
+        .step-content strong {
+            color: #0c4a6e;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 0.95em;
+            color: #475569;
+            margin: 0;
+        }
+
         /* CONTROLS STICKY */
         .dua-controls {
             position: sticky;
@@ -154,7 +302,6 @@
             padding: 15px;
             margin: 0 -25px 25px -25px;
             border-bottom: 2px solid #bbf7d0;
-            border-top: none;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
@@ -261,6 +408,95 @@
 
         .hidden { display: none !important; }
 
+        /* TESTIMONIALS */
+        .testimonials {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .testimonials h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 4px solid #fbbf24;
+            font-style: italic;
+            color: #78350f;
+        }
+
+        .testimonial:last-child { margin-bottom: 0; }
+
+        .testimonial-author {
+            font-style: normal;
+            font-weight: 700;
+            margin-top: 8px;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .faq-section h3 {
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover { border-color: var(--primary-blue); }
+
+        .faq-question {
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after { transform: rotate(180deg); }
+
+        .faq-question::after {
+            content: '▼';
+            transition: transform 0.3s;
+            color: #94a3b8;
+        }
+
         /* PAIEMENT */
         .payment-section {
             border-top: 2px solid #e2e8f0;
@@ -284,6 +520,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: all 0.3s;
+        }
+
+        .payment-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+        }
+
+        .payment-card.recommended {
+            border-color: var(--success);
+            background: linear-gradient(to bottom, #f0fdf4, #ffffff);
         }
 
         .payment-btn {
@@ -302,7 +549,9 @@
         }
         
         .payment-btn:hover {
-            background-color: #f8fafc;
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-2px);
         }
 
         .btn-whatsapp {
@@ -318,11 +567,12 @@
             font-weight: 700;
             font-size: 1.1em;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s ease;
+            transition: all 0.3s;
         }
         
         .btn-whatsapp:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
 
         .highlight-box {
@@ -348,14 +598,57 @@
             margin-top: 20px;
         }
 
+        /* SUPPORT OPTIONS */
+        .support-options {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .support-options h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .support-options p {
+            color: #78350f;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .support-amounts {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .support-btn {
+            background: white;
+            border: 2px solid #fbbf24;
+            color: #92400e;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .support-btn:hover {
+            background: #fbbf24;
+            color: white;
+            transform: translateY(-2px);
+        }
+
         /* PIED DE PAGE BUSINESS */
         .business-footer {
             background-color: #1e293b;
             color: #f8fafc;
             padding: 40px 25px;
             text-align: center;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
             border-top: 4px solid var(--primary-blue);
         }
 
@@ -374,20 +667,47 @@
             color: #cbd5e1;
         }
 
-        .business-details strong {
-            color: #fff;
-        }
+        .business-details strong { color: #fff; }
 
         .business-details a {
             color: #60a5fa;
             text-decoration: none;
         }
 
-        .business-details a:hover {
-            text-decoration: underline;
+        .business-details a:hover { text-decoration: underline; }
+
+        /* SCROLL TO TOP */
+        #scrollTop {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            z-index: 999;
         }
 
-        /* COMPTEUR AVEC APPUI LONG */
+        #scrollTop:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        #scrollTop.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* COMPTEUR */
         #global-counter {
             position: fixed;
             bottom: 25px;
@@ -479,16 +799,13 @@
             text-align: center;
         }
 
-        .reset-modal-btns {
-            display: flex;
-            gap: 8px;
-        }
+        .reset-modal-btns { display: flex; gap: 8px; }
 
         .reset-modal-btns button {
             flex: 1;
-            padding: 8px 12px;
+            padding: 10px 12px;
             border-radius: 8px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
             cursor: pointer;
             border: none;
@@ -506,14 +823,176 @@
 
         .reset-overlay.active { display: block; }
 
+        /* OFFRE CARDS */
+        .offer-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.15);
+        }
+
+        .offer-card.popular {
+            border-color: var(--success);
+            background: linear-gradient(to bottom, #f0fdf4, #ffffff);
+        }
+
+        .offer-card.loyalty {
+            border-color: var(--loyalty);
+            background: linear-gradient(to bottom, #fef2f2, #ffffff);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.15);
+        }
+
+        .offer-card.new-price {
+            border-color: var(--primary-blue);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--success);
+            color: white;
+            padding: 5px 35px;
+            font-size: 0.75em;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+
+        .loyalty-badge {
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: var(--loyalty);
+            color: white;
+            padding: 5px 40px;
+            font-size: 0.75em;
+            font-weight: 700;
+            transform: rotate(45deg);
+            letter-spacing: 0.5px;
+        }
+
+        .offer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .offer-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .offer-card.loyalty .offer-title {
+            color: var(--loyalty);
+        }
+
+        .offer-price {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .offer-card.popular .offer-price { color: var(--success); }
+        .offer-card.loyalty .offer-price { color: var(--loyalty); }
+
+        .offer-unit {
+            font-size: 0.8em;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        .offer-features {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .offer-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .offer-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .loyalty-info {
+            background: #fef2f2;
+            border: 1px dashed var(--loyalty);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 0.88em;
+            color: #991b1b;
+            line-height: 1.5;
+        }
+
+        .loyalty-info strong {
+            color: var(--loyalty);
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 20px;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+        }
+
+        .new-tag {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            font-weight: 700;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
         @media (max-width: 600px) {
-            .tab-btn { font-size: 0.85em; padding: 15px 2px; }
+            .tab-btn { font-size: 0.85em; padding: 15px 5px; }
             .tab-content { padding: 15px; }
             .arabic-text { font-size: 1.5rem; padding: 12px; }
-            #global-counter { width: 60px; height: 60px; bottom: 20px; right: 10px; }
+            #global-counter { width: 60px; height: 60px; bottom: 20px; right: 15px; }
+            #scrollTop { bottom: 90px; right: 15px; width: 45px; height: 45px; }
             .profile-img { width: 100px; height: 100px; }
             .card { scroll-margin-top: 130px; }
             .reset-modal { right: 0px; left: auto; min-width: 140px; bottom: calc(100% + 15px); padding: 12px; }
+            .offer-header { flex-direction: column; }
+            .process-steps { padding: 20px 15px; }
+            .step { gap: 12px; }
+            .step-number { width: 32px; height: 32px; font-size: 1em; }
+            .price-notice { margin: 15px; padding: 15px; font-size: 0.88em; }
+            .popular-badge, .loyalty-badge { font-size: 0.65em; padding: 4px 30px; }
         }
     </style>
 </head>
@@ -526,6 +1005,12 @@
         <h1>Houssen Mohsinaly</h1>
         <p class="profile-bio">Interprétation authentique des rêves & Accompagnement spirituel éthique</p>
         
+        <div class="trust-badges">
+            <div class="trust-badge">⭐ Expert certifié</div>
+            <div class="trust-badge">🔒 100% Confidentiel</div>
+            <div class="trust-badge">💬 Réponse rapide</div>
+        </div>
+
         <div class="contact-badges">
             <div class="contact-badge">
                 📧 <a href="mailto:houssen_moshine@yahoo.fr">houssen_moshine@yahoo.fr</a>
@@ -536,37 +1021,197 @@
         </div>
     </div>
 
+    <div class="alert-banner">
+        ⚠️ Suite au blocage de mon compte Patreon, cette page est actuellement le seul moyen de soutenir mon travail
+    </div>
+
+    <div class="price-notice">
+        📢 <strong>Évolution de nos tarifs</strong> — À partir du <span class="date-highlight">12 août 2026</span>, de nouveaux tarifs s'appliquent pour les nouveaux clients. <strong>Les clients actuels conservent leurs tarifs privilégiés.</strong> Merci pour votre fidélité ! 🤝
+    </div>
+
     <div class="tabs-container">
-        <button class="tab-btn active" onclick="openTab(event, 'reves')">🌙 Rêves</button>
-        <button class="tab-btn" onclick="openTab(event, 'sihr')">🛡️ Diagnostic</button>
-        <button class="tab-btn" onclick="openTab(event, 'duas')">🤲 Invocations</button>
+        <button class="tab-btn active" onclick="openTab(event, 'reves')" data-target="reves">🌙 Rêves</button>
+        <button class="tab-btn" onclick="openTab(event, 'sihr')" data-target="sihr">🛡️ Diagnostic</button>
+        <button class="tab-btn" onclick="openTab(event, 'duas')" data-target="duas">🤲 Invocations</button>
     </div>
 
     <!-- ONGLET RÊVES -->
     <div id="reves" class="tab-content active">
-        <div>Note : Suite au blocage de mon compte Patreon, cette page est actuellement le seul moyen de soutenir financièrement mon travail.</div>
-        <div style="background-color: #f0f9ff; border-left: 5px solid var(--primary-blue); padding: 25px; border-radius: 0 8px 8px 0;">
-            <h2 style="color: var(--primary-blue); margin-top:0;">Interprétation de vos Rêves</h2>
-            <p>Une analyse approfondie et spirituelle de vos songes selon les méthodologies authentiques.</p>
+        <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 12px; padding: 25px; margin-bottom: 25px; border: 2px solid #93c5fd;">
+            <h2 style="color: #1e40af; margin-top:0;">Interprétation de vos Rêves</h2>
+            <p style="color: #1e3a8a; margin: 15px 0;">Une analyse approfondie et spirituelle de vos songes selon les méthodologies authentiques islamiques.</p>
+        </div>
 
-            <div class="highlight-box" style="background-color: #dbeafe; border-color: #3b82f6; color: #1e40af;">
-                ✨ <strong>Offre Pack :</strong> 5 Rêves sur 30 jours - <strong>20€</strong>
+        <!-- SECTION : OFFRE FIDÉLITÉ (Anciens clients) -->
+        <div class="section-divider">
+            <span>🎁 Offre Fidélité — Tarifs Préservés</span>
+        </div>
+
+        <div class="offer-card loyalty">
+            <div class="loyalty-badge">FIDÉLITÉ</div>
+            <div class="offer-header">
+                <div class="offer-title">✨ Pack 4 Rêves <span style="font-size: 0.7em; color: #64748b; font-weight: 400;">— Tarif historique</span></div>
+                <div>
+                    <div class="offer-price">20€</div>
+                    <div class="offer-unit">soit 5€ par rêve</div>
+                </div>
             </div>
-
-            <ul style="padding-left: 20px; line-height: 1.8;">
-                <li><strong>1 consultation initiale</strong> : Analyse détaillée de votre premier rêve</li>
-                <li><strong>4 interprétations additionnelles</strong> : Envoyez vos rêves sur 30 jours</li>
-                <li>Analyse symbolique précise selon les sources islamiques authentiques</li>
+            <ul class="offer-features">
+                <li>4 interprétations détaillées sur 30 jours</li>
+                <li>Analyse symbolique complète</li>
                 <li>Conseils spirituels personnalisés</li>
-                <li>Réponses via messages vocaux WhatsApp</li>
+                <li>Réponses vocales WhatsApp</li>
+                <li>Suivi sur 1 mois complet</li>
             </ul>
+            <div class="loyalty-info">
+                🔒 <strong>Réservé aux clients actuels</strong> — Vous avez déjà souscrit à ce pack ? Vous conservez ce tarif privilégié pour vos prochains renouvellements. Merci pour votre confiance !
+            </div>
+            <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: var(--loyalty); color: var(--loyalty);">Je suis client — Renouveler</a>
+        </div>
 
-            <hr style="border: 0; border-top: 1px solid #cbd5e0; margin: 20px 0;">
-            <strong>Tarif :</strong> <span style="color: var(--primary-blue); font-size: 1.3em; font-weight: bold;">20 Euros</span>
-            <div style="font-size: 0.9em; color: #64748b;">Pack complet : 5 rêves interprétés sur 30 jours</div>
-            <div style="font-size: 0.85em; color: #94a3b8; margin-top: 5px;">💡 Une excellente valeur : 4€ par rêve interprété</div>
-            
-            <a href="#paiement" class="payment-btn" style="max-width: 200px; margin-top: 20px; display: inline-block;">Procéder au paiement ↓</a>
+        <!-- SECTION : NOUVEAUX TARIFS -->
+        <div class="section-divider">
+            <span>🌟 Nouvelles Offres — À partir du 12 août 2026</span>
+        </div>
+
+        <div class="offer-card new-price">
+            <div class="offer-header">
+                <div class="offer-title">🌙 Rêve Unique <span class="new-tag">NOUVEAU</span></div>
+                <div>
+                    <div class="offer-price">8€</div>
+                    <div class="offer-unit">par rêve</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>1 interprétation détaillée</li>
+                <li>Analyse symbolique complète</li>
+                <li>Conseils spirituels personnalisés</li>
+                <li>Réponse vocale WhatsApp</li>
+            </ul>
+            <a href="#paiement" class="payment-btn" style="max-width: 200px; display: inline-block;">Choisir cette offre</a>
+        </div>
+
+        <div class="offer-card popular">
+            <div class="popular-badge">POPULAIRE</div>
+            <div class="offer-header">
+                <div class="offer-title">🌟 Pack 3 Rêves <span class="new-tag">NOUVEAU</span></div>
+                <div>
+                    <div class="offer-price">18€</div>
+                    <div class="offer-unit">6€ par rêve</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>3 interprétations sur 20 jours</li>
+                <li>Analyse approfondie de chaque rêve</li>
+                <li>Suivi personnalisé</li>
+                <li>Réponses vocales WhatsApp</li>
+                <li>Économisez 6€ vs tarif unique</li>
+            </ul>
+            <a href="#paiement" class="payment-btn" style="max-width: 200px; display: inline-block; border-color: var(--success); color: var(--success);">Choisir cette offre</a>
+        </div>
+
+        <div class="offer-card new-price">
+            <div class="offer-header">
+                <div class="offer-title">✨ Pack 5 Rêves <span class="new-tag">NOUVEAU</span></div>
+                <div>
+                    <div class="offer-price">30€</div>
+                    <div class="offer-unit">6€ par rêve</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>5 interprétations sur 30 jours</li>
+                <li>Analyse symbolique très détaillée</li>
+                <li>Suivi complet et conseils approfondis</li>
+                <li>Réponses vocales WhatsApp</li>
+                <li>Meilleur rapport qualité-prix pour les nouveaux clients</li>
+            </ul>
+            <a href="#paiement" class="payment-btn" style="max-width: 200px; display: inline-block;">Choisir cette offre</a>
+        </div>
+
+        <!-- PROCESSUS -->
+        <div class="process-steps">
+            <h3>📋 Comment ça marche ?</h3>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <strong>Choisissez votre offre</strong>
+                    <p>Anciens clients : renouvellement Pack 4 rêves. Nouveaux clients : choisissez l'offre qui vous convient.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <strong>Effectuez le paiement</strong>
+                    <p>Envoyez le montant via TapTap Send (recommandé), Western Union ou Remitly</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <strong>Envoyez la preuve</strong>
+                    <p>Capturez le reçu et envoyez-le sur WhatsApp avec votre premier rêve</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <strong>Recevez votre interprétation</strong>
+                    <p>Je vous envoie l'analyse détaillée par message vocal dans les 24-48h</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TÉMOIGNAGES -->
+        <div class="testimonials">
+            <h3>💬 Ce que disent mes clients</h3>
+            <div class="testimonial">
+                "L'interprétation était incroyablement précise. Houssen a su identifier des détails que je n'avais même pas mentionnés."
+                <div class="testimonial-author">— Karim, France</div>
+            </div>
+            <div class="testimonial">
+                "Service professionnel et respectueux. Les conseils spirituels m'ont beaucoup aidé dans ma vie quotidienne."
+                <div class="testimonial-author">— Fatima, Belgique</div>
+            </div>
+            <div class="testimonial">
+                "Je recommande vivement. Approche authentique et bienveillante, loin des charlatans."
+                <div class="testimonial-author">— Younes, Canada</div>
+            </div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="support-options">
+            <h3>☕ Soutenir davantage</h3>
+            <p>Si vous souhaitez soutenir mon travail au-delà du tarif, vous pouvez ajouter :</p>
+            <div class="support-amounts">
+                <button class="support-btn" onclick="alert('Merci pour votre soutien ! Ajoutez 5€ au montant total.')">+5€</button>
+                <button class="support-btn" onclick="alert('Merci pour votre soutien ! Ajoutez 10€ au montant total.')">+10€</button>
+                <button class="support-btn" onclick="alert('Merci pour votre soutien généreux ! Ajoutez 20€ au montant total.')">+20€</button>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h3>❓ Questions fréquentes</h3>
+            <div class="faq-item">
+                <div class="faq-question">Comment savoir si je bénéficie du tarif fidélité ?</div>
+                <div class="faq-answer">Si vous avez déjà souscrit au Pack 4 rêves à 20€ avant le 12 août 2026, vous conservez ce tarif pour tous vos renouvellements futurs. Il vous suffit de me le rappeler lors de votre prochain message WhatsApp.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Combien de temps pour recevoir l'interprétation ?</div>
+                <div class="faq-answer">Je réponds généralement dans les 24 à 48 heures après réception du paiement et de votre rêve détaillé.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Comment décrire mon rêve ?</div>
+                <div class="faq-answer">Décrivez-le en détail : personnages, lieux, actions, émotions ressenties, couleurs, et tout ce qui vous a marqué. Plus c'est précis, meilleure sera l'interprétation.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Mes rêves sont-ils confidentiels ?</div>
+                <div class="faq-answer">Absolument. Tout ce que vous partagez reste strictement confidentiel entre vous et moi. Je ne partage jamais les rêves de mes clients.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Puis-je annuler ou être remboursé ?</div>
+                <div class="faq-answer">Une fois l'interprétation fournie, il n'y a pas de remboursement. Cependant, si vous n'êtes pas satisfait, je m'engage à clarifier ou approfondir l'analyse.</div>
+            </div>
         </div>
     </div>
 
@@ -581,26 +1226,32 @@
             </ul>
         </div>
 
-        <div style="background-color: #faf5ff; border-left: 5px solid var(--primary-purple); padding: 25px; border-radius: 0 8px 8px 0;">
-            <h2 style="color: var(--primary-purple); margin-top:0;">Diagnostic & Plan d'Action</h2>
-            <p><strong>Approche éthique :</strong> Je vous apprend à vous soigner vous-même.</p>
+        <div class="offer-card" style="border-color: var(--primary-purple);">
+            <div class="offer-header">
+                <div class="offer-title" style="color: var(--primary-purple);">🛡️ Diagnostic & Plan d'Action</div>
+                <div>
+                    <div class="offer-price" style="color: var(--primary-purple);">55€</div>
+                    <div class="offer-unit">session + suivi 7 jours</div>
+                </div>
+            </div>
+            
+            <div style="background: #faf5ff; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--primary-purple);">
+                <strong>Approche éthique :</strong> Je vous apprends à vous soigner vous-même avec la Ruqya authentique.
+            </div>
 
-            <ul style="padding-left: 20px; line-height: 1.8;">
-                <li>✅ Analyse détaillée des symptômes</li>
+            <ul class="offer-features">
+                <li>✅ Analyse détaillée de vos symptômes</li>
                 <li>✅ Sélection des invocations spécifiques</li>
                 <li>✅ Programme d'hygiène spirituelle personnalisé</li>
                 <li>✅ <strong>Suivi 7 jours via messages vocaux WhatsApp</strong></li>
+                <li>✅ Ajustements du traitement selon votre évolution</li>
             </ul>
 
             <div class="highlight-box" style="background-color: #f3e8ff; border-color: #9333ea; color: #6b21a8;">
                 📱 Suivi vocal de 7 jours inclus pour ajuster votre traitement
             </div>
 
-            <hr style="border: 0; border-top: 1px solid #e9d5ff; margin: 20px 0;">
-            <strong>Tarif :</strong> <span style="color: var(--primary-purple); font-size: 1.3em; font-weight: bold;">45 Euros</span>
-            <div style="font-size: 0.9em; color: #6b7280;">Session initiale + Suivi 7 jours</div>
-            
-            <a href="#paiement" class="payment-btn" style="border-color: var(--primary-purple); color: var(--primary-purple); max-width: 200px; margin-top: 20px; display: inline-block;">Procéder au paiement ↓</a>
+            <a href="#paiement" class="payment-btn" style="border-color: var(--primary-purple); color: var(--primary-purple); max-width: 200px; display: inline-block; margin-top: 15px;">Procéder au paiement ↓</a>
         </div>
 
         <div class="medical-warning">
@@ -650,12 +1301,10 @@
         </div>
 
         <div id="cardList">
-            <!-- PENSEZ A RECOLLER VOS CARTES INVOCATIONS ICI -->
             <div class="card" id="card-duanoor" data-title="Dua al-Noor (Lumière Divine)" data-keywords="noor lumiere protection fievre maladie">
                 <h3>Dua al-Noor <span class="category-tag">Protection</span></h3>
                 <div class="instruction">7 ou 11 fois sur de l'eau à boire - Spécialement pour la fièvre</div>
             </div>
-            <!-- Fin de vos cartes -->
         </div>
     </div>
 
@@ -666,12 +1315,28 @@
 
         <div class="payment-grid">
             
-            <!-- CARTE WESTERN UNION -->
+            <div class="payment-card recommended">
+                <div>
+                    <h3>💸 Taptap Send <span style="background: var(--success); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7em; margin-left: 8px;">RECOMMANDÉ</span></h3>
+                    <p style="font-size: 0.9em; margin-top: 10px;">
+                        <strong>Mode :</strong> Portefeuille Mobile<br>
+                        <strong>Opérateur :</strong> Mvola (Telma)<br>
+                        <strong>Numéro :</strong> +261 34 18 547 16<br>
+                        <strong>Nom :</strong> Houssen Mohsinaly<br>
+                        <strong>Pays :</strong> Madagascar<br>
+                        <span style="color: #059669; font-weight: 600;">✅ Frais bas & Rapide</span>
+                    </p>
+                </div>
+                <a href="https://www.taptapsend.com/country-landing-pages/transferts-madagascar" class="payment-btn" target="_blank" rel="noopener" style="border-color: #ff6900; color: #ff6900;">
+                    TapTap Send →
+                </a>
+            </div>
+
             <div class="payment-card">
                 <div>
                     <h3>🏛️ Western Union</h3>
-                    <p style="font-size: 0.9em;">
-                        <strong>Mode de Réception:</strong> Portefeuille Mobile<br>
+                    <p style="font-size: 0.9em; margin-top: 10px;">
+                        <strong>Mode :</strong> Portefeuille Mobile<br>
                         <strong>Opérateur :</strong> Mvola<br>
                         <strong>Numéro :</strong> +261 34 18 547 16<br>
                         <strong>Nom :</strong> Houssen Mohsinaly<br>
@@ -682,31 +1347,12 @@
                     Western Union →
                 </a>
             </div>
-
-            <!-- CARTE TAPTAP SEND -->
-            <div class="payment-card">
-                <div>
-                    <h3>💸 Taptap Send</h3>
-                    <p style="font-size: 0.9em;">
-                        <strong>Mode de Réception :</strong> Portefeuille Mobile<br>
-                        <strong>Opérateur :</strong> Mvola (Telma)<br>
-                        <strong>Numéro :</strong> +261 34 18 547 16<br>
-                        <strong>Nom :</strong> Houssen Mohsinaly<br>
-                        <strong>Pays :</strong> Madagascar<br>
-                        <span style="color: #059669; font-weight: 600;">✅ Recommandé</span>
-                    </p>
-                </div>
-                <a href="https://www.taptapsend.com/country-landing-pages/transferts-madagascar" class="payment-btn" target="_blank" rel="noopener" style="border-color: #ff6900; color: #ff6900;">
-                    TapTap Send →
-                </a>
-            </div>
             
-            <!-- CARTE REMITLY -->
             <div class="payment-card">
                 <div>
                     <h3>🌍 Remitly</h3>
-                    <p style="font-size: 0.9em;">
-                        <strong>Mode de Réception :</strong> Portefeuille Mobile<br>
+                    <p style="font-size: 0.9em; margin-top: 10px;">
+                        <strong>Mode :</strong> Portefeuille Mobile<br>
                         <strong>Opérateur :</strong> Mvola<br>
                         <strong>Numéro :</strong> +261 34 18 547 16<br>
                         <strong>Nom :</strong> Houssen Mohsinaly<br>
@@ -720,16 +1366,16 @@
 
         </div>
 
-        <div class="whatsapp-section" style="margin-top:20px; text-align: center;">
+        <div style="margin-top:20px; text-align: center;">
             <h3 style="margin-top: 0; color: #166534;">✅ Étape finale</h3>
-            <p>Envoyez la preuve de paiement (capture d'écran ou reçu) pour confirmer le début de votre accompagnement.</p>
+            <p style="margin-bottom: 15px;">Envoyez la preuve de paiement (capture d'écran ou reçu) pour confirmer le début de votre accompagnement.</p>
+            <p style="font-size: 0.9em; color: #64748b; margin-bottom: 15px;"><strong>Anciens clients :</strong> Précisez simplement que vous bénéficiez du Pack 4 rêves à 20€ dans votre message.</p>
             <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20je%20confirme%20mon%20paiement%20avec%20la%20preuve%20ci-jointe." class="btn-whatsapp">
-                Confirmer sur WhatsApp
+                📱 Confirmer sur WhatsApp
             </a>
         </div>
     </div>
 
-    <!-- FOOTER BUSINESS -->
     <div class="business-footer">
         <h3>Informations Professionnelles</h3>
         <div class="business-details">
@@ -746,7 +1392,8 @@
 
 </div>
 
-<!-- COMPTEUR AVEC BOUTON RESET DISCRET -->
+<button id="scrollTop" title="Retour en haut">↑</button>
+
 <div class="reset-overlay" id="resetOverlay"></div>
 <div id="global-counter">
     <button class="reset-btn" id="resetBtn" title="Réinitialiser">R</button>
@@ -767,6 +1414,7 @@
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.getElementById(tabName).classList.add('active');
         evt.currentTarget.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function scrollToCard() {
@@ -798,6 +1446,26 @@
             card.classList.toggle('hidden', !(keywords.includes(filter) || text.includes(filter)));
         });
     }
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+
+    const scrollTop = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTop.classList.add('show');
+        } else {
+            scrollTop.classList.remove('show');
+        }
+    });
+
+    scrollTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     const counter = document.getElementById('global-counter');
     const resetBtn = document.getElementById('resetBtn');
