@@ -135,7 +135,6 @@
             transform: translateY(-2px);
         }
 
-        /* ALERT BANNER */
         .alert-banner {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             color: #92400e;
@@ -146,7 +145,6 @@
             border-bottom: 2px solid #fbbf24;
         }
 
-        /* PRICE UPDATE NOTICE */
         .price-notice {
             background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
             border: 2px solid #60a5fa;
@@ -158,9 +156,7 @@
             line-height: 1.6;
         }
 
-        .price-notice strong {
-            color: #1e3a8a;
-        }
+        .price-notice strong { color: #1e3a8a; }
 
         .price-notice .date-highlight {
             display: inline-block;
@@ -172,7 +168,6 @@
             font-size: 0.95em;
         }
 
-        /* ONGLETS */
         .tabs-container {
             display: flex;
             background-color: #fff;
@@ -239,7 +234,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* PROCESS STEPS */
         .process-steps {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             border-radius: 12px;
@@ -293,7 +287,6 @@
             margin: 0;
         }
 
-        /* CONTROLS STICKY */
         .dua-controls {
             position: sticky;
             top: 64px;
@@ -327,7 +320,6 @@
 
         .dua-controls input { margin-bottom: 0; }
 
-        /* CARDS */
         .card {
             background-color: #fff;
             border: 1px solid #e2e8f0;
@@ -408,7 +400,6 @@
 
         .hidden { display: none !important; }
 
-        /* TESTIMONIALS */
         .testimonials {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border-radius: 12px;
@@ -442,7 +433,6 @@
             color: #92400e;
         }
 
-        /* FAQ */
         .faq-section {
             background: #f8fafc;
             border-radius: 12px;
@@ -497,7 +487,6 @@
             color: #94a3b8;
         }
 
-        /* PAIEMENT */
         .payment-section {
             border-top: 2px solid #e2e8f0;
             margin-top: 30px;
@@ -598,7 +587,6 @@
             margin-top: 20px;
         }
 
-        /* SUPPORT OPTIONS */
         .support-options {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border-radius: 12px;
@@ -643,7 +631,6 @@
             transform: translateY(-2px);
         }
 
-        /* PIED DE PAGE BUSINESS */
         .business-footer {
             background-color: #1e293b;
             color: #f8fafc;
@@ -676,7 +663,6 @@
 
         .business-details a:hover { text-decoration: underline; }
 
-        /* SCROLL TO TOP */
         #scrollTop {
             position: fixed;
             bottom: 100px;
@@ -707,7 +693,6 @@
             animation: fadeIn 0.3s ease;
         }
 
-        /* COMPTEUR */
         #global-counter {
             position: fixed;
             bottom: 25px;
@@ -715,7 +700,7 @@
             width: 65px;
             height: 65px;
             border-radius: 50%;
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -729,6 +714,7 @@
             transition: transform 0.2s;
         }
 
+        #global-counter.visible { display: flex; }
         #global-counter:hover { transform: scale(1.05); }
         #global-counter:active { transform: scale(0.95); }
 
@@ -780,13 +766,7 @@
             z-index: 1001;
         }
 
-        .reset-modal.show {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
-
-        .reset-modal.active {
+        .reset-modal.show, .reset-modal.active {
             opacity: 1;
             transform: translateY(0) scale(1);
             pointer-events: auto;
@@ -823,7 +803,6 @@
 
         .reset-overlay.active { display: block; }
 
-        /* OFFRE CARDS */
         .offer-card {
             background: white;
             border: 2px solid #e2e8f0;
@@ -851,15 +830,11 @@
             box-shadow: 0 4px 15px rgba(220, 38, 38, 0.15);
         }
 
-        .offer-card.new-price {
-            border-color: var(--primary-blue);
-        }
+        .offer-card.new-price { border-color: var(--primary-blue); }
 
-        .popular-badge {
+        .popular-badge, .loyalty-badge {
             position: absolute;
             top: 15px;
-            right: -30px;
-            background: var(--success);
             color: white;
             padding: 5px 35px;
             font-size: 0.75em;
@@ -867,16 +842,14 @@
             transform: rotate(45deg);
         }
 
+        .popular-badge {
+            right: -30px;
+            background: var(--success);
+        }
+
         .loyalty-badge {
-            position: absolute;
-            top: 15px;
             right: -35px;
             background: var(--loyalty);
-            color: white;
-            padding: 5px 40px;
-            font-size: 0.75em;
-            font-weight: 700;
-            transform: rotate(45deg);
             letter-spacing: 0.5px;
         }
 
@@ -895,9 +868,7 @@
             color: #1e293b;
         }
 
-        .offer-card.loyalty .offer-title {
-            color: var(--loyalty);
-        }
+        .offer-card.loyalty .offer-title { color: var(--loyalty); }
 
         .offer-price {
             font-size: 1.8em;
@@ -944,9 +915,7 @@
             line-height: 1.5;
         }
 
-        .loyalty-info strong {
-            color: var(--loyalty);
-        }
+        .loyalty-info strong { color: var(--loyalty); }
 
         .section-divider {
             display: flex;
@@ -976,6 +945,33 @@
             font-weight: 700;
             margin-left: 6px;
             vertical-align: middle;
+        }
+
+        .value-breakdown {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .value-breakdown h4 {
+            color: #475569;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .value-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .value-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--primary-purple);
+            padding-top: 10px;
         }
 
         @media (max-width: 600px) {
@@ -1042,7 +1038,6 @@
             <p style="color: #1e3a8a; margin: 15px 0;">Une analyse approfondie et spirituelle de vos songes selon les méthodologies authentiques islamiques.</p>
         </div>
 
-        <!-- SECTION : OFFRE FIDÉLITÉ (Anciens clients) -->
         <div class="section-divider">
             <span>🎁 Offre Fidélité — Tarifs Préservés</span>
         </div>
@@ -1069,7 +1064,6 @@
             <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: var(--loyalty); color: var(--loyalty);">Je suis client — Renouveler</a>
         </div>
 
-        <!-- SECTION : NOUVEAUX TARIFS -->
         <div class="section-divider">
             <span>🌟 Nouvelles Offres — À partir du 12 août 2026</span>
         </div>
@@ -1128,7 +1122,6 @@
             <a href="#paiement" class="payment-btn" style="max-width: 200px; display: inline-block;">Choisir cette offre</a>
         </div>
 
-        <!-- PROCESSUS -->
         <div class="process-steps">
             <h3>📋 Comment ça marche ?</h3>
             <div class="step">
@@ -1161,7 +1154,6 @@
             </div>
         </div>
 
-        <!-- TÉMOIGNAGES -->
         <div class="testimonials">
             <h3>💬 Ce que disent mes clients</h3>
             <div class="testimonial">
@@ -1178,7 +1170,6 @@
             </div>
         </div>
 
-        <!-- SUPPORT -->
         <div class="support-options">
             <h3>☕ Soutenir davantage</h3>
             <p>Si vous souhaitez soutenir mon travail au-delà du tarif, vous pouvez ajouter :</p>
@@ -1189,7 +1180,6 @@
             </div>
         </div>
 
-        <!-- FAQ -->
         <div class="faq-section">
             <h3>❓ Questions fréquentes</h3>
             <div class="faq-item">
@@ -1217,18 +1207,24 @@
 
     <!-- ONGLET SIHR -->
     <div id="sihr" class="tab-content">
+        <div style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); border-radius: 12px; padding: 25px; margin-bottom: 25px; border: 2px solid #d8b4fe;">
+            <h2 style="color: #6b21a8; margin-top:0;">🛡️ Diagnostic Spirituel & Accompagnement</h2>
+            <p style="color: #7c3aed; margin: 15px 0;">Approche éthique basée sur la Ruqya authentique pour vous aider à retrouver paix et sérénité.</p>
+        </div>
+
         <div style="background-color: #f3f4f6; border-left: 5px solid #6b7280; padding: 25px; border-radius: 0 8px 8px 0; margin-bottom: 20px;">
-            <h3>🛡️ À qui s'adresse ce service ?</h3>
+            <h3>À qui s'adresse ce service ?</h3>
             <ul style="padding-left: 20px; line-height: 1.8;">
-                <li>Blocages inexpliqués (mariage, travail, santé)</li>
-                <li>Suspicion de Sihr, 'Ayn ou possession</li>
-                <li>Besoin d'un plan d'action autonome (Self-Ruqya)</li>
+                <li><strong>Blocages inexpliqués</strong> dans votre vie (mariage, travail, études, santé)</li>
+                <li><strong>Suspicion de Sihr</strong> (sorcellerie), 'Ayn (mauvais œil) ou possession</li>
+                <li><strong>Symptômes persistants</strong> : cauchemars récurrents, anxiété, malaise inexplicable</li>
+                <li><strong>Besoin d'autonomie</strong> : Apprendre à vous soigner vous-même avec la Self-Ruqya</li>
             </ul>
         </div>
 
         <div class="offer-card" style="border-color: var(--primary-purple);">
             <div class="offer-header">
-                <div class="offer-title" style="color: var(--primary-purple);">🛡️ Diagnostic & Plan d'Action</div>
+                <div class="offer-title" style="color: var(--primary-purple);">🛡️ Diagnostic Complet & Plan d'Action</div>
                 <div>
                     <div class="offer-price" style="color: var(--primary-purple);">55€</div>
                     <div class="offer-unit">session + suivi 7 jours</div>
@@ -1236,34 +1232,140 @@
             </div>
             
             <div style="background: #faf5ff; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--primary-purple);">
-                <strong>Approche éthique :</strong> Je vous apprends à vous soigner vous-même avec la Ruqya authentique.
+                <strong>Approche éthique :</strong> Je ne pratique pas de ruqya à votre place. Je vous enseigne comment vous soigner vous-même avec les méthodes authentiques du Coran et de la Sunna.
             </div>
 
+            <h4 style="margin: 20px 0 10px; color: var(--primary-purple);">Ce qui est inclus :</h4>
             <ul class="offer-features">
-                <li>✅ Analyse détaillée de vos symptômes</li>
-                <li>✅ Sélection des invocations spécifiques</li>
-                <li>✅ Programme d'hygiène spirituelle personnalisé</li>
-                <li>✅ <strong>Suivi 7 jours via messages vocaux WhatsApp</strong></li>
-                <li>✅ Ajustements du traitement selon votre évolution</li>
+                <li>✅ <strong>Analyse détaillée de vos symptômes</strong> (1-2 heures d'échange)</li>
+                <li>✅ <strong>Diagnostic spirituel personnalisé</strong> basé sur votre situation</li>
+                <li>✅ <strong>Sélection d'invocations spécifiques</strong> adaptées à votre cas</li>
+                <li>✅ <strong>Programme d'hygiène spirituelle</strong> complet et personnalisé</li>
+                <li>✅ <strong>Guide de Self-Ruqya</strong> avec instructions détaillées</li>
+                <li>✅ <strong>Suivi vocal 7 jours</strong> via WhatsApp pour ajuster le traitement</li>
+                <li>✅ <strong>Réponses à vos questions</strong> pendant toute la durée du suivi</li>
             </ul>
 
-            <div class="highlight-box" style="background-color: #f3e8ff; border-color: #9333ea; color: #6b21a8;">
-                📱 Suivi vocal de 7 jours inclus pour ajuster votre traitement
+            <div class="value-breakdown">
+                <h4>💡 Pourquoi ce prix ?</h4>
+                <div class="value-item">
+                    <span>Analyse initiale approfondie (1-2h)</span>
+                    <span>~15€</span>
+                </div>
+                <div class="value-item">
+                    <span>Programme personnalisé + Guide Ruqya</span>
+                    <span>~20€</span>
+                </div>
+                <div class="value-item">
+                    <span>Suivi vocal 7 jours (plusieurs échanges)</span>
+                    <span>~20€</span>
+                </div>
+                <div class="value-item">
+                    <span><strong>Total pour ce service complet</strong></span>
+                    <span><strong>55€</strong></span>
+                </div>
             </div>
 
-            <a href="#paiement" class="payment-btn" style="border-color: var(--primary-purple); color: var(--primary-purple); max-width: 200px; display: inline-block; margin-top: 15px;">Procéder au paiement ↓</a>
+            <div class="highlight-box" style="background-color: #f3e8ff; border-color: #9333ea; color: #6b21a8;">
+                📱 Suivi vocal de 7 jours inclus pour ajuster votre traitement en temps réel
+            </div>
+
+            <a href="#paiement" class="payment-btn" style="border-color: var(--primary-purple); color: var(--primary-purple); max-width: 250px; display: inline-block; margin-top: 15px;">Procéder au paiement ↓</a>
+        </div>
+
+        <div class="offer-card" style="border-color: #059669; background: linear-gradient(to bottom, #f0fdf4, #ffffff);">
+            <div class="offer-header">
+                <div class="offer-title" style="color: #047857;">🔄 Option Suivi Prolongé</div>
+                <div>
+                    <div class="offer-price" style="color: #047857;">85€</div>
+                    <div class="offer-unit">diagnostic + suivi 14 jours</div>
+                </div>
+            </div>
+            <p style="margin: 10px 0; color: #475569;">Pour les cas complexes nécessitant un accompagnement plus long.</p>
+            <ul class="offer-features">
+                <li>✅ Tout ce qui est inclus dans le diagnostic de base</li>
+                <li>✅ <strong>Suivi vocal étendu à 14 jours</strong></li>
+                <li>✅ <strong>Ajustements approfondis</strong> du traitement</li>
+                <li>✅ <strong>Sessions de questions/réponses</strong> supplémentaires</li>
+            </ul>
+            <a href="#paiement" class="payment-btn" style="border-color: #059669; color: #059669; max-width: 250px; display: inline-block; margin-top: 15px;">Choisir cette option</a>
+        </div>
+
+        <div class="process-steps" style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); border-color: #d8b4fe;">
+            <h3 style="color: #7c3aed;">📋 Déroulement du diagnostic</h3>
+            <div class="step">
+                <div class="step-number" style="background: var(--primary-purple);">1</div>
+                <div class="step-content">
+                    <strong>Prise de contact</strong>
+                    <p>Envoyez-moi un message WhatsApp décrivant brièvement votre situation</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number" style="background: var(--primary-purple);">2</div>
+                <div class="step-content">
+                    <strong>Analyse approfondie</strong>
+                    <p>Nous échangeons par messages vocaux pour comprendre votre situation en détail</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number" style="background: var(--primary-purple);">3</div>
+                <div class="step-content">
+                    <strong>Diagnostic & Programme</strong>
+                    <p>Je vous envoie un diagnostic complet avec votre programme de Ruqya personnalisé</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number" style="background: var(--primary-purple);">4</div>
+                <div class="step-content">
+                    <strong>Suivi 7 jours</strong>
+                    <p>Nous restons en contact pour ajuster le traitement selon votre évolution</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials" style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);">
+            <h3 style="color: #6b21a8;">💬 Témoignages de personnes accompagnées</h3>
+            <div class="testimonial" style="border-left-color: var(--primary-purple);">
+                "Après des mois de blocages dans ma vie professionnelle, le diagnostic a révélé des choses que je n'aurais jamais imaginées. Le programme de Ruqya m'a redonné espoir."
+                <div class="testimonial-author" style="color: #7c3aed;">— Amina, France</div>
+            </div>
+            <div class="testimonial" style="border-left-color: var(--primary-purple);">
+                "Approche très professionnelle et éthique. Houssen prend le temps d'expliquer et de nous rendre autonomes. Je recommande vivement."
+                <div class="testimonial-author" style="color: #7c3aed;">— Youssef, Belgique</div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3>❓ Questions fréquentes sur le diagnostic</h3>
+            <div class="faq-item">
+                <div class="faq-question">Est-ce que vous pratiquez la Ruqya à ma place ?</div>
+                <div class="faq-answer">Non, c'est contraire à mon approche éthique. Je vous enseigne comment faire votre propre Ruqya avec les méthodes authentiques. L'objectif est de vous rendre autonome, pas de créer une dépendance.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Combien de temps dure le suivi ?</div>
+                <div class="faq-answer">Le suivi standard dure 7 jours. Si votre cas nécessite plus de temps, vous pouvez opter pour le suivi prolongé de 14 jours à 85€.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Est-ce que cela remplace un traitement médical ?</div>
+                <div class="faq-answer">Absolument pas. Le diagnostic spirituel est complémentaire à la médecine. Si vous avez des problèmes de santé physique ou mentale, consultez d'abord un médecin. Le spirituel ne remplace jamais le médical.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Comment se déroule l'échange ?</div>
+                <div class="faq-answer">Tout se fait via WhatsApp. Nous échangeons par messages vocaux pour plus de fluidité. Je prends le temps de bien comprendre votre situation avant de poser un diagnostic.</div>
+            </div>
         </div>
 
         <div class="medical-warning">
-            ⚠️ Conseils spirituels uniquement. Consultez un médecin pour tout problème physique.
+            ⚠️ <strong>Important :</strong> Ce service propose des conseils spirituels uniquement. Il ne remplace en aucun cas un avis ou traitement médical. Consultez un médecin pour tout problème de santé physique ou mentale.
         </div>
     </div>
 
     <!-- ONGLET INVOCATIONS -->
     <div id="duas" class="tab-content">
         <div style="text-align: center; margin-bottom: 15px;">
-            <h2 style="color: var(--primary-green); margin-bottom: 5px;">Trésors Spirituels</h2>
-            <p style="color: #64748b; font-size: 0.9em; margin: 0;">26 invocations authentiques</p>
+            <h2 style="color: var(--primary-green); margin-bottom: 5px;">🤲 Trésors Spirituels</h2>
+            <p style="color: #64748b; font-size: 0.9em; margin: 0;">26 invocations authentiques pour différents besoins</p>
+            <p style="color: #16a34a; font-size: 0.85em; margin-top: 5px; font-weight: 600;">💡 Utilisez le compteur en bas à droite pour suivre vos répétitions</p>
         </div>
 
         <div class="dua-controls">
@@ -1301,10 +1403,245 @@
         </div>
 
         <div id="cardList">
+            <!-- CARTE 1: Dua al-Noor -->
             <div class="card" id="card-duanoor" data-title="Dua al-Noor (Lumière Divine)" data-keywords="noor lumiere protection fievre maladie">
-                <h3>Dua al-Noor <span class="category-tag">Protection</span></h3>
-                <div class="instruction">7 ou 11 fois sur de l'eau à boire - Spécialement pour la fièvre</div>
+                <h3>1. Dua al-Noor <span class="category-tag">Protection</span></h3>
+                <div class="arabic-text">اللَّهُمَّ اجْعَلْ لِي فِي قَلْبِي نُورًا</div>
+                <div class="transliteration">Allahumma ij'al li fi qalbi nooran</div>
+                <div class="translation">"Ô Allah, place dans mon cœur une lumière"</div>
+                <div class="instruction">📖 7 ou 11 fois sur de l'eau à boire - Spécialement pour la fièvre et la protection</div>
             </div>
+
+            <!-- CARTE 2: Facilitation des Études -->
+            <div class="card" id="card-examen" data-title="Facilitation des Études et Examens" data-keywords="etudes examen ecole universite reussite">
+                <h3>2. Facilitation des Études <span class="category-tag">Savoir</span></h3>
+                <div class="arabic-text">رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي</div>
+                <div class="transliteration">Rabbi ishrah li sadri wa yassir li amri</div>
+                <div class="translation">"Seigneur, ouvre-moi ma poitrine et facilite ma tâche" (Coran 20:25-26)</div>
+                <div class="instruction">📖 À réciter avant d'étudier ou passer un examen</div>
+            </div>
+
+            <!-- CARTE 3: Espoir d'Enfant -->
+            <div class="card" id="card-enfant" data-title="Invocation pour avoir un enfant" data-keywords="enfant grossesse fertilite bebe">
+                <h3>3. Espoir d'Enfant <span class="category-tag">Famille</span></h3>
+                <div class="arabic-text">رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ</div>
+                <div class="transliteration">Rabbi la tadharni fardan wa anta khayru al-warithin</div>
+                <div class="translation">"Seigneur, ne me laisse pas seul et Tu es le meilleur des héritiers" (Invocation du Prophète Zakariya)</div>
+                <div class="instruction">📖 À réciter après chaque prière obligatoire</div>
+            </div>
+
+            <!-- CARTE 4: Bénédiction Maison -->
+            <div class="card" id="card-barakat" data-title="Bénédiction de la Maison" data-keywords="maison barakat benediction famille">
+                <h3>4. Bénédiction Maison <span class="category-tag">Protection</span></h3>
+                <div class="arabic-text">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ</div>
+                <div class="transliteration">Bismillahil-ladhi la yadurru ma'as-mihi shay'un</div>
+                <div class="translation">"Au nom d'Allah, avec le nom duquel rien ne peut nuire"</div>
+                <div class="instruction">📖 3 fois matin et soir pour protéger la maison</div>
+            </div>
+
+            <!-- CARTE 5: Apaisement & Colère -->
+            <div class="card" id="card-colere" data-title="Apaisement de la Colère" data-keywords="colere apaisement calme patience">
+                <h3>5. Apaisement & Colère <span class="category-tag">Émotions</span></h3>
+                <div class="arabic-text">أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ</div>
+                <div class="transliteration">A'udhu billahi min ash-shaytan ir-rajim</div>
+                <div class="translation">"Je cherche refuge auprès d'Allah contre Satan le maudit"</div>
+                <div class="instruction">📖 À dire immédiatement quand vous sentez la colère monter</div>
+            </div>
+
+            <!-- CARTE 6: Diabète -->
+            <div class="card" id="card-diabete" data-title="Invocation pour le Diabète" data-keywords="diabete sucre sante guerison">
+                <h3>6. Diabète <span class="category-tag">Santé</span></h3>
+                <div class="arabic-text">بِسْمِ اللَّهِ أَرْقِيكَ مِنْ كُلِّ شَيْءٍ يُؤْذِيكَ</div>
+                <div class="transliteration">Bismillahi arqika min kulli shay'in yu'dhika</div>
+                <div class="translation">"Au nom d'Allah, je te fais ruqya contre tout ce qui te fait du mal"</div>
+                <div class="instruction">📖 À réciter 7 fois sur de l'eau à boire (en complément du traitement médical)</div>
+            </div>
+
+            <!-- CARTE 7: Détresse -->
+            <div class="card" id="card-difficulte" data-title="Invocation en cas de Détresse" data-keywords="detresse difficulte epreuve souffrance">
+                <h3>7. Détresse <span class="category-tag">Soutien</span></h3>
+                <div class="arabic-text">لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</div>
+                <div class="transliteration">La ilaha illa anta subhanaka inni kuntu min adh-dhalimin</div>
+                <div class="translation">"Il n'y a de divinité que Toi, Gloire à Toi ! J'étais du nombre des injustes" (Invocation du Prophète Yunus)</div>
+                <div class="instruction">📖 Invocation puissante dans les moments de grande détresse</div>
+            </div>
+
+            <!-- CARTE 8: Douleur au Pied -->
+            <div class="card" id="card-pied" data-title="Douleur au Pied" data-keywords="pied douleur marche sante">
+                <h3>8. Douleur au Pied <span class="category-tag">Santé</span></h3>
+                <div class="arabic-text">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ</div>
+                <div class="transliteration">Bismillahil-ladhi la yadurru ma'as-mihi shay'un</div>
+                <div class="translation">"Au nom d'Allah, avec le nom duquel rien ne peut nuire"</div>
+                <div class="instruction">📖 Placer la main sur la zone douloureuse et réciter 7 fois</div>
+            </div>
+
+            <!-- CARTE 9: Guidance -->
+            <div class="card" id="card-guidance" data-title="Invocation pour la Guidance" data-keywords="guidance direction choix decision istikhara">
+                <h3>9. Guidance <span class="category-tag">Spiritualité</span></h3>
+                <div class="arabic-text">اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ</div>
+                <div class="transliteration">Allahumma inni astakhiruka bi-'ilmika</div>
+                <div class="translation">"Ô Allah, je Te consulte par Ton savoir" (Salat al-Istikhara)</div>
+                <div class="instruction">📖 À faire avant de prendre une décision importante</div>
+            </div>
+
+            <!-- CARTE 10: Enfant qui Pleure -->
+            <div class="card" id="card-pleur" data-title="Enfant qui Pleure" data-keywords="enfant pleur bebe calmant">
+                <h3>10. Enfant qui Pleure <span class="category-tag">Famille</span></h3>
+                <div class="arabic-text">أُعِيذُكَ بِكَلِمَاتِ اللَّهِ التَّامَّةِ</div>
+                <div class="transliteration">U'idhuka bikalimatillahit-tammati</div>
+                <div class="translation">"Je te place sous la protection des paroles parfaites d'Allah"</div>
+                <div class="instruction">📖 À réciter doucement sur l'enfant en passant la main sur sa tête</div>
+            </div>
+
+            <!-- CARTE 11: Affaires Judiciaires -->
+            <div class="card" id="card-justice" data-title="Affaires Judiciaires" data-keywords="justice tribunal proces droit">
+                <h3>11. Affaires Judiciaires <span class="category-tag">Justice</span></h3>
+                <div class="arabic-text">رَبِّ احْكُمْ بِالْحَقِّ</div>
+                <div class="transliteration">Rabbi uhkum bil-haqq</div>
+                <div class="translation">"Seigneur, juge avec la vérité"</div>
+                <div class="instruction">📖 À réciter avant de se rendre au tribunal</div>
+            </div>
+
+            <!-- CARTE 12: Sommeil -->
+            <div class="card" id="card-sommeil" data-title="Invocation pour le Sommeil" data-keywords="sommeil dormir insomnie nuit">
+                <h3>12. Sommeil <span class="category-tag">Quotidien</span></h3>
+                <div class="arabic-text">بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا</div>
+                <div class="transliteration">Bismika Allahumma amutu wa ahya</div>
+                <div class="translation">"En Ton nom, ô Allah, je meurs et je vis"</div>
+                <div class="instruction">📖 À dire avant de dormir, en se couchant sur le côté droit</div>
+            </div>
+
+            <!-- CARTE 13: Guérison Générale -->
+            <div class="card" id="card-guerison" data-title="Invocation pour la Guérison" data-keywords="guerison sante maladie remede">
+                <h3>13. Guérison Générale <span class="category-tag">Santé</span></h3>
+                <div class="arabic-text">اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ اشْفِ أَنْتَ الشَّافِي</div>
+                <div class="transliteration">Allahumma Rabban-nasi, adhhibil-ba'sa, ishfi antash-Shafi</div>
+                <div class="translation">"Ô Allah, Seigneur des gens, fais partir le mal, guéris, Tu es le Guérisseur"</div>
+                <div class="instruction">📖 À réciter 7 fois sur la zone malade ou sur de l'eau à boire</div>
+            </div>
+
+            <!-- CARTE 14: Vue & Yeux -->
+            <div class="card" id="card-yeux" data-title="Protection de la Vue" data-keywords="vue yeux vision sante">
+                <h3>14. Vue & Yeux <span class="category-tag">Santé</span></h3>
+                <div class="arabic-text">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ</div>
+                <div class="transliteration">Bismillahil-ladhi la yadurru ma'as-mihi shay'un</div>
+                <div class="translation">"Au nom d'Allah, avec le nom duquel rien ne peut nuire"</div>
+                <div class="instruction">📖 Réciter sur de l'eau de rose et appliquer sur les yeux (fermés)</div>
+            </div>
+
+            <!-- CARTE 15: Mariage -->
+            <div class="card" id="card-mariage" data-title="Invocation pour le Mariage" data-keywords="mariage epoux epouse couple">
+                <h3>15. Mariage <span class="category-tag">Famille</span></h3>
+                <div class="arabic-text">رَبِّ هَبْ لِي مِن لَّدُنكَ زَوْجَةً طَيِّبَةً</div>
+                <div class="transliteration">Rabbi hab li min ladunka zawjatan tayyibatan</div>
+                <div class="translation">"Seigneur, accorde-moi de Ta part une épouse vertueuse"</div>
+                <div class="instruction">📖 À réciter régulièrement avec sincérité et patience</div>
+            </div>
+
+            <!-- CARTE 16: Mauvais Oeil -->
+            <div class="card" id="card-ayn" data-title="Protection contre le Mauvais Oeil" data-keywords="mauvais oeil ayn protection jalousie">
+                <h3>16. Mauvais Oeil <span class="category-tag">Protection</span></h3>
+                <div class="arabic-text">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِن شَرِّ مَا خَلَقَ</div>
+                <div class="transliteration">A'udhu bikalimatillahit-tammati min sharri ma khalaq</div>
+                <div class="translation">"Je cherche refuge dans les paroles parfaites d'Allah contre le mal de ce qu'Il a créé"</div>
+                <div class="instruction">📖 3 fois matin et soir pour une protection complète</div>
+            </div>
+
+            <!-- CARTE 17: Migraine -->
+            <div class="card" id="card-migraine" data-title="Invocation contre la Migraine" data-keywords="migraine mal tete douleur">
+                <h3>17. Migraine <span class="category-tag">Santé</span></h3>
+                <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                <div class="transliteration">Bismillahir-Rahmanir-Rahim</div>
+                <div class="translation">"Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux"</div>
+                <div class="instruction">📖 Placer la main sur la tête et réciter 7 fois Al-Fatiha</div>
+            </div>
+
+            <!-- CARTE 18: Harmonie Conjugale -->
+            <div class="card" id="card-amour" data-title="Harmonie Conjugale" data-keywords="amour couple harmonie mariage">
+                <h3>18. Harmonie Conjugale <span class="category-tag">Famille</span></h3>
+                <div class="arabic-text">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا قُرَّةَ أَعْيُنٍ</div>
+                <div class="transliteration">Rabbana hab lana min azwajina qurrata a'yun</div>
+                <div class="translation">"Notre Seigneur, fais que nos épouses soient la joie de nos yeux"</div>
+                <div class="instruction">📖 À réciter régulièrement pour renforcer l'harmonie dans le couple</div>
+            </div>
+
+            <!-- CARTE 19: Objet Perdu -->
+            <div class="card" id="card-perdu" data-title="Invocation pour retrouver un objet perdu" data-keywords="objet perdu retrouver recherche">
+                <h3>19. Objet Perdu <span class="category-tag">Quotidien</span></h3>
+                <div class="arabic-text">إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ</div>
+                <div class="transliteration">Inna lillahi wa inna ilayhi raji'un</div>
+                <div class="translation">"C'est à Allah que nous appartenons et c'est vers Lui que nous retournerons"</div>
+                <div class="instruction">📖 Dire cette invocation puis demander à Allah de vous aider à retrouver l'objet</div>
+            </div>
+
+            <!-- CARTE 20: Anxiété -->
+            <div class="card" id="card-anxiete" data-title="Invocation contre l'Anxiété" data-keywords="anxiete stress inquietude peur">
+                <h3>20. Anxiété <span class="category-tag">Émotions</span></h3>
+                <div class="arabic-text">حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ</div>
+                <div class="transliteration">Hasbiyallahu la ilaha illa huwa 'alayhi tawakkaltu</div>
+                <div class="translation">"Allah me suffit, il n'y a de divinité que Lui, en Lui je place ma confiance"</div>
+                <div class="instruction">📖 7 fois matin et soir pour apaiser l'anxiété</div>
+            </div>
+
+            <!-- CARTE 21: Réalisation des Vœux -->
+            <div class="card" id="card-souhait" data-title="Réalisation des Vœux" data-keywords="souhait voeu desir realisation">
+                <h3>21. Réalisation des Vœux <span class="category-tag">Spiritualité</span></h3>
+                <div class="arabic-text">لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</div>
+                <div class="transliteration">La ilaha illa anta subhanaka inni kuntu min adh-dhalimin</div>
+                <div class="translation">"Il n'y a de divinité que Toi, Gloire à Toi ! J'étais du nombre des injustes"</div>
+                <div class="instruction">📖 Invocation du Prophète Yunus - Très puissante pour l'exaucation des invocations</div>
+            </div>
+
+            <!-- CARTE 22: Rizq & Provisions -->
+            <div class="card" id="card-rizq" data-title="Invocation pour le Rizq" data-keywords="rizq provision argent subsistance travail">
+                <h3>22. Rizq & Provisions <span class="category-tag">Quotidien</span></h3>
+                <div class="arabic-text">رَبِّ اغْفِرْ وَارْحَمْ وَأَنتَ خَيْرُ الرَّاحِمِينَ</div>
+                <div class="transliteration">Rabbi ighfir warham wa anta khayrur-rahimin</div>
+                <div class="translation">"Seigneur, pardonne et fais miséricorde, Tu es le Meilleur des miséricordieux"</div>
+                <div class="instruction">📖 À réciter après chaque prière pour la bénédiction dans la subsistance</div>
+            </div>
+
+            <!-- CARTE 23: Protection Sorcellerie -->
+            <div class="card" id="card-sihr" data-title="Protection contre la Sorcellerie" data-keywords="sorcellerie sihr protection magie">
+                <h3>23. Protection Sorcellerie <span class="category-tag">Protection</span></h3>
+                <div class="arabic-text">قُلْ هُوَ اللَّهُ أَحَدٌ (سورة الإخلاص)</div>
+                <div class="transliteration">Qul huwallahu ahad (Sourate Al-Ikhlas)</div>
+                <div class="translation">"Dis : Il est Allah, Unique" (Réciter les 3 dernières sourates)</div>
+                <div class="instruction">📖 Réciter Al-Ikhlas, Al-Falaq et An-Nas 3 fois matin et soir</div>
+            </div>
+
+            <!-- CARTE 24: Facilitation des Affaires -->
+            <div class="card" id="card-travail" data-title="Facilitation des Affaires" data-keywords="travail affaires commerce business reussite">
+                <h3>24. Facilitation des Affaires <span class="category-tag">Quotidien</span></h3>
+                <div class="arabic-text">رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي</div>
+                <div class="transliteration">Rabbi ishrah li sadri wa yassir li amri</div>
+                <div class="translation">"Seigneur, ouvre-moi ma poitrine et facilite ma tâche"</div>
+                <div class="instruction">📖 À réciter avant de commencer une affaire ou une réunion importante</div>
+            </div>
+
+            <!-- CARTE 25: Digestion -->
+            <div class="card" id="card-estomac" data-title="Invocation pour la Digestion" data-keywords="digestion estomac ventre sante">
+                <h3>25. Digestion <span class="category-tag">Santé</span></h3>
+                <div class="arabic-text">الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي وَسَقَانِي</div>
+                <div class="transliteration">Alhamdulillahil-ladhi at'amani wa saqani</div>
+                <div class="translation">"Louange à Allah qui m'a nourri et abreuvé"</div>
+                <div class="instruction">📖 À dire après avoir mangé pour faciliter la digestion</div>
+            </div>
+
+            <!-- CARTE 26: Pluie & Abondance -->
+            <div class="card" id="card-pluie" data-title="Invocation pour la Pluie" data-keywords="pluie abondance benediction agriculture">
+                <h3>26. Pluie & Abondance <span class="category-tag">Nature</span></h3>
+                <div class="arabic-text">اللَّهُمَّ اسْقِنَا غَيْثًا مُغِيثًا</div>
+                <div class="transliteration">Allahumma asqina ghaythan mughithan</div>
+                <div class="translation">"Ô Allah, donne-nous une pluie abondante et secourable"</div>
+                <div class="instruction">📖 Invocation du Prophète ﷺ pour demander la pluie et la bénédiction</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f0fdf4; border-radius: 12px;">
+            <h3 style="color: var(--primary-green); margin-bottom: 10px;">📿 Compteur de Dhikr</h3>
+            <p style="color: #475569; margin-bottom: 15px;">Utilisez le bouton vert en bas à droite pour compter vos répétitions d'invocations</p>
+            <p style="font-size: 0.9em; color: #64748b;">Le compteur reste actif même si vous changez d'onglet</p>
         </div>
     </div>
 
@@ -1414,6 +1751,15 @@
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.getElementById(tabName).classList.add('active');
         evt.currentTarget.classList.add('active');
+        
+        // Afficher/masquer le compteur selon l'onglet
+        const counter = document.getElementById('global-counter');
+        if (tabName === 'duas') {
+            counter.classList.add('visible');
+        } else {
+            counter.classList.remove('visible');
+        }
+        
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
