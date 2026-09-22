@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Houssen Mohsinaly - Interprétation authentique des rêves en Islam et accompagnement spirituel éthique.">
+    <meta name="description" content="Houssen Mohsinaly - Interprétation authentique des rêves en Islam, accompagnement spirituel éthique et formation complète.">
     
-    <meta property="og:title" content="Houssen Mohsinaly - Interprétation des Rêves & Spiritualité">
-    <meta property="og:description" content="Interprétation authentique des rêves selon les sources islamiques. Accompagnement spirituel éthique.">
+    <meta property="og:title" content="Houssen Mohsinaly - Interprétation des Rêves & Formation">
+    <meta property="og:description" content="Interprétation authentique des rêves selon les sources islamiques. Accompagnement spirituel éthique. Formation complète disponible.">
     <meta property="og:image" content="profil.jpg">
     <meta property="og:type" content="website">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
     
-    <title>Houssen Mohsinaly - Rêves, Soins & Spiritualité</title>
+    <title>Houssen Mohsinaly - Rêves, Soins & Formation</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
             --primary-blue: #3498db;
             --primary-purple: #9b59b6;
             --primary-green: #27ae60;
+            --primary-orange: #f39c12;
             --bg-color: #f8fafc;
             --text-main: #2c3e50;
             --success: #10b981;
@@ -210,6 +211,12 @@
             border-bottom-color: var(--primary-green); 
             color: var(--primary-green);
             background: #f0fdf4;
+        }
+
+        .tab-btn[data-target="formation"].active { 
+            border-bottom-color: var(--primary-orange); 
+            color: var(--primary-orange);
+            background: #fff7ed;
         }
 
         .tab-content {
@@ -974,8 +981,49 @@
             padding-top: 10px;
         }
 
+        /* STYLES FORMATION */
+        .formation-module {
+            background: white;
+            border: 2px solid #fed7aa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .formation-module:hover {
+            border-color: var(--primary-orange);
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.15);
+        }
+
+        .formation-module h4 {
+            color: var(--primary-orange);
+            margin-bottom: 10px;
+        }
+
+        .formation-module ul {
+            padding-left: 20px;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        .formation-module ul li {
+            margin-bottom: 5px;
+        }
+
+        .level-badge {
+            display: inline-block;
+            background: var(--primary-orange);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
         @media (max-width: 600px) {
-            .tab-btn { font-size: 0.85em; padding: 15px 5px; }
+            .tab-btn { font-size: 0.8em; padding: 15px 5px; }
             .tab-content { padding: 15px; }
             .arabic-text { font-size: 1.5rem; padding: 12px; }
             #global-counter { width: 60px; height: 60px; bottom: 20px; right: 15px; }
@@ -1029,6 +1077,7 @@
         <button class="tab-btn active" onclick="openTab(event, 'reves')" data-target="reves">🌙 Rêves</button>
         <button class="tab-btn" onclick="openTab(event, 'sihr')" data-target="sihr">🛡️ Diagnostic</button>
         <button class="tab-btn" onclick="openTab(event, 'duas')" data-target="duas">🤲 Invocations</button>
+        <button class="tab-btn" onclick="openTab(event, 'formation')" data-target="formation">📚 Formation</button>
     </div>
 
     <!-- ONGLET RÊVES -->
@@ -1200,7 +1249,7 @@
             </div>
             <div class="faq-item">
                 <div class="faq-question">Puis-je annuler ou être remboursé ?</div>
-                <div class="faq-answer">Une fois l'interprétation fournie, il n'y a pas de remboursement. Cependant, si vous n'êtes pas satisfait, je m'engage à clarifier ou approfondir l'analyse.</div>
+                <div class="faq-answer">Non, les modes de paiement et les modalités sont telles que je ne peux pas rembourser.</div>
             </div>
         </div>
     </div>
@@ -1645,6 +1694,323 @@
         </div>
     </div>
 
+    <!-- ONGLET FORMATION -->
+    <div id="formation" class="tab-content">
+        <div style="background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%); border-radius: 12px; padding: 25px; margin-bottom: 25px; border: 2px solid #fb923c;">
+            <h2 style="color: #c2410c; margin-top:0;">📚 Formation à l'Interprétation des Rêves</h2>
+            <p style="color: #9a3412; margin: 15px 0; font-size: 1.05em;">Apprenez à interpréter les rêves vous-même, avec une méthode authentique fondée sur 15 ans de pratique et les sources classiques islamiques (Ibn Sirin et autres).</p>
+        </div>
+
+        <div style="background-color: #fff7ed; border-left: 5px solid var(--primary-orange); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px;">
+            <h3 style="color: #c2410c; margin-bottom: 10px;">🎯 Pour qui est cette formation ?</h3>
+            <ul style="padding-left: 20px; line-height: 1.8; color: #475569;">
+                <li>Vous rêvez souvent et voulez comprendre vous-même les messages</li>
+                <li>Vous en avez assez de chercher sur Internet sans trouver de réponses fiables</li>
+                <li>Vous voulez développer une compétence spirituelle utile à vie</li>
+                <li>Vous souhaitez aider votre entourage avec des interprétations justes</li>
+            </ul>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 12px 15px; margin-bottom: 25px; font-size: 0.9em; color: #475569;">
+            📌 <strong>Note :</strong> mon activité principale reste l'interprétation de vos rêves. La formation est proposée en <strong>sessions limitées</strong>, pour garantir un accompagnement de qualité à chaque élève.
+        </div>
+
+        <div class="section-divider">
+            <span>📖 Programme Détaillé</span>
+        </div>
+
+        <!-- NIVEAU 1 -->
+        <div style="background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 2px solid #fb923c;">
+            <h3 style="color: #c2410c; margin-bottom: 15px;">
+                <span class="level-badge">Niveau 1</span> Les Fondations
+            </h3>
+            <p style="color: #9a3412; margin-bottom: 15px;"><strong>Objectif :</strong> Comprendre les bases et interpréter les rêves courants</p>
+
+            <div class="formation-module">
+                <h4>📚 Module 1 : Introduction à l'interprétation islamique</h4>
+                <ul>
+                    <li>Notre source principale : Ibn Sirin</li>
+                    <li>Le concept du rêve comme message selon l'Islam (l'âme, l'ange Siddiqun, le corps, le cerveau, la « pièce de théâtre »)</li>
+                    <li>Les 4 types de rêves : véridique (Rahmani), probables et prémonitoires, confus (Nafsani), satanique (Shaytani)</li>
+                    <li>Quand un rêve est-il interprétable ? (conditions et moments propices)</li>
+                    <li>Éthique de l'interprète : ce qu'on peut dire et ce qu'on doit taire</li>
+                </ul>
+            </div>
+
+            <div class="formation-module">
+                <h4>⚙️ Module 2 : Méthode d'interprétation en 5 étapes</h4>
+                <ul>
+                    <li><strong>Étape 1 :</strong> Analyser l'émotion au réveil (peur, joie, confusion, paix)</li>
+                    <li><strong>Étape 2 :</strong> Identifier les symboles dominants (les 2-3 plus marquants, dont un symbole principal)</li>
+                    <li><strong>Étape 3 :</strong> Croiser avec la réalité (situation actuelle du rêveur)</li>
+                    <li><strong>Étape 4 :</strong> Vérifier la cohérence (l'interprétation a-t-elle du sens ?)</li>
+                    <li><strong>Étape 5 :</strong> Formuler avec tact (comment annoncer une nouvelle difficile)</li>
+                </ul>
+            </div>
+
+            <div class="formation-module">
+                <h4>🎯 Module 3 : 10 cas pratiques guidés</h4>
+                <ul>
+                    <li>Analyse pas à pas de 10 rêves réels (anonymisés)</li>
+                    <li>Développement des symboles principaux à la volée, selon chaque contexte</li>
+                    <li>Exercices d'auto-évaluation après chaque cas</li>
+                    <li>Quiz final de validation</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border-radius: 8px; padding: 15px; margin-top: 15px;">
+                <h4 style="color: #c2410c; margin-bottom: 10px;">✅ Livrables inclus :</h4>
+                <ul style="padding-left: 20px; line-height: 1.8; color: #475569;">
+                    <li>Accès aux vidéos (YouTube non répertorié)</li>
+                    <li>PDF récapitulatif des symboles et des techniques pour débuter l'interprétation (envoyé par WhatsApp)</li>
+                    <li>Accès au groupe WhatsApp privé des élèves</li>
+                    <li>Certificat de complétion Niveau 1</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- NIVEAU 2 -->
+        <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 2px solid #60a5fa;">
+            <h3 style="color: #1e40af; margin-bottom: 15px;">
+                <span class="level-badge" style="background: #1e40af;">Niveau 2</span> Approfondissement
+            </h3>
+            <p style="color: #1e3a8a; margin-bottom: 15px;"><strong>Prérequis :</strong> Niveau 1 validé | <strong>Objectif :</strong> Maîtriser les symboles complexes et les nuances</p>
+
+            <div class="formation-module" style="border-color: #93c5fd;">
+                <h4 style="color: #1e40af;">🔄 Module 4 : Symboles ambivalents</h4>
+                <ul>
+                    <li>Combinaison des éléments du rêve : partir du symbole principal vers les éléments secondaires (la « pièce de théâtre »)</li>
+                    <li>Symboles contradictoires : comment trancher selon le contexte du rêveur</li>
+                    <li>L'importance de garder l'historique des personnes dont vous interprétez les rêves</li>
+                    <li>La charge mentale de l'interprète et les responsabilités partagées avec le rêveur</li>
+                </ul>
+            </div>
+
+            <div class="formation-module" style="border-color: #93c5fd;">
+                <h4 style="color: #1e40af;">🔁 Module 5 : Rêves récurrents et séries</h4>
+                <ul>
+                    <li>Identifier les patterns (même symbole, même scénario)</li>
+                    <li>Interpréter l'évolution d'un rêve qui se répète (l'alarme : quelque chose que la personne doit faire et ne fait pas)</li>
+                    <li>Les symboles les plus puissants et les ressentis intenses</li>
+                </ul>
+            </div>
+
+            <div class="formation-module" style="border-color: #93c5fd;">
+                <h4 style="color: #1e40af;">⚠️ Module 6 : Pièges et erreurs courantes</h4>
+                <ul>
+                    <li>Surinterprétation (voir du sens partout) et projection personnelle (plaquer ses peurs)</li>
+                    <li>Toujours considérer la situation du rêveur (religion, histoire, contexte)</li>
+                    <li>Confusion avec la voyance (ce que l'Islam interdit)</li>
+                    <li><strong>Garder ses limites :</strong> invocations, sadaqa oui — mais pas au-delà de votre spécialité</li>
+                    <li><strong>Protection émotionnelle :</strong> ne pas absorber la souffrance des autres</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border-radius: 8px; padding: 15px; margin-top: 15px;">
+                <h4 style="color: #1e40af; margin-bottom: 10px;">✅ Livrables inclus :</h4>
+                <ul style="padding-left: 20px; line-height: 1.8; color: #475569;">
+                    <li>Tout le Niveau 1</li>
+                    <li>Vidéos supplémentaires</li>
+                    <li>Livret PDF des symboles ambivalents</li>
+                    <li>2 consultations privées offertes (30 min chacune)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- NIVEAU 3 -->
+        <div style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 2px solid #d8b4fe;">
+            <h3 style="color: #6b21a8; margin-bottom: 15px;">
+                <span class="level-badge" style="background: #6b21a8;">Niveau 3</span> Spécialisation (optionnel)
+            </h3>
+            <p style="color: #7c3aed; margin-bottom: 15px;"><strong>Prérequis :</strong> Niveaux 1-2 validés | <strong>Objectif :</strong> Maîtriser un domaine spécifique</p>
+            <p style="color: #475569; margin-bottom: 15px;"><strong>Choisissez UNE spécialisation :</strong></p>
+
+            <div class="formation-module" style="border-color: #c4b5fd;">
+                <h4 style="color: #6b21a8;">🛡️ Option A : Rêves et Sorcellerie (Sihr)</h4>
+                <ul>
+                    <li>Identifier les rêves de sihr (signes caractéristiques)</li>
+                    <li>Différencier sihr / épreuve spirituelle / confusion mentale</li>
+                    <li>Protocoles de protection et de guérison</li>
+                </ul>
+            </div>
+
+            <div class="formation-module" style="border-color: #c4b5fd;">
+                <h4 style="color: #6b21a8;">🔮 Option B : Rêves Prémonitoires</h4>
+                <ul>
+                    <li>Rêves qui se réalisent (comment les reconnaître)</li>
+                    <li>Rêves de personnes décédées (messages importants)</li>
+                </ul>
+            </div>
+
+            <div style="background: white; border-radius: 8px; padding: 15px; margin-top: 15px;">
+                <h4 style="color: #6b21a8; margin-bottom: 10px;">✅ Livrables inclus :</h4>
+                <ul style="padding-left: 20px; line-height: 1.8; color: #475569;">
+                    <li>Vidéos complètes de la spécialisation choisie</li>
+                    <li>1 consultation privée offerte (30 min)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <span>💰 Tarifs Accessibles</span>
+        </div>
+
+        <!-- OFFRE NIVEAU 1 -->
+        <div class="offer-card new-price" style="border-color: var(--primary-orange);">
+            <div class="offer-header">
+                <div class="offer-title">📘 Niveau 1 : Les Fondations</div>
+                <div>
+                    <div class="offer-price" style="color: var(--primary-orange);">67€</div>
+                    <div class="offer-unit">paiement unique</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>3 modules complets (vidéos)</li>
+                <li>PDF récapitulatif des symboles et techniques</li>
+                <li>Accès au groupe WhatsApp privé</li>
+                <li>Certificat de complétion Niveau 1</li>
+            </ul>
+            <div style="background: #fff7ed; border: 1px dashed var(--primary-orange); border-radius: 8px; padding: 12px 15px; margin-top: 15px; font-size: 0.88em; color: #9a3412; line-height: 1.5;">
+                💳 <strong>Option paiement échelonné :</strong> 2 × 36€ (= 72€)
+            </div>
+            <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: var(--primary-orange); color: var(--primary-orange);">S'inscrire au Niveau 1</a>
+        </div>
+
+        <!-- OFFRE NIVEAU 2 -->
+        <div class="offer-card new-price" style="border-color: #1e40af;">
+            <div class="offer-header">
+                <div class="offer-title">📗 Niveau 2 : Approfondissement</div>
+                <div>
+                    <div class="offer-price" style="color: #1e40af;">67€</div>
+                    <div class="offer-unit">+ 2 consultations offertes</div>
+                </div>
+            </div>
+            <p style="color: #64748b; font-size: 0.9em; margin: 10px 0;"><em>Réservé aux élèves ayant validé le Niveau 1</em></p>
+            <ul class="offer-features">
+                <li>3 modules avancés (vidéos)</li>
+                <li>Livret PDF des symboles ambivalents</li>
+                <li>2 consultations privées offertes (30 min chacune)</li>
+                <li>Accès au groupe WhatsApp privé</li>
+            </ul>
+            <div style="background: #eff6ff; border: 1px dashed #1e40af; border-radius: 8px; padding: 12px 15px; margin-top: 15px; font-size: 0.88em; color: #1e3a8a; line-height: 1.5;">
+                💳 <strong>Option paiement échelonné :</strong> 2 × 36€ (= 72€)
+            </div>
+            <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: #1e40af; color: #1e40af;">S'inscrire au Niveau 2</a>
+        </div>
+
+        <!-- OFFRE PACK COMPLET -->
+        <div class="offer-card popular">
+            <div class="popular-badge">MEILLEURE OFFRE</div>
+            <div class="offer-header">
+                <div class="offer-title">📚 Pack Complet (Niveaux 1 + 2)</div>
+                <div>
+                    <div class="offer-price">119€</div>
+                    <div class="offer-unit">+ 2 consultations offertes</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>Tout le contenu des Niveaux 1 et 2 (6 modules)</li>
+                <li>2 PDF (symboles + symboles ambivalents)</li>
+                <li>2 consultations privées offertes (30 min chacune)</li>
+                <li>Accès au groupe WhatsApp privé</li>
+                <li><strong>Économisez 15€</strong> vs achat séparé (134€)</li>
+            </ul>
+            <div style="background: #f0fdf4; border: 1px dashed var(--success); border-radius: 8px; padding: 12px 15px; margin-top: 15px; font-size: 0.88em; color: #14532d; line-height: 1.5;">
+                💳 <strong>Option paiement échelonné :</strong> 3 × 42€ (= 126€)
+            </div>
+            <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: var(--success); color: var(--success);">Choisir le Pack Complet</a>
+        </div>
+
+        <!-- OFFRE NIVEAU 3 -->
+        <div class="offer-card new-price" style="border-color: #6b21a8;">
+            <div class="offer-header">
+                <div class="offer-title">🎓 Niveau 3 : Spécialisation</div>
+                <div>
+                    <div class="offer-price" style="color: #6b21a8;">67€</div>
+                    <div class="offer-unit">par spécialisation</div>
+                </div>
+            </div>
+            <p style="color: #64748b; font-size: 0.9em; margin: 10px 0;"><em>Optionnel — Réservé aux élèves ayant validé les Niveaux 1-2</em></p>
+            <ul class="offer-features">
+                <li>Choix d'UNE spécialisation (Sihr ou Rêves Prémonitoires)</li>
+                <li>Vidéos complètes de la spécialisation</li>
+                <li>1 consultation privée offerte (30 min)</li>
+            </ul>
+            <div style="background: #faf5ff; border: 1px dashed #6b21a8; border-radius: 8px; padding: 12px 15px; margin-top: 15px; font-size: 0.88em; color: #6b21a8; line-height: 1.5;">
+                💳 <strong>Option paiement échelonné :</strong> 2 × 36€ (= 72€)
+            </div>
+            <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: #6b21a8; color: #6b21a8;">Choisir une Spécialisation</a>
+        </div>
+
+        <div class="process-steps" style="background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); border-color: #fb923c;">
+            <h3 style="color: #c2410c;">📋 Comment s'inscrire ?</h3>
+            <div class="step">
+                <div class="step-number" style="background: var(--primary-orange);">1</div>
+                <div class="step-content">
+                    <strong>Choisissez votre formule</strong>
+                    <p>Niveau 1, Niveau 2, Pack Complet ou Spécialisation</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number" style="background: var(--primary-orange);">2</div>
+                <div class="step-content">
+                    <strong>Effectuez le paiement</strong>
+                    <p>Envoyez le montant via TapTap Send (recommandé), Western Union ou Remitly</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number" style="background: var(--primary-orange);">3</div>
+                <div class="step-content">
+                    <strong>Envoyez la preuve</strong>
+                    <p>Capturez le reçu et envoyez-le sur WhatsApp, en précisant la formule choisie</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number" style="background: var(--primary-orange);">4</div>
+                <div class="step-content">
+                    <strong>Recevez vos accès</strong>
+                    <p>Sous 24-48h : liens des vidéos + PDF + invitation au groupe WhatsApp privé</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="background-color: #fff7ed; border-color: var(--primary-orange); color: #9a3412;">
+            📱 Lors de l'envoi de votre preuve sur WhatsApp, <strong>précisez bien la formule choisie</strong> (Niveau 1, Niveau 2, Pack Complet ou Spécialisation + option A/B).
+        </div>
+
+        <div class="faq-section">
+            <h3>❓ Questions fréquentes sur la formation</h3>
+            <div class="faq-item">
+                <div class="faq-question">Combien de temps ai-je accès aux vidéos ?</div>
+                <div class="faq-answer">Accès à vie aux vidéos et aux PDF. Vous suivez la formation à votre rythme, sans contrainte de temps.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Puis-je poser des questions pendant la formation ?</div>
+                <div class="faq-answer">Oui, le groupe WhatsApp privé est fait pour ça : questions, exercices, échanges avec les autres élèves. J'y réponds régulièrement.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Comment se passent les consultations privées offertes ?</div>
+                <div class="faq-answer">Ce sont des sessions de 30 minutes (vocales ou en visio WhatsApp) où nous analysons ensemble un de vos rêves personnels ou une de vos interprétations. Utilisables pendant ou après la formation.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Les PDF sont-ils vraiment complets ?</div>
+                <div class="faq-answer">Oui, ce sont le socle symbolique de la formation : de nombreux symboles classés par catégories, avec des fiches de méthode. Ils sont enrichis régulièrement et vous recevez les mises à jour.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Puis-je être remboursé si la formation ne me convient pas ?</div>
+                <div class="faq-answer">Non, les modes de paiement et les modalités sont telles que je ne peux pas rembourser. Prenez la formation que lorsque vous êtes sûr et intéressé à 100 %.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Faut-il des connaissances préalables ?</div>
+                <div class="faq-answer">Non, le Niveau 1 part de zéro. Une pratique religieuse minimale est simplement recommandée pour bien saisir le contexte spirituel.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Pourrai-je interpréter les rêves des autres après la formation ?</div>
+                <div class="faq-answer">Vous aurez les outils pour interpréter vos propres rêves et aider votre proche entourage. Devenir interprète confirmé demande des années de pratique supplémentaire : la formation vous apprend surtout la méthode et vous donne les points de départ. Mais si vous interprétez régulièrement les rêves, alors votre expertise s'enrichira et oui, vous pourrez interpréter ceux des autres.</div>
+            </div>
+        </div>
+    </div>
+
     <!-- PAIEMENT -->
     <div id="paiement" class="payment-section">
         <h2 style="text-align: center; color: #1e293b; margin-bottom: 10px;">💳 Effectuer le paiement</h2>
@@ -1706,7 +2072,7 @@
         <div style="margin-top:20px; text-align: center;">
             <h3 style="margin-top: 0; color: #166534;">✅ Étape finale</h3>
             <p style="margin-bottom: 15px;">Envoyez la preuve de paiement (capture d'écran ou reçu) pour confirmer le début de votre accompagnement.</p>
-            <p style="font-size: 0.9em; color: #64748b; margin-bottom: 15px;"><strong>Anciens clients :</strong> Précisez simplement que vous bénéficiez du Pack 4 rêves à 20€ dans votre message.</p>
+            <p style="font-size: 0.9em; color: #64748b; margin-bottom: 15px;"><strong>Anciens clients :</strong> Précisez simplement que vous bénéficiez du Pack 4 rêves à 20€ dans votre message. <strong>Formation :</strong> précisez la formule choisie.</p>
             <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20je%20confirme%20mon%20paiement%20avec%20la%20preuve%20ci-jointe." class="btn-whatsapp">
                 📱 Confirmer sur WhatsApp
             </a>
