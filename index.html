@@ -50,7 +50,6 @@
             position: relative;
         }
 
-        /* HEADER */
         .profile-header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
@@ -638,6 +637,34 @@
             transform: translateY(-2px);
         }
 
+        .budget-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 2px solid #60a5fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .budget-box h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .budget-box p {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .budget-box .btn-whatsapp {
+            background-color: #3b82f6;
+        }
+
         .business-footer {
             background-color: #1e293b;
             color: #f8fafc;
@@ -981,7 +1008,6 @@
             padding-top: 10px;
         }
 
-        /* STYLES FORMATION */
         .formation-module {
             background: white;
             border: 2px solid #fed7aa;
@@ -1087,34 +1113,9 @@
             <p style="color: #1e3a8a; margin: 15px 0;">Une analyse approfondie et spirituelle de vos songes selon les méthodologies authentiques islamiques.</p>
         </div>
 
+        <!-- NOUVELLES OFFRES EN PREMIER -->
         <div class="section-divider">
-            <span>🎁 Offre Fidélité — Tarifs Préservés</span>
-        </div>
-
-        <div class="offer-card loyalty">
-            <div class="loyalty-badge">FIDÉLITÉ</div>
-            <div class="offer-header">
-                <div class="offer-title">✨ Pack 4 Rêves <span style="font-size: 0.7em; color: #64748b; font-weight: 400;">— Tarif historique</span></div>
-                <div>
-                    <div class="offer-price">20€</div>
-                    <div class="offer-unit">soit 5€ par rêve</div>
-                </div>
-            </div>
-            <ul class="offer-features">
-                <li>4 interprétations détaillées sur 30 jours</li>
-                <li>Analyse symbolique complète</li>
-                <li>Conseils spirituels personnalisés</li>
-                <li>Réponses vocales WhatsApp</li>
-                <li>Suivi sur 1 mois complet</li>
-            </ul>
-            <div class="loyalty-info">
-                🔒 <strong>Réservé aux clients actuels</strong> — Vous avez déjà souscrit à ce pack ? Vous conservez ce tarif privilégié pour vos prochains renouvellements. Merci pour votre confiance !
-            </div>
-            <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: var(--loyalty); color: var(--loyalty);">Je suis client — Renouveler</a>
-        </div>
-
-        <div class="section-divider">
-            <span>🌟 Nouvelles Offres — À partir du 12 août 2026</span>
+            <span>🌟 Nos Offres</span>
         </div>
 
         <div class="offer-card new-price">
@@ -1169,6 +1170,33 @@
                 <li>Meilleur rapport qualité-prix pour les nouveaux clients</li>
             </ul>
             <a href="#paiement" class="payment-btn" style="max-width: 200px; display: inline-block;">Choisir cette offre</a>
+        </div>
+
+        <!-- OFFRE FIDÉLITÉ DÉPLACÉE ICI -->
+        <div class="section-divider">
+            <span>🎁 Offre Fidélité — Tarifs Préservés</span>
+        </div>
+
+        <div class="offer-card loyalty">
+            <div class="loyalty-badge">FIDÉLITÉ</div>
+            <div class="offer-header">
+                <div class="offer-title">✨ Pack 4 Rêves <span style="font-size: 0.7em; color: #64748b; font-weight: 400;">— Tarif historique</span></div>
+                <div>
+                    <div class="offer-price">20€</div>
+                    <div class="offer-unit">soit 5€ par rêve</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>4 interprétations détaillées sur 30 jours</li>
+                <li>Analyse symbolique complète</li>
+                <li>Conseils spirituels personnalisés</li>
+                <li>Réponses vocales WhatsApp</li>
+                <li>Suivi sur 1 mois complet</li>
+            </ul>
+            <div class="loyalty-info">
+                🔒 <strong>Réservé aux clients actuels</strong> — Vous avez déjà souscrit à ce pack ? Vous conservez ce tarif privilégié pour vos prochains renouvellements. Merci pour votre confiance !
+            </div>
+            <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: var(--loyalty); color: var(--loyalty);">Je suis client — Renouveler</a>
         </div>
 
         <div class="process-steps">
@@ -1229,11 +1257,24 @@
             </div>
         </div>
 
+        <!-- ENCART BUDGET LIMITÉ -->
+        <div class="budget-box">
+            <h3>💙 Budget limité ?</h3>
+            <p>Je comprends que tout le monde n'a pas les mêmes moyens. Si les tarifs proposés sont trop élevés pour vous en ce moment, n'hésitez pas à me contacter. Nous pourrons discuter ensemble et trouver une solution adaptée à votre situation.</p>
+            <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20j'aimerais%20discuter%20des%20modalités%20pour%20une%20interprétation%20de%20rêve.%20Mon%20budget%20est%20limité." class="btn-whatsapp">
+                Me contacter pour en discuter
+            </a>
+        </div>
+
         <div class="faq-section">
             <h3>❓ Questions fréquentes</h3>
             <div class="faq-item">
                 <div class="faq-question">Comment savoir si je bénéficie du tarif fidélité ?</div>
                 <div class="faq-answer">Si vous avez déjà souscrit au Pack 4 rêves à 20€ avant le 12 août 2026, vous conservez ce tarif pour tous vos renouvellements futurs. Il vous suffit de me le rappeler lors de votre prochain message WhatsApp.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Puis-je discuter des tarifs si mon budget est limité ?</div>
+                <div class="faq-answer">Oui, absolument. Je comprends que chaque situation est différente. N'hésitez pas à me contacter via WhatsApp pour en discuter. Nous trouverons ensemble une solution adaptée à vos moyens.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Combien de temps pour recevoir l'interprétation ?</div>
@@ -1340,6 +1381,15 @@
             <a href="#paiement" class="payment-btn" style="border-color: #059669; color: #059669; max-width: 250px; display: inline-block; margin-top: 15px;">Choisir cette option</a>
         </div>
 
+        <!-- ENCART BUDGET LIMITÉ POUR SIHR -->
+        <div class="budget-box">
+            <h3>💙 Budget limité ?</h3>
+            <p>Je comprends que tout le monde n'a pas les mêmes moyens. Si les tarifs proposés sont trop élevés pour vous en ce moment, n'hésitez pas à me contacter. Nous pourrons discuter ensemble et trouver une solution adaptée à votre situation.</p>
+            <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20j'aimerais%20discuter%20des%20modalités%20pour%20un%20diagnostic%20spirituel.%20Mon%20budget%20est%20limité." class="btn-whatsapp">
+                Me contacter pour en discuter
+            </a>
+        </div>
+
         <div class="process-steps" style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); border-color: #d8b4fe;">
             <h3 style="color: #7c3aed;">📋 Déroulement du diagnostic</h3>
             <div class="step">
@@ -1402,6 +1452,10 @@
                 <div class="faq-question">Comment se déroule l'échange ?</div>
                 <div class="faq-answer">Tout se fait via WhatsApp. Nous échangeons par messages vocaux pour plus de fluidité. Je prends le temps de bien comprendre votre situation avant de poser un diagnostic.</div>
             </div>
+            <div class="faq-item">
+                <div class="faq-question">Puis-je discuter des tarifs si mon budget est limité ?</div>
+                <div class="faq-answer">Oui, absolument. Je comprends que chaque situation est différente. N'hésitez pas à me contacter via WhatsApp pour en discuter. Nous trouverons ensemble une solution adaptée à vos moyens.</div>
+            </div>
         </div>
 
         <div class="medical-warning">
@@ -1452,7 +1506,6 @@
         </div>
 
         <div id="cardList">
-            <!-- CARTE 1: Dua al-Noor -->
             <div class="card" id="card-duanoor" data-title="Dua al-Noor (Lumière Divine)" data-keywords="noor lumiere protection fievre maladie">
                 <h3>1. Dua al-Noor <span class="category-tag">Protection</span></h3>
                 <div class="arabic-text">اللَّهُمَّ اجْعَلْ لِي فِي قَلْبِي نُورًا</div>
@@ -1461,7 +1514,6 @@
                 <div class="instruction">📖 7 ou 11 fois sur de l'eau à boire - Spécialement pour la fièvre et la protection</div>
             </div>
 
-            <!-- CARTE 2: Facilitation des Études -->
             <div class="card" id="card-examen" data-title="Facilitation des Études et Examens" data-keywords="etudes examen ecole universite reussite">
                 <h3>2. Facilitation des Études <span class="category-tag">Savoir</span></h3>
                 <div class="arabic-text">رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي</div>
@@ -1470,7 +1522,6 @@
                 <div class="instruction">📖 À réciter avant d'étudier ou passer un examen</div>
             </div>
 
-            <!-- CARTE 3: Espoir d'Enfant -->
             <div class="card" id="card-enfant" data-title="Invocation pour avoir un enfant" data-keywords="enfant grossesse fertilite bebe">
                 <h3>3. Espoir d'Enfant <span class="category-tag">Famille</span></h3>
                 <div class="arabic-text">رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ</div>
@@ -1479,7 +1530,6 @@
                 <div class="instruction">📖 À réciter après chaque prière obligatoire</div>
             </div>
 
-            <!-- CARTE 4: Bénédiction Maison -->
             <div class="card" id="card-barakat" data-title="Bénédiction de la Maison" data-keywords="maison barakat benediction famille">
                 <h3>4. Bénédiction Maison <span class="category-tag">Protection</span></h3>
                 <div class="arabic-text">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ</div>
@@ -1488,7 +1538,6 @@
                 <div class="instruction">📖 3 fois matin et soir pour protéger la maison</div>
             </div>
 
-            <!-- CARTE 5: Apaisement & Colère -->
             <div class="card" id="card-colere" data-title="Apaisement de la Colère" data-keywords="colere apaisement calme patience">
                 <h3>5. Apaisement & Colère <span class="category-tag">Émotions</span></h3>
                 <div class="arabic-text">أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ</div>
@@ -1497,7 +1546,6 @@
                 <div class="instruction">📖 À dire immédiatement quand vous sentez la colère monter</div>
             </div>
 
-            <!-- CARTE 6: Diabète -->
             <div class="card" id="card-diabete" data-title="Invocation pour le Diabète" data-keywords="diabete sucre sante guerison">
                 <h3>6. Diabète <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text">بِسْمِ اللَّهِ أَرْقِيكَ مِنْ كُلِّ شَيْءٍ يُؤْذِيكَ</div>
@@ -1506,7 +1554,6 @@
                 <div class="instruction">📖 À réciter 7 fois sur de l'eau à boire (en complément du traitement médical)</div>
             </div>
 
-            <!-- CARTE 7: Détresse -->
             <div class="card" id="card-difficulte" data-title="Invocation en cas de Détresse" data-keywords="detresse difficulte epreuve souffrance">
                 <h3>7. Détresse <span class="category-tag">Soutien</span></h3>
                 <div class="arabic-text">لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</div>
@@ -1515,7 +1562,6 @@
                 <div class="instruction">📖 Invocation puissante dans les moments de grande détresse</div>
             </div>
 
-            <!-- CARTE 8: Douleur au Pied -->
             <div class="card" id="card-pied" data-title="Douleur au Pied" data-keywords="pied douleur marche sante">
                 <h3>8. Douleur au Pied <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ</div>
@@ -1524,7 +1570,6 @@
                 <div class="instruction">📖 Placer la main sur la zone douloureuse et réciter 7 fois</div>
             </div>
 
-            <!-- CARTE 9: Guidance -->
             <div class="card" id="card-guidance" data-title="Invocation pour la Guidance" data-keywords="guidance direction choix decision istikhara">
                 <h3>9. Guidance <span class="category-tag">Spiritualité</span></h3>
                 <div class="arabic-text">اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ</div>
@@ -1533,7 +1578,6 @@
                 <div class="instruction">📖 À faire avant de prendre une décision importante</div>
             </div>
 
-            <!-- CARTE 10: Enfant qui Pleure -->
             <div class="card" id="card-pleur" data-title="Enfant qui Pleure" data-keywords="enfant pleur bebe calmant">
                 <h3>10. Enfant qui Pleure <span class="category-tag">Famille</span></h3>
                 <div class="arabic-text">أُعِيذُكَ بِكَلِمَاتِ اللَّهِ التَّامَّةِ</div>
@@ -1542,7 +1586,6 @@
                 <div class="instruction">📖 À réciter doucement sur l'enfant en passant la main sur sa tête</div>
             </div>
 
-            <!-- CARTE 11: Affaires Judiciaires -->
             <div class="card" id="card-justice" data-title="Affaires Judiciaires" data-keywords="justice tribunal proces droit">
                 <h3>11. Affaires Judiciaires <span class="category-tag">Justice</span></h3>
                 <div class="arabic-text">رَبِّ احْكُمْ بِالْحَقِّ</div>
@@ -1551,7 +1594,6 @@
                 <div class="instruction">📖 À réciter avant de se rendre au tribunal</div>
             </div>
 
-            <!-- CARTE 12: Sommeil -->
             <div class="card" id="card-sommeil" data-title="Invocation pour le Sommeil" data-keywords="sommeil dormir insomnie nuit">
                 <h3>12. Sommeil <span class="category-tag">Quotidien</span></h3>
                 <div class="arabic-text">بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا</div>
@@ -1560,7 +1602,6 @@
                 <div class="instruction">📖 À dire avant de dormir, en se couchant sur le côté droit</div>
             </div>
 
-            <!-- CARTE 13: Guérison Générale -->
             <div class="card" id="card-guerison" data-title="Invocation pour la Guérison" data-keywords="guerison sante maladie remede">
                 <h3>13. Guérison Générale <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text">اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ اشْفِ أَنْتَ الشَّافِي</div>
@@ -1569,7 +1610,6 @@
                 <div class="instruction">📖 À réciter 7 fois sur la zone malade ou sur de l'eau à boire</div>
             </div>
 
-            <!-- CARTE 14: Vue & Yeux -->
             <div class="card" id="card-yeux" data-title="Protection de la Vue" data-keywords="vue yeux vision sante">
                 <h3>14. Vue & Yeux <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text">بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ</div>
@@ -1578,7 +1618,6 @@
                 <div class="instruction">📖 Réciter sur de l'eau de rose et appliquer sur les yeux (fermés)</div>
             </div>
 
-            <!-- CARTE 15: Mariage -->
             <div class="card" id="card-mariage" data-title="Invocation pour le Mariage" data-keywords="mariage epoux epouse couple">
                 <h3>15. Mariage <span class="category-tag">Famille</span></h3>
                 <div class="arabic-text">رَبِّ هَبْ لِي مِن لَّدُنكَ زَوْجَةً طَيِّبَةً</div>
@@ -1587,7 +1626,6 @@
                 <div class="instruction">📖 À réciter régulièrement avec sincérité et patience</div>
             </div>
 
-            <!-- CARTE 16: Mauvais Oeil -->
             <div class="card" id="card-ayn" data-title="Protection contre le Mauvais Oeil" data-keywords="mauvais oeil ayn protection jalousie">
                 <h3>16. Mauvais Oeil <span class="category-tag">Protection</span></h3>
                 <div class="arabic-text">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِن شَرِّ مَا خَلَقَ</div>
@@ -1596,7 +1634,6 @@
                 <div class="instruction">📖 3 fois matin et soir pour une protection complète</div>
             </div>
 
-            <!-- CARTE 17: Migraine -->
             <div class="card" id="card-migraine" data-title="Invocation contre la Migraine" data-keywords="migraine mal tete douleur">
                 <h3>17. Migraine <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
@@ -1605,7 +1642,6 @@
                 <div class="instruction">📖 Placer la main sur la tête et réciter 7 fois Al-Fatiha</div>
             </div>
 
-            <!-- CARTE 18: Harmonie Conjugale -->
             <div class="card" id="card-amour" data-title="Harmonie Conjugale" data-keywords="amour couple harmonie mariage">
                 <h3>18. Harmonie Conjugale <span class="category-tag">Famille</span></h3>
                 <div class="arabic-text">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا قُرَّةَ أَعْيُنٍ</div>
@@ -1614,7 +1650,6 @@
                 <div class="instruction">📖 À réciter régulièrement pour renforcer l'harmonie dans le couple</div>
             </div>
 
-            <!-- CARTE 19: Objet Perdu -->
             <div class="card" id="card-perdu" data-title="Invocation pour retrouver un objet perdu" data-keywords="objet perdu retrouver recherche">
                 <h3>19. Objet Perdu <span class="category-tag">Quotidien</span></h3>
                 <div class="arabic-text">إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ</div>
@@ -1623,7 +1658,6 @@
                 <div class="instruction">📖 Dire cette invocation puis demander à Allah de vous aider à retrouver l'objet</div>
             </div>
 
-            <!-- CARTE 20: Anxiété -->
             <div class="card" id="card-anxiete" data-title="Invocation contre l'Anxiété" data-keywords="anxiete stress inquietude peur">
                 <h3>20. Anxiété <span class="category-tag">Émotions</span></h3>
                 <div class="arabic-text">حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ</div>
@@ -1632,7 +1666,6 @@
                 <div class="instruction">📖 7 fois matin et soir pour apaiser l'anxiété</div>
             </div>
 
-            <!-- CARTE 21: Réalisation des Vœux -->
             <div class="card" id="card-souhait" data-title="Réalisation des Vœux" data-keywords="souhait voeu desir realisation">
                 <h3>21. Réalisation des Vœux <span class="category-tag">Spiritualité</span></h3>
                 <div class="arabic-text">لَا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</div>
@@ -1641,7 +1674,6 @@
                 <div class="instruction">📖 Invocation du Prophète Yunus - Très puissante pour l'exaucation des invocations</div>
             </div>
 
-            <!-- CARTE 22: Rizq & Provisions -->
             <div class="card" id="card-rizq" data-title="Invocation pour le Rizq" data-keywords="rizq provision argent subsistance travail">
                 <h3>22. Rizq & Provisions <span class="category-tag">Quotidien</span></h3>
                 <div class="arabic-text">رَبِّ اغْفِرْ وَارْحَمْ وَأَنتَ خَيْرُ الرَّاحِمِينَ</div>
@@ -1650,7 +1682,6 @@
                 <div class="instruction">📖 À réciter après chaque prière pour la bénédiction dans la subsistance</div>
             </div>
 
-            <!-- CARTE 23: Protection Sorcellerie -->
             <div class="card" id="card-sihr" data-title="Protection contre la Sorcellerie" data-keywords="sorcellerie sihr protection magie">
                 <h3>23. Protection Sorcellerie <span class="category-tag">Protection</span></h3>
                 <div class="arabic-text">قُلْ هُوَ اللَّهُ أَحَدٌ (سورة الإخلاص)</div>
@@ -1659,7 +1690,6 @@
                 <div class="instruction">📖 Réciter Al-Ikhlas, Al-Falaq et An-Nas 3 fois matin et soir</div>
             </div>
 
-            <!-- CARTE 24: Facilitation des Affaires -->
             <div class="card" id="card-travail" data-title="Facilitation des Affaires" data-keywords="travail affaires commerce business reussite">
                 <h3>24. Facilitation des Affaires <span class="category-tag">Quotidien</span></h3>
                 <div class="arabic-text">رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي</div>
@@ -1668,7 +1698,6 @@
                 <div class="instruction">📖 À réciter avant de commencer une affaire ou une réunion importante</div>
             </div>
 
-            <!-- CARTE 25: Digestion -->
             <div class="card" id="card-estomac" data-title="Invocation pour la Digestion" data-keywords="digestion estomac ventre sante">
                 <h3>25. Digestion <span class="category-tag">Santé</span></h3>
                 <div class="arabic-text">الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي وَسَقَانِي</div>
@@ -1677,7 +1706,6 @@
                 <div class="instruction">📖 À dire après avoir mangé pour faciliter la digestion</div>
             </div>
 
-            <!-- CARTE 26: Pluie & Abondance -->
             <div class="card" id="card-pluie" data-title="Invocation pour la Pluie" data-keywords="pluie abondance benediction agriculture">
                 <h3>26. Pluie & Abondance <span class="category-tag">Nature</span></h3>
                 <div class="arabic-text">اللَّهُمَّ اسْقِنَا غَيْثًا مُغِيثًا</div>
@@ -1719,7 +1747,6 @@
             <span>📖 Programme Détaillé</span>
         </div>
 
-        <!-- NIVEAU 1 -->
         <div style="background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 2px solid #fb923c;">
             <h3 style="color: #c2410c; margin-bottom: 15px;">
                 <span class="level-badge">Niveau 1</span> Les Fondations
@@ -1730,21 +1757,21 @@
                 <h4>📚 Module 1 : Introduction à l'interprétation islamique</h4>
                 <ul>
                     <li>Notre source principale : Ibn Sirin</li>
-                    <li>Le concept du rêve comme message selon l'Islam (l'âme, l'ange Siddiqun, le corps, le cerveau, la « pièce de théâtre »)</li>
-                    <li>Les 4 types de rêves : véridique (Rahmani), probables et prémonitoires, confus (Nafsani), satanique (Shaytani)</li>
-                    <li>Quand un rêve est-il interprétable ? (conditions et moments propices)</li>
-                    <li>Éthique de l'interprète : ce qu'on peut dire et ce qu'on doit taire</li>
+                    <li>Le concept du rêve comme message selon l'Islam</li>
+                    <li>Les 4 types de rêves : véridique, probables, confus, satanique</li>
+                    <li>Quand un rêve est-il interprétable ?</li>
+                    <li>Éthique de l'interprète</li>
                 </ul>
             </div>
 
             <div class="formation-module">
                 <h4>⚙️ Module 2 : Méthode d'interprétation en 5 étapes</h4>
                 <ul>
-                    <li><strong>Étape 1 :</strong> Analyser l'émotion au réveil (peur, joie, confusion, paix)</li>
-                    <li><strong>Étape 2 :</strong> Identifier les symboles dominants (les 2-3 plus marquants, dont un symbole principal)</li>
-                    <li><strong>Étape 3 :</strong> Croiser avec la réalité (situation actuelle du rêveur)</li>
-                    <li><strong>Étape 4 :</strong> Vérifier la cohérence (l'interprétation a-t-elle du sens ?)</li>
-                    <li><strong>Étape 5 :</strong> Formuler avec tact (comment annoncer une nouvelle difficile)</li>
+                    <li><strong>Étape 1 :</strong> Analyser l'émotion au réveil</li>
+                    <li><strong>Étape 2 :</strong> Identifier les symboles dominants</li>
+                    <li><strong>Étape 3 :</strong> Croiser avec la réalité</li>
+                    <li><strong>Étape 4 :</strong> Vérifier la cohérence</li>
+                    <li><strong>Étape 5 :</strong> Formuler avec tact</li>
                 </ul>
             </div>
 
@@ -1752,8 +1779,8 @@
                 <h4>🎯 Module 3 : 10 cas pratiques guidés</h4>
                 <ul>
                     <li>Analyse pas à pas de 10 rêves réels (anonymisés)</li>
-                    <li>Développement des symboles principaux à la volée, selon chaque contexte</li>
-                    <li>Exercices d'auto-évaluation après chaque cas</li>
+                    <li>Développement des symboles principaux</li>
+                    <li>Exercices d'auto-évaluation</li>
                     <li>Quiz final de validation</li>
                 </ul>
             </div>
@@ -1762,47 +1789,46 @@
                 <h4 style="color: #c2410c; margin-bottom: 10px;">✅ Livrables inclus :</h4>
                 <ul style="padding-left: 20px; line-height: 1.8; color: #475569;">
                     <li>Accès aux vidéos (YouTube non répertorié)</li>
-                    <li>PDF récapitulatif des symboles et des techniques pour débuter l'interprétation (envoyé par WhatsApp)</li>
+                    <li>PDF récapitulatif des symboles et techniques</li>
                     <li>Accès au groupe WhatsApp privé des élèves</li>
                     <li>Certificat de complétion Niveau 1</li>
                 </ul>
             </div>
         </div>
 
-        <!-- NIVEAU 2 -->
         <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 2px solid #60a5fa;">
             <h3 style="color: #1e40af; margin-bottom: 15px;">
                 <span class="level-badge" style="background: #1e40af;">Niveau 2</span> Approfondissement
             </h3>
-            <p style="color: #1e3a8a; margin-bottom: 15px;"><strong>Prérequis :</strong> Niveau 1 validé | <strong>Objectif :</strong> Maîtriser les symboles complexes et les nuances</p>
+            <p style="color: #1e3a8a; margin-bottom: 15px;"><strong>Prérequis :</strong> Niveau 1 validé | <strong>Objectif :</strong> Maîtriser les symboles complexes</p>
 
             <div class="formation-module" style="border-color: #93c5fd;">
                 <h4 style="color: #1e40af;">🔄 Module 4 : Symboles ambivalents</h4>
                 <ul>
-                    <li>Combinaison des éléments du rêve : partir du symbole principal vers les éléments secondaires (la « pièce de théâtre »)</li>
-                    <li>Symboles contradictoires : comment trancher selon le contexte du rêveur</li>
-                    <li>L'importance de garder l'historique des personnes dont vous interprétez les rêves</li>
-                    <li>La charge mentale de l'interprète et les responsabilités partagées avec le rêveur</li>
+                    <li>Combinaison des éléments du rêve</li>
+                    <li>Symboles contradictoires</li>
+                    <li>Importance de garder l'historique</li>
+                    <li>Charge mentale de l'interprète</li>
                 </ul>
             </div>
 
             <div class="formation-module" style="border-color: #93c5fd;">
                 <h4 style="color: #1e40af;">🔁 Module 5 : Rêves récurrents et séries</h4>
                 <ul>
-                    <li>Identifier les patterns (même symbole, même scénario)</li>
-                    <li>Interpréter l'évolution d'un rêve qui se répète (l'alarme : quelque chose que la personne doit faire et ne fait pas)</li>
-                    <li>Les symboles les plus puissants et les ressentis intenses</li>
+                    <li>Identifier les patterns</li>
+                    <li>Interpréter l'évolution d'un rêve qui se répète</li>
+                    <li>Symboles les plus puissants</li>
                 </ul>
             </div>
 
             <div class="formation-module" style="border-color: #93c5fd;">
                 <h4 style="color: #1e40af;">⚠️ Module 6 : Pièges et erreurs courantes</h4>
                 <ul>
-                    <li>Surinterprétation (voir du sens partout) et projection personnelle (plaquer ses peurs)</li>
-                    <li>Toujours considérer la situation du rêveur (religion, histoire, contexte)</li>
-                    <li>Confusion avec la voyance (ce que l'Islam interdit)</li>
-                    <li><strong>Garder ses limites :</strong> invocations, sadaqa oui — mais pas au-delà de votre spécialité</li>
-                    <li><strong>Protection émotionnelle :</strong> ne pas absorber la souffrance des autres</li>
+                    <li>Surinterprétation et projection personnelle</li>
+                    <li>Considérer la situation du rêveur</li>
+                    <li>Confusion avec la voyance</li>
+                    <li>Garder ses limites</li>
+                    <li>Protection émotionnelle</li>
                 </ul>
             </div>
 
@@ -1817,7 +1843,6 @@
             </div>
         </div>
 
-        <!-- NIVEAU 3 -->
         <div style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 2px solid #d8b4fe;">
             <h3 style="color: #6b21a8; margin-bottom: 15px;">
                 <span class="level-badge" style="background: #6b21a8;">Niveau 3</span> Spécialisation (optionnel)
@@ -1828,8 +1853,8 @@
             <div class="formation-module" style="border-color: #c4b5fd;">
                 <h4 style="color: #6b21a8;">🛡️ Option A : Rêves et Sorcellerie (Sihr)</h4>
                 <ul>
-                    <li>Identifier les rêves de sihr (signes caractéristiques)</li>
-                    <li>Différencier sihr / épreuve spirituelle / confusion mentale</li>
+                    <li>Identifier les rêves de sihr</li>
+                    <li>Différencier sihr / épreuve / confusion mentale</li>
                     <li>Protocoles de protection et de guérison</li>
                 </ul>
             </div>
@@ -1837,8 +1862,8 @@
             <div class="formation-module" style="border-color: #c4b5fd;">
                 <h4 style="color: #6b21a8;">🔮 Option B : Rêves Prémonitoires</h4>
                 <ul>
-                    <li>Rêves qui se réalisent (comment les reconnaître)</li>
-                    <li>Rêves de personnes décédées (messages importants)</li>
+                    <li>Rêves qui se réalisent</li>
+                    <li>Rêves de personnes décédées</li>
                 </ul>
             </div>
 
@@ -1855,7 +1880,6 @@
             <span>💰 Tarifs Accessibles</span>
         </div>
 
-        <!-- OFFRE NIVEAU 1 -->
         <div class="offer-card new-price" style="border-color: var(--primary-orange);">
             <div class="offer-header">
                 <div class="offer-title">📘 Niveau 1 : Les Fondations</div>
@@ -1876,7 +1900,6 @@
             <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: var(--primary-orange); color: var(--primary-orange);">S'inscrire au Niveau 1</a>
         </div>
 
-        <!-- OFFRE NIVEAU 2 -->
         <div class="offer-card new-price" style="border-color: #1e40af;">
             <div class="offer-header">
                 <div class="offer-title">📗 Niveau 2 : Approfondissement</div>
@@ -1898,7 +1921,6 @@
             <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: #1e40af; color: #1e40af;">S'inscrire au Niveau 2</a>
         </div>
 
-        <!-- OFFRE PACK COMPLET -->
         <div class="offer-card popular">
             <div class="popular-badge">MEILLEURE OFFRE</div>
             <div class="offer-header">
@@ -1921,7 +1943,6 @@
             <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: var(--success); color: var(--success);">Choisir le Pack Complet</a>
         </div>
 
-        <!-- OFFRE NIVEAU 3 -->
         <div class="offer-card new-price" style="border-color: #6b21a8;">
             <div class="offer-header">
                 <div class="offer-title">🎓 Niveau 3 : Spécialisation</div>
@@ -1940,6 +1961,15 @@
                 💳 <strong>Option paiement échelonné :</strong> 2 × 36€ (= 72€)
             </div>
             <a href="#paiement" class="payment-btn" style="max-width: 250px; display: inline-block; margin-top: 15px; border-color: #6b21a8; color: #6b21a8;">Choisir une Spécialisation</a>
+        </div>
+
+        <!-- ENCART BUDGET LIMITÉ POUR FORMATION -->
+        <div class="budget-box">
+            <h3>💙 Budget limité ?</h3>
+            <p>Je comprends que tout le monde n'a pas les mêmes moyens. Si les tarifs proposés sont trop élevés pour vous en ce moment, n'hésitez pas à me contacter. Nous pourrons discuter ensemble et trouver une solution adaptée à votre situation.</p>
+            <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20j'aimerais%20discuter%20des%20modalités%20pour%20la%20formation.%20Mon%20budget%20est%20limité." class="btn-whatsapp">
+                Me contacter pour en discuter
+            </a>
         </div>
 
         <div class="process-steps" style="background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); border-color: #fb923c;">
@@ -2006,7 +2036,11 @@
             </div>
             <div class="faq-item">
                 <div class="faq-question">Pourrai-je interpréter les rêves des autres après la formation ?</div>
-                <div class="faq-answer">Vous aurez les outils pour interpréter vos propres rêves et aider votre proche entourage. Devenir interprète confirmé demande des années de pratique supplémentaire : la formation vous apprend surtout la méthode et vous donne les points de départ. Mais si vous interprétez régulièrement les rêves, alors votre expertise s'enrichira et oui, vous pourrez interpréter ceux des autres.</div>
+                <div class="faq-answer">Vous aurez les outils pour interpréter vos propres rêves et aider votre proche entourage. Devenir interprète confirmé demande des années de pratique supplémentaire : la formation vous apprend surtout la méthode et vous donne les points de départ.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Puis-je discuter des tarifs si mon budget est limité ?</div>
+                <div class="faq-answer">Oui, absolument. Je comprends que chaque situation est différente. N'hésitez pas à me contacter via WhatsApp pour en discuter. Nous trouverons ensemble une solution adaptée à vos moyens.</div>
             </div>
         </div>
     </div>
@@ -2118,7 +2152,6 @@
         document.getElementById(tabName).classList.add('active');
         evt.currentTarget.classList.add('active');
         
-        // Afficher/masquer le compteur selon l'onglet
         const counter = document.getElementById('global-counter');
         if (tabName === 'duas') {
             counter.classList.add('visible');
