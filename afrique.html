@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Houssen Mohsinaly - Interprétation des rêves en Islam pour l'Afrique. Tarifs adaptés et paiement crypto accessible.">
+    
+    <meta property="og:title" content="Interprétation des Rêves - Spécial Afrique">
+    <meta property="og:description" content="Service d'interprétation authentique des rêves adapté aux résidents africains. Tarifs en FCFA, paiement USDT.">
+    <meta property="og:image" content="profil.jpg">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+    
+    <title>Interprétation des Rêves - Spécial Afrique</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-green: #27ae60;
+            --primary-orange: #f39c12;
+            --bg-color: #f8fafc;
+            --text-main: #2c3e50;
+            --success: #10b981;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            min-height: 100vh;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #065f46 0%, #064e3b 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.4);
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .profile-header h1 {
+            margin: 10px 0 5px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .profile-bio {
+            font-size: 1em;
+            opacity: 0.95;
+            max-width: 500px;
+            margin: 10px auto 0;
+            font-weight: 300;
+        }
+
+        .africa-badge {
+            display: inline-block;
+            background: #fbbf24;
+            color: #92400e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .exclusive-notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 3px solid #f59e0b;
+            color: #92400e;
+            padding: 20px;
+            margin: 25px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 25px;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #86efac;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .intro-box h2 {
+            color: #14532d;
+            margin-bottom: 15px;
+        }
+
+        .intro-box p {
+            color: #166534;
+            line-height: 1.8;
+        }
+
+        .countries-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .countries-section h3 {
+            color: #475569;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .country-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .country-item {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-green);
+            font-size: 0.9em;
+        }
+
+        .offer-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .offer-card:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.15);
+        }
+
+        .offer-card.popular {
+            border-color: var(--success);
+            background: linear-gradient(to bottom, #f0fdf4, #ffffff);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--success);
+            color: white;
+            padding: 5px 35px;
+            font-size: 0.75em;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+
+        .offer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .offer-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .offer-price {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .offer-unit {
+            font-size: 0.8em;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        .offer-features {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .offer-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .offer-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .payment-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 3px solid #f59e0b;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .payment-section h2 {
+            color: #92400e;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .crypto-info {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .crypto-info h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wallet-address {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            word-break: break-all;
+            text-align: center;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .copy-btn {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 10px auto;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #991b1b;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .warning-box strong {
+            color: #7f1d1d;
+        }
+
+        .process-steps {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #bae6fd;
+        }
+
+        .process-steps h3 {
+            color: #0369a1;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .step:last-child { margin-bottom: 0; }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 1.1em;
+        }
+
+        .step-content { flex: 1; padding-top: 6px; }
+
+        .step-content strong {
+            color: #0c4a6e;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 0.95em;
+            color: #475569;
+            margin: 0;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s;
+            margin: 15px auto;
+            display: block;
+            max-width: 350px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .back-link {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .faq-section h3 {
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover { border-color: var(--primary-green); }
+
+        .faq-question {
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after { transform: rotate(180deg); }
+
+        .faq-question::after {
+            content: '▼';
+            transition: transform 0.3s;
+            color: #94a3b8;
+        }
+
+        .conversion-note {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 0.88em;
+            color: #1e40af;
+            margin: 15px 0;
+        }
+
+        @media (max-width: 600px) {
+            .content-section { padding: 15px; }
+            .profile-header h1 { font-size: 1.5em; }
+            .offer-header { flex-direction: column; }
+            .country-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="profile-header">
+        <img src="profil.jpg" alt="Houssen Mohsinaly" class="profile-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22%3E%3Ccircle cx=%2260%22 cy=%2260%22 r=%2255%22 fill=%22%23e0e7ff%22/%3E%3Ctext x=%2260%22 y=%2270%22 text-anchor=%22middle%22 fill=%22%234f46e5%22 font-size=%2240%22%3E☪%3C/text%3E%3C/svg%3E'">
+        <h1>Houssen Mohsinaly</h1>
+        <p class="profile-bio">Interprétation authentique des rêves en Islam</p>
+        <div class="africa-badge">🌍 Spécial Afrique</div>
+    </div>
+
+    <div class="exclusive-notice">
+        ⚠️ <strong>Service réservé exclusivement aux résidents en Afrique</strong><br>
+        Tarifs adaptés et paiement crypto accessible depuis votre pays
+    </div>
+
+    <div class="content-section">
+
+        <div class="intro-box">
+            <h2>💚 Un service adapté à votre réalité</h2>
+            <p>Conscient des réalités économiques et des barrières bancaires qui empêchent souvent les frères et sœurs africains d'accéder à des services spirituels de qualité, j'ai créé cette offre spéciale avec des <strong>tarifs adaptés</strong> et un <strong>mode de paiement accessible</strong> via crypto-monnaie.</p>
+            <p style="margin-top: 15px;">Cette démarche s'inscrit dans ma volonté de ne laisser personne sans réponse spirituelle, quelles que soient les contraintes géographiques ou financières.</p>
+        </div>
+
+        <div class="countries-section">
+            <h3>🌍 Pays concernés</h3>
+            <p style="color: #64748b; margin-bottom: 15px;">Cette offre s'adresse aux résidents des pays suivants utilisant le Franc CFA :</p>
+            
+            <h4 style="color: #475569; margin: 15px 0 10px;">💶 Franc CFA d'Afrique de l'Ouest (XOF)</h4>
+            <div class="country-list">
+                <div class="country-item">🇧🇯 Bénin</div>
+                <div class="country-item">🇧🇫 Burkina Faso</div>
+                <div class="country-item">🇲🇱 Mali</div>
+                <div class="country-item">🇳🇪 Niger</div>
+                <div class="country-item">🇹🇬 Togo</div>
+            </div>
+
+            <h4 style="color: #475569; margin: 20px 0 10px;">💶 Franc CFA d'Afrique Centrale (XAF)</h4>
+            <div class="country-list">
+                <div class="country-item">🇨🇲 Cameroun</div>
+                <div class="country-item">🇨🇫 République Centrafricaine</div>
+                <div class="country-item">🇨🇬 République du Congo</div>
+                <div class="country-item">🇬🇦 Gabon</div>
+                <div class="country-item">🇬🇶 Guinée Équatoriale</div>
+                <div class="country-item">🇹🇩 Tchad</div>
+            </div>
+
+            <div class="conversion-note">
+                💡 <strong>Note :</strong> Les prix sont affichés en Franc CFA (FCFA). Si vous résidez dans un autre pays africain avec une devise différente, vous pouvez convertir ces montants selon le taux de change en vigueur.
+            </div>
+        </div>
+
+        <!-- OFFRE GRATUITE - PREMIER CONTACT -->
+<div style="background: linear-gradient(135deg, #065f46 0%, #064e3b 100%); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 3px solid #022c22; box-shadow: 0 8px 25px rgba(6, 78, 59, 0.4);">
+    <div style="text-align: center; color: white;">
+        <div style="background: white; color: #059669; display: inline-block; padding: 6px 20px; border-radius: 20px; font-weight: 700; font-size: 0.85em; margin-bottom: 15px;">
+            🎁 OFFRE DÉCOUVERTE
+        </div>
+        <h2 style="margin: 0 0 10px 0; font-size: 1.8em;">Première Interprétation GRATUITE</h2>
+        <p style="margin: 0 0 20px 0; font-size: 1.05em; opacity: 0.95;">
+            Vous hésitez ? Testez mon expertise sans engagement.<br>
+            <strong>Envoyez-moi UN rêve</strong> et recevez une interprétation complète gratuitement.
+        </p>
+        
+        <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 20px; margin: 20px 0; backdrop-filter: blur(10px);">
+            <h3 style="margin: 0 0 15px 0; font-size: 1.1em;">✅ Ce que vous recevez :</h3>
+            <div style="text-align: left; display: inline-block;">
+                <p style="margin: 8px 0; font-size: 0.95em;">✓ Analyse détaillée de votre rêve</p>
+                <p style="margin: 8px 0; font-size: 0.95em;">✓ Interprétation des symboles principaux</p>
+                <p style="margin: 8px 0; font-size: 0.95em;">✓ Conseils spirituels personnalisés</p>
+                <p style="margin: 8px 0; font-size: 0.95em;">✓ Réponse vocale WhatsApp (24-48h)</p>
+            </div>
+        </div>
+
+        <div style="background: rgba(251, 191, 36, 0.2); border: 2px solid #fbbf24; border-radius: 8px; padding: 12px; margin: 15px 0; font-size: 0.9em;">
+            💡 <strong>Pas besoin de crypto pour cette offre !</strong><br>
+            Envoyez simplement votre rêve sur WhatsApp.
+        </div>
+
+        <p style="margin: 15px 0; font-size: 0.9em; opacity: 0.9;">
+            💡 <strong>Sans engagement</strong> — Si mon travail vous plaît, vous pourrez ensuite choisir une offre payante.
+        </p>
+
+        <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20j'aimerais%20bénéficier%20de%20l'interprétation%20gratuite%20de%20mon%20premier%20rêve.%20Voici%20mon%20rêve%20:%20" class="btn-whatsapp" style="background-color: white; color: #065f46; font-size: 1.15em; padding: 18px 35px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); max-width: 350px; display: inline-block;">
+            🎁 Obtenir mon interprétation gratuite
+        </a>
+
+        <p style="margin-top: 15px; font-size: 0.85em; opacity: 0.9; font-style: italic;">
+            "Décrivez votre rêve en détail : personnages, lieux, émotions, couleurs..."
+        </p>
+
+        <p style="margin-top: 15px; font-size: 0.8em; opacity: 0.85;">
+            Offre limitée à 1 rêve par personne • Réponse sous 24-48h
+        </p>
+    </div>
+</div>
+
+<!-- SÉPARATEUR VISUEL -->
+<div style="text-align: center; margin: 35px 0 25px; color: #94a3b8; font-weight: 600;">
+    <span style="background: white; padding: 0 15px; position: relative; z-index: 1;">ou choisissez une offre complète</span>
+    <hr style="border: none; border-top: 2px solid #e2e8f0; margin-top: -10px;">
+</div>
+
+        <h2 style="color: #1e293b; margin: 30px 0 20px; text-align: center;">🌙 Nos Offres d'Interprétation</h2>
+
+        <div class="offer-card">
+            <div class="offer-header">
+                <div class="offer-title">🌙 Rêve Unique</div>
+                <div>
+                    <div class="offer-price">1 500 FCFA</div>
+                    <div class="offer-unit">par rêve</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>1 interprétation détaillée</li>
+                <li>Analyse symbolique complète</li>
+                <li>Conseils spirituels personnalisés</li>
+                <li>Réponse vocale WhatsApp (24-48h)</li>
+            </ul>
+            <a href="#paiement" class="btn-whatsapp" style="background-color: var(--primary-green); max-width: 250px; font-size: 1em; padding: 12px 25px;">Choisir cette offre</a>
+        </div>
+
+        <div class="offer-card popular">
+            <div class="popular-badge">POPULAIRE</div>
+            <div class="offer-header">
+                <div class="offer-title">🌟 Pack 3 Rêves</div>
+                <div>
+                    <div class="offer-price">4 000 FCFA</div>
+                    <div class="offer-unit">1 333 FCFA par rêve</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>3 interprétations sur 20 jours</li>
+                <li>Analyse approfondie de chaque rêve</li>
+                <li>Suivi personnalisé</li>
+                <li>Réponses vocales WhatsApp</li>
+                <li><strong>Économisez 500 FCFA</strong> vs tarif unique</li>
+            </ul>
+            <a href="#paiement" class="btn-whatsapp" style="background-color: var(--success); max-width: 250px; font-size: 1em; padding: 12px 25px;">Choisir cette offre</a>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-header">
+                <div class="offer-title">✨ Pack 5 Rêves</div>
+                <div>
+                    <div class="offer-price">6 500 FCFA</div>
+                    <div class="offer-unit">1 300 FCFA par rêve</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>5 interprétations sur 30 jours</li>
+                <li>Analyse symbolique très détaillée</li>
+                <li>Suivi complet et conseils approfondis</li>
+                <li>Réponses vocales WhatsApp</li>
+                <li><strong>Meilleur rapport qualité-prix</strong></li>
+            </ul>
+            <a href="#paiement" class="btn-whatsapp" style="background-color: var(--primary-green); max-width: 250px; font-size: 1em; padding: 12px 25px;">Choisir cette offre</a>
+        </div>
+
+        <h2 style="color: #1e293b; margin: 40px 0 20px; text-align: center;">🛡️ Diagnostic Spirituel (Sihr)</h2>
+
+        <div class="offer-card" style="border-color: #9b59b6;">
+            <div class="offer-header">
+                <div class="offer-title" style="color: #9b59b6;">🛡️ Diagnostic Complet & Suivi 7 jours</div>
+                <div>
+                    <div class="offer-price" style="color: #9b59b6;">18 000 FCFA</div>
+                    <div class="offer-unit">session + suivi</div>
+                </div>
+            </div>
+            <ul class="offer-features">
+                <li>✅ Analyse détaillée de vos symptômes (1-2h)</li>
+                <li>✅ Diagnostic spirituel personnalisé</li>
+                <li>✅ Invocations spécifiques adaptées</li>
+                <li>✅ Programme d'hygiène spirituelle</li>
+                <li>✅ Guide de Self-Ruqya</li>
+                <li>✅ Suivi vocal 7 jours via WhatsApp</li>
+                <li>✅ Réponses à vos questions</li>
+            </ul>
+            <a href="#paiement" class="btn-whatsapp" style="background-color: #9b59b6; max-width: 250px; font-size: 1em; padding: 12px 25px;">Choisir cette offre</a>
+        </div>
+
+        <div id="paiement" class="payment-section">
+            <h2>💰 Mode de Paiement : USDT (Crypto)</h2>
+            <p style="text-align: center; color: #78350f; margin-bottom: 20px;">Le seul moyen accessible pour les transferts intra-africains vers Madagascar</p>
+
+            <div class="crypto-info">
+                <h3>🪙 USDT sur réseau Tron (TRC20)</h3>
+                <p style="color: #64748b; margin: 10px 0;">Envoyez le montant correspondant en USDT à l'adresse suivante :</p>
+                
+                <div class="wallet-address" id="walletAddress">
+                    TWBjwq1zugCDmR54EhSFFR4npox7FGxU7W
+                </div>
+
+                <button class="copy-btn" onclick="copyAddress()">📋 Copier l'adresse</button>
+
+                <div class="warning-box">
+                    <strong>⚠️ ATTENTION :</strong>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li>Utilisez <strong>UNIQUEMENT le réseau TRC20 (Tron)</strong></li>
+                        <li>Tout envoi sur un autre réseau (ERC20, BEP20, etc.) entraînera la <strong>PERTE DÉFINITIVE</strong> de vos fonds</li>
+                        <li>Vérifiez bien l'adresse avant d'envoyer (copiez-collez, ne tapez pas manuellement)</li>
+                        <li>Les frais de transaction sur le réseau Tron sont généralement inférieurs à 1$</li>
+                    </ul>
+                </div>
+
+                <div class="conversion-note">
+                    <strong>💡 Comment acheter des USDT ?</strong><br>
+                    Vous pouvez acheter des USDT via des plateformes d'échange locales (Binance, Yellow Card, etc.) ou auprès de revendeurs de crypto dans votre pays. De nombreux services permettent d'acheter de la crypto via Orange Money, Wave, ou Mobile Money.
+                </div>
+            </div>
+
+            <div class="process-steps">
+                <h3>📋 Comment procéder ?</h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Choisissez votre offre</strong>
+                        <p>Sélectionnez le pack qui vous convient (Rêve unique, Pack 3 ou Pack 5)</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Achetez des USDT</strong>
+                        <p>Procurez-vous le montant en USDT via une plateforme d'échange ou un revendeur local</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Envoyez les USDT</strong>
+                        <p>Transférez le montant à l'adresse ci-dessus via le <strong>réseau TRC20 uniquement</strong></p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <strong>Confirmez sur WhatsApp</strong>
+                        <p>Envoyez-moi la preuve de transaction (hash ou capture) avec votre rêve</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://wa.me/261341854716?text=Assalamu%20alaykum,%20je%20viens%20de%20la%20page%20Afrique.%20J'ai%20effectué%20le%20transfert%20USDT%20de%20[Montant]%20FCFA.%20Voici%20la%20preuve%20:%20" class="btn-whatsapp">
+                📱 Confirmer mon paiement sur WhatsApp
+            </a>
+
+            <p style="text-align: center; margin-top: 15px; font-size: 0.9em; color: #78350f;">
+                Dans votre message WhatsApp, précisez :<br>
+                • Le montant envoyé en FCFA<br>
+                • L'offre choisie<br>
+                • La preuve de transaction (hash ou capture)<br>
+                • Votre rêve détaillé
+            </p>
+        </div>
+
+        <div class="faq-section">
+            <h3>❓ Questions fréquentes</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Pourquoi le paiement en crypto ?</div>
+                <div class="faq-answer">Les services de transfert classiques (Western Union, TapTap Send, Remitly) ne fonctionnent pas pour les transferts entre pays africains et Madagascar, ou ont des frais prohibitifs. La crypto-monnaie est actuellement la seule solution viable et abordable pour recevoir des paiements depuis l'Afrique.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Je ne connais rien à la crypto, comment faire ?</div>
+                <div class="faq-answer">Je comprends que cela peut sembler complexe. De nombreuses plateformes locales proposent des services simples pour acheter de la crypto avec Mobile Money. Vous pouvez aussi demander à un proche de vous aider. Si vraiment vous n'y arrivez pas, contactez-moi sur WhatsApp et nous discuterons des alternatives possibles.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Que se passe-t-il si j'envoie sur le mauvais réseau ?</div>
+                <div class="faq-answer">Malheureusement, si vous envoyez des USDT sur un réseau autre que TRC20 (Tron), les fonds seront définitivement perdus. C'est pourquoi il est crucial de bien vérifier que vous utilisez le réseau TRC20 et de copier-coller l'adresse plutôt que de la taper manuellement.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Les frais de transaction sont-ils inclus ?</div>
+                <div class="faq-answer">Non, les frais de transaction sur le réseau Tron (généralement moins de 1$) sont à votre charge. Vous devez donc envoyer le montant exact de l'offre choisie, les frais seront déduits automatiquement par le réseau.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Combien de temps pour recevoir mon interprétation ?</div>
+                <div class="faq-answer">Une fois votre paiement confirmé (je vérifie la transaction sur la blockchain), je vous envoie l'interprétation détaillée par message vocal WhatsApp dans les 24 à 48 heures.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Puis-je être remboursé ?</div>
+                <div class="faq-answer">Non, les transactions crypto sont irréversibles et les modalités ne permettent pas de remboursement. Assurez-vous de bien comprendre le processus avant d'envoyer le paiement.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Et si je vis dans un pays africain non listé ?</div>
+                <div class="faq-answer">Si vous résidez dans un autre pays africain avec une devise différente, vous pouvez utiliser cette page en convertissant les prix FCFA selon le taux de change en vigueur. Contactez-moi si vous avez des questions.</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="back-link">← Retour à la page principale</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function copyAddress() {
+        const address = document.getElementById('walletAddress').textContent.trim();
+        navigator.clipboard.writeText(address).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.textContent;
+            btn.textContent = '✓ Adresse copiée !';
+            btn.style.background = '#059669';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+            }, 2000);
+        }).catch(err => {
+            alert('Adresse : ' + address);
+        });
+    }
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
